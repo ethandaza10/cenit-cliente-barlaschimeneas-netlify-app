@@ -18,7 +18,15 @@ interface Props {
 const { title, description, path, schema = [] } = Astro.props;
 
 const canonicalPath = path ?? Astro.url.pathname;
-const canonical = new URL(canonicalPath, site.domain).href;
+// Canonical relativo al sitio realmente desplegado (Astro.site), con fallback.
+const siteBase = Astro.site?.href ?? `${site.domain}/`;
+const canonical = new URL(canonicalPath.replace(/^\//, ''), siteBase).href;
+
+// Indexable solo si se activa explícitamente (SITE_INDEXABLE=true).
+// Por defecto NOINDEX: pensado para sitios de comparación/preview que no
+// deben competir en Google con la web viva del cliente.
+const indexable = process.env.SITE_INDEXABLE === 'true';
+const robotsContent = indexable ? 'index, follow' : 'noindex, nofollow';
 
 // Nodo LocalBusiness común a todas las páginas (datos verificados).
 const business = {
@@ -59,7 +67,7 @@ const jsonLd = [business, ...schema];
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={robotsContent} />
     <meta name="theme-color" content="#17110b" />
     <link rel="icon" type="image/png" href="/favicon.png" />
 
