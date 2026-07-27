@@ -1,0 +1,42 @@
+name: Desplegar en GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Permisos que necesita el despliegue de Pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Un despliegue a la vez.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Construir el sitio (Astro)
+        uses: withastro/action@v3
+        env:
+          # Activa la subruta /REPO/ y la URL de Pages en astro.config.mjs.
+          GITHUB_PAGES: 'true'
+          # Cambia a 'true' el día que sea la web oficial y deba indexarse.
+          SITE_INDEXABLE: 'false'
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar en Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -4,7 +4,7 @@ import '@fontsource-variable/mulish';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { site } from '../data/site';
+import { site, link } from '../data/site';
 
 interface Props {
   title: string;
@@ -18,9 +18,11 @@ interface Props {
 const { title, description, path, schema = [] } = Astro.props;
 
 const canonicalPath = path ?? Astro.url.pathname;
-// Canonical relativo al sitio realmente desplegado (Astro.site), con fallback.
+// Origen del sitio realmente desplegado (Astro.site), con fallback.
 const siteBase = Astro.site?.href ?? `${site.domain}/`;
-const canonical = new URL(canonicalPath.replace(/^\//, ''), siteBase).href;
+// Canonical = origen + base + ruta (link() añade la base de GitHub Pages).
+const canonical = new URL(link(canonicalPath), siteBase).href;
+const businessUrl = new URL(link('/'), siteBase).href;
 
 // Indexable solo si se activa explícitamente (SITE_INDEXABLE=true).
 // Por defecto NOINDEX: pensado para sitios de comparación/preview que no
@@ -32,13 +34,13 @@ const robotsContent = indexable ? 'index, follow' : 'noindex, nofollow';
 const business = {
   '@context': 'https://schema.org',
   '@type': 'BarOrPub',
-  '@id': `${site.domain}/#business`,
+  '@id': `${businessUrl}#business`,
   name: site.name,
-  url: site.domain,
+  url: businessUrl,
   telephone: site.phoneTel,
   priceRange: '€€',
   servesCuisine: site.cuisine,
-  image: `${site.domain}/favicon.png`,
+  image: new URL(link('/favicon.png'), siteBase).href,
   address: {
     '@type': 'PostalAddress',
     streetAddress: site.street,
@@ -69,7 +71,7 @@ const jsonLd = [business, ...schema];
     <link rel="canonical" href={canonical} />
     <meta name="robots" content={robotsContent} />
     <meta name="theme-color" content="#17110b" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" href={link('/favicon.png')} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -79,7 +81,7 @@ const jsonLd = [business, ...schema];
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content="es_ES" />
 
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="sitemap" href={link('/sitemap-index.xml')} />
 
     {
       jsonLd.map((node) => (

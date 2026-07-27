@@ -1,16 +1,20 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '../assets/logo-las-chimeneas.png';
-import { nav, telLink, site } from '../data/site';
+import { nav, telLink, site, link } from '../data/site';
 
-const current = Astro.url.pathname;
+// Normaliza la ruta actual quitando la `base` para poder comparar con las
+// rutas "raíz" del menú (funciona igual en local, Netlify y GitHub Pages).
+const base = import.meta.env.BASE_URL.replace(/\/+$/, '');
+let current = Astro.url.pathname.replace(/\/+$/, '') || '/';
+if (base && current.startsWith(base)) current = current.slice(base.length) || '/';
 const isActive = (href: string) =>
   href === '/' ? current === '/' : current.startsWith(href);
 ---
 
 <header class="site-header" data-header>
   <div class="container bar">
-    <a class="brand" href="/" aria-label={`${site.name} — inicio`}>
+    <a class="brand" href={link('/')} aria-label={`${site.name} — inicio`}>
       <Image
         src={logo}
         alt=""
@@ -41,7 +45,7 @@ const isActive = (href: string) =>
           nav.map((item) => (
             <li>
               <a
-                href={item.href}
+                href={link(item.href)}
                 class:list={['nav__link', { 'is-active': isActive(item.href) }]}
                 aria-current={isActive(item.href) ? 'page' : undefined}
               >

@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { telLink } from '../data/site';
+import { telLink, link } from '../data/site';
 ---
 
 <Base title="Página no encontrada | Bar Las Chimeneas" description="La página que buscas no existe. Vuelve al inicio de Bar Las Chimeneas en Valdemorillo." path="/404">
@@ -12,7 +12,7 @@ import { telLink } from '../data/site';
         La página que buscas no está aquí, pero la terraza sigue abierta.
       </p>
       <div class="btn-row" style="justify-content:center;margin-top:var(--sp-5)">
-        <a class="btn btn--lg" href="/">Volver al inicio</a>
+        <a class="btn btn--lg" href={link('/')}>Volver al inicio</a>
         <a class="btn btn--ghost btn--lg" href={telLink}>Reservar</a>
       </div>
     </div>

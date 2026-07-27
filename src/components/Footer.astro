@@ -1,5 +1,5 @@
 ---
-import { site, nav, telLink, waLink } from '../data/site';
+import { site, nav, telLink, waLink, link } from '../data/site';
 const year = 2026;
 ---
 
@@ -20,7 +20,7 @@ const year = 2026;
     <nav class="foot__nav" aria-label="Pie">
       <p class="foot__h">Explora</p>
       <ul>
-        {nav.map((i) => <li><a href={i.href}>{i.label}</a></li>)}
+        {nav.map((i) => <li><a href={link(i.href)}>{i.label}</a></li>)}
       </ul>
     </nav>
 

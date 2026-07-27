@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Faq from '../components/Faq.astro';
-import { site, telLink, waLink } from '../data/site';
+import { site, telLink, waLink, link } from '../data/site';
 
 import hero from '../assets/plato-solomillo-romesco.jpg';
 import torreznos from '../assets/torreznos-panceta.jpg';
@@ -84,7 +84,7 @@ const proofs = [
         </p>
         <div class="btn-row">
           <a class="btn btn--lg" href={telLink}><span aria-hidden="true">☎</span> Reservar mesa</a>
-          <a class="btn btn--ghost btn--lg" href="/carta">Ver la carta</a>
+          <a class="btn btn--ghost btn--lg" href={link('/carta')}>Ver la carta</a>
         </div>
       </div>
 
@@ -193,7 +193,7 @@ const proofs = [
             simple consumición. El ambiente es relajado y cercano: un sitio donde apetece quedarse.
           </p>
         </div>
-        <a class="link-gold" href="/eventos-musica-en-vivo">Ver la agenda de eventos →</a>
+        <a class="link-gold" href={link('/eventos-musica-en-vivo')}>Ver la agenda de eventos →</a>
       </div>
     </div>
   </section>
@@ -245,7 +245,7 @@ const proofs = [
         </dl>
         <div class="btn-row">
           <a class="btn" href={waLink}>Reservar por WhatsApp</a>
-          <a class="btn btn--ghost" href="/contacto">Cómo llegar</a>
+          <a class="btn btn--ghost" href={link('/contacto')}>Cómo llegar</a>
         </div>
       </div>
       <div class="frame map" data-reveal style="--reveal-delay:80ms">

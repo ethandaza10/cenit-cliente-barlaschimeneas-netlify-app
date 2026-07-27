@@ -52,3 +52,15 @@ export const nav = [
 
 export const waLink = `https://wa.me/${site.whatsapp}`;
 export const telLink = `tel:${site.phoneTel}`;
+
+/**
+ * Enlace interno consciente de la `base` del sitio.
+ * En GitHub Pages el sitio vive bajo `/nombre-del-repo/`; este helper antepone
+ * esa subruta a los enlaces internos para que no rompan. En local/Netlify la
+ * base es `/`, así que devuelve la ruta tal cual.
+ */
+export function link(path: string): string {
+  const base = import.meta.env.BASE_URL.replace(/\/+$/, '');
+  if (!path.startsWith('/')) path = `/${path}`;
+  return path === '/' ? `${base}/` : `${base}${path}`;
+}
