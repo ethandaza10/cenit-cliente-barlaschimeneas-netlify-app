@@ -184,7 +184,7 @@ p {
   text-decoration-color: var(--ember-ink);
 }
 .paper .btn--ghost {
-  --_fg: #3a2a1c;
+  color: #3a2a1c;
   border-color: rgba(120, 80, 30, 0.5);
 }
 .paper .btn--ghost:hover {
@@ -250,54 +250,93 @@ p {
   border-radius: 2px;
 }
 
-/* — Botones — */
+/* — Botones (acabado premium: profundidad + brillo sutil) — */
 .btn {
-  --_bg: var(--ember);
-  --_fg: #fff8f2;
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--sp-2);
-  padding: 0.85em 1.5em;
+  padding: 0.95em 1.7em;
   font-family: var(--font-body);
   font-weight: 800;
   font-size: var(--step-0);
   line-height: 1;
-  color: var(--_fg);
-  background: var(--_bg);
-  border: 1px solid transparent;
-  border-radius: var(--radius-s);
+  letter-spacing: 0.012em;
+  color: #fff8f2;
+  /* Degradado de brasa: arriba = tono base (garantiza contraste AA), abajo más hondo. */
+  background: linear-gradient(180deg, var(--ember) 0%, #a5401c 100%);
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 6px;
   cursor: pointer;
-  transition: transform 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
-  box-shadow: var(--shadow-soft);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 10px 24px -14px rgba(120, 45, 20, 0.85);
+  transition: transform 0.22s ease, box-shadow 0.28s ease, filter 0.22s ease;
+}
+/* Destello que barre al pasar el cursor */
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    transparent 34%,
+    rgba(255, 255, 255, 0.28) 50%,
+    transparent 66%
+  );
+  transform: translateX(-130%);
+  transition: transform 0.7s ease;
 }
 .btn:hover {
-  background: var(--ember-bright);
   transform: translateY(-2px);
+  filter: brightness(1.05) saturate(1.03);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.24),
+    0 18px 30px -14px rgba(120, 45, 20, 0.9);
+}
+.btn:hover::after {
+  transform: translateX(130%);
 }
 .btn:active {
   transform: translateY(0);
 }
+
 .btn--ghost {
-  --_bg: transparent;
-  --_fg: var(--cream);
-  border-color: var(--line-strong);
+  color: var(--cream);
+  background: transparent;
+  border: 1px solid var(--line-strong);
   box-shadow: none;
 }
+.btn--ghost::after {
+  display: none;
+}
 .btn--ghost:hover {
-  background: rgba(199, 154, 75, 0.1);
+  background: rgba(199, 154, 75, 0.12);
   border-color: var(--gold);
+  filter: none;
+  box-shadow: inset 0 0 0 1px rgba(199, 154, 75, 0.25);
 }
+
 .btn--gold {
-  --_bg: var(--gold);
-  --_fg: #1a1206;
+  color: #1a1206;
+  background: linear-gradient(180deg, #e2ba69 0%, var(--gold) 55%, #a97e35 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 10px 24px -14px rgba(120, 90, 30, 0.7);
 }
-.btn--gold:hover {
-  --_bg: var(--gold-bright);
-}
+
 .btn--lg {
-  padding: 1em 1.8em;
+  padding: 1.1em 2em;
   font-size: var(--step-1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn::after {
+    display: none;
+  }
 }
 
 .btn-row {
@@ -305,6 +344,10 @@ p {
   flex-wrap: wrap;
   gap: var(--sp-3);
   align-items: center;
+}
+/* Aire entre un párrafo destacado y su llamada a la acción */
+.lead + .btn-row {
+  margin-top: var(--sp-6);
 }
 
 /* — Enlaces de texto con subrayado de oro — */
@@ -335,20 +378,85 @@ p {
   overflow: hidden;
   box-shadow: var(--shadow);
 }
+/* Filete de oro + profundidad cálida en la base (integra en el fondo oscuro) */
 .frame::after {
   content: '';
   position: absolute;
   inset: 0;
+  z-index: 3;
   pointer-events: none;
   box-shadow: inset 0 0 0 1px var(--line);
-  /* Viñeteado cálido para integrar en el fondo oscuro */
-  background: radial-gradient(120% 120% at 50% 120%, rgba(23, 17, 11, 0.55), transparent 55%);
+  background: linear-gradient(to top, rgba(14, 9, 5, 0.42), transparent 40%);
   border-radius: inherit;
+}
+/* En marcos de mapa (iframe) no aplicamos velo ni zoom */
+.frame:has(iframe)::after {
+  background: none;
 }
 .frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.frame:hover img,
+.frame:focus-within img {
+  transform: scale(1.045);
+}
+/* Etiqueta del plato: aparece con elegancia al pasar por encima */
+.frame__cap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-7) var(--sp-4) var(--sp-4);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  color: var(--cream);
+  background: linear-gradient(
+    to top,
+    rgba(11, 7, 4, 0.92),
+    rgba(11, 7, 4, 0.35) 46%,
+    transparent
+  );
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.frame__cap::before {
+  content: '';
+  flex: 0 0 auto;
+  width: 20px;
+  height: 1px;
+  background: var(--gold);
+}
+.frame:hover .frame__cap,
+.frame:focus-within .frame__cap {
+  opacity: 1;
+  transform: none;
+}
+/* En pantallas táctiles (sin hover) la etiqueta se muestra siempre */
+@media (hover: none) {
+  .frame__cap {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .frame img,
+  .frame__cap {
+    transition: none;
+  }
+  .frame:hover img,
+  .frame:focus-within img {
+    transform: none;
+  }
 }
 
 /* — Nota de dato pendiente (honestidad) — */

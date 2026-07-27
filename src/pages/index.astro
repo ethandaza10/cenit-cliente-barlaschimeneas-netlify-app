@@ -14,13 +14,13 @@ import postre from '../assets/postre-fruta-braseada.jpg';
 import tarta from '../assets/tarta-queso-mermelada.jpg';
 
 const carousel = [
-  { img: torreznos, alt: 'Torreznos crujientes con rúcula y patatas caseras en plato de pizarra.' },
-  { img: cremaTomate, alt: 'Crema de tomate templada decorada con una flor comestible y aceite de oliva.' },
-  { img: carrilleras, alt: 'Carrilleras guisadas en salsa sobre un puré cremoso de patata.' },
-  { img: ensalada, alt: 'Ensalada de tomate con ventresca y cebolla morada, rematada con flores.' },
-  { img: cremaVerde, alt: 'Crema verde de guisantes con un toque de crujiente por encima.' },
-  { img: postre, alt: 'Postre de fruta braseada con crema y frutos secos.' },
-  { img: tarta, alt: 'Porción de tarta de queso con mermelada y menta fresca.' },
+  { img: torreznos, label: 'Torreznos caseros', alt: 'Torreznos crujientes con rúcula y patatas caseras en plato de pizarra.' },
+  { img: cremaTomate, label: 'Crema de tomate', alt: 'Crema de tomate templada decorada con una flor comestible y aceite de oliva.' },
+  { img: carrilleras, label: 'Carrilleras en salsa', alt: 'Carrilleras guisadas en salsa sobre un puré cremoso de patata.' },
+  { img: ensalada, label: 'Ensalada de ventresca', alt: 'Ensalada de tomate con ventresca y cebolla morada, rematada con flores.' },
+  { img: cremaVerde, label: 'Crema de guisantes', alt: 'Crema verde de guisantes con un toque de crujiente por encima.' },
+  { img: postre, label: 'Fruta braseada', alt: 'Postre de fruta braseada con crema y frutos secos.' },
+  { img: tarta, label: 'Tarta de queso', alt: 'Porción de tarta de queso con mermelada y menta fresca.' },
 ];
 
 const faq = [
@@ -160,6 +160,7 @@ const proofs = [
             <li class="carousel__item" data-reveal style={`--reveal-delay:${i * 50}ms`}>
               <div class="frame">
                 <Image src={c.img} alt={c.alt} width={420} height={300} format="webp" densities={[1, 2]} quality={82} loading="lazy" />
+                <span class="frame__cap">{c.label}</span>
               </div>
             </li>
           ))

@@ -14,13 +14,13 @@ import postre from '../assets/postre-fruta-braseada.jpg';
 import tarta from '../assets/tarta-queso-mermelada.jpg';
 
 const gallery = [
-  { img: torreznos, alt: 'Torreznos crujientes con rúcula y patatas caseras.', tall: true },
-  { img: ensalada, alt: 'Ensalada de tomate con ventresca y cebolla morada.' },
-  { img: cremaTomate, alt: 'Crema de tomate templada con flor comestible.' },
-  { img: carrilleras, alt: 'Carrilleras guisadas sobre puré de patata.' },
-  { img: cremaVerde, alt: 'Crema verde de guisantes con crujiente.', tall: true },
-  { img: postre, alt: 'Postre de fruta braseada con crema.' },
-  { img: tarta, alt: 'Tarta de queso con mermelada y menta.' },
+  { img: torreznos, label: 'Torreznos caseros', alt: 'Torreznos crujientes con rúcula y patatas caseras.', tall: true },
+  { img: ensalada, label: 'Ensalada de ventresca', alt: 'Ensalada de tomate con ventresca y cebolla morada.' },
+  { img: cremaTomate, label: 'Crema de tomate', alt: 'Crema de tomate templada con flor comestible.' },
+  { img: carrilleras, label: 'Carrilleras en salsa', alt: 'Carrilleras guisadas sobre puré de patata.' },
+  { img: cremaVerde, label: 'Crema de guisantes', alt: 'Crema verde de guisantes con crujiente.', tall: true },
+  { img: postre, label: 'Fruta braseada', alt: 'Postre de fruta braseada con crema.' },
+  { img: tarta, label: 'Tarta de queso', alt: 'Tarta de queso con mermelada y menta.' },
 ];
 
 const faq = [
@@ -130,6 +130,7 @@ const faqSchema = {
             <li class:list={['masonry__item', { 'masonry__item--tall': g.tall }]} data-reveal style={`--reveal-delay:${i * 45}ms`}>
               <div class="frame">
                 <Image src={g.img} alt={g.alt} width={480} height={g.tall ? 640 : 360} format="webp" densities={[1, 2]} quality={82} loading="lazy" />
+                <span class="frame__cap">{g.label}</span>
               </div>
             </li>
           ))
