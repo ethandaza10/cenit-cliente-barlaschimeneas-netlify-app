@@ -1,0 +1,7 @@
+{
+  "cenit_build_spec": "1.0",
+  "client": "barlaschimeneas-netlify-app",
+  "agent_pack": "cenit-default",
+  "stack": "astro",
+  "note": "Cambia agent_pack para construir con otro pack de agentes (el tuyo o el de un tercero). El contrato del pack está en PACK-CONTRATO.md."
+}
