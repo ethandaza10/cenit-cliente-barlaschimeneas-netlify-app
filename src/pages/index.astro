@@ -97,8 +97,8 @@ const proofs = [
             height={480}
             loading="eager"
             fetchpriority="high"
-            format="webp"
-            quality={78}
+            format="webp" densities={[1, 2]}
+            quality={82}
           />
         </div>
         <span class="hero__ember" aria-hidden="true"></span>
@@ -159,7 +159,7 @@ const proofs = [
           carousel.map((c, i) => (
             <li class="carousel__item" data-reveal style={`--reveal-delay:${i * 50}ms`}>
               <div class="frame">
-                <Image src={c.img} alt={c.alt} width={420} height={300} format="webp" quality={75} loading="lazy" />
+                <Image src={c.img} alt={c.alt} width={420} height={300} format="webp" densities={[1, 2]} quality={82} loading="lazy" />
               </div>
             </li>
           ))
@@ -177,8 +177,8 @@ const proofs = [
           alt="Plato de carrilleras en salsa sobre puré, listo para compartir en la terraza."
           width={620}
           height={620}
-          format="webp"
-          quality={78}
+          format="webp" densities={[1, 2]}
+          quality={82}
           loading="lazy"
         />
       </div>
