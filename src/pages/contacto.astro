@@ -1,0 +1,252 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import { site, telLink, waLink } from '../data/site';
+
+// Datos verificados (ver src/data/site.ts). El copy del kit citaba
+// "Calle Real 15" y "918 99 88 77": datos sin corroborar y contradichos por
+// tres fuentes. Se sustituyen por los reales; el resto del copy se respeta.
+const faq = [
+  {
+    q: '¿Cuál es el teléfono del Bar Las Chimeneas en Valdemorillo?',
+    a: `Puedes llamarnos o escribirnos por WhatsApp al ${site.phoneDisplay}. Es la vía más rápida para reservar o resolver cualquier duda.`,
+  },
+  {
+    q: '¿Dónde está exactamente el bar?',
+    a: `En la ${site.addressFull}, en pleno centro del pueblo y en el corazón de la Casa de la Cultura.`,
+  },
+  {
+    q: '¿Cómo reservo mesa?',
+    a: `Llamándonos o enviándonos un WhatsApp al ${site.phoneDisplay} con el día, la hora y el número de personas. Si quieres terraza, indícalo al reservar porque las plazas son limitadas.`,
+  },
+  {
+    q: '¿Qué horario tenéis?',
+    a: 'Abrimos de 08:00 a 23:00. Los sábados hay música en vivo y los domingos, vermut dominical.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<Base
+  title="Contacto Bar Las Chimeneas Valdemorillo | Reserva"
+  description="¿Quieres venir al Bar Las Chimeneas en Valdemorillo? Aquí tienes dirección, teléfono, cómo llegar y cómo reservar mesa. Terraza y música en vivo."
+  path="/contacto"
+  schema={[faqSchema]}
+>
+  <section class="section--tight page-head">
+    <div class="container">
+      <span class="eyebrow" data-reveal>Contacto y reservas</span>
+      <h1 class="display" data-reveal>Contacto y reservas — Bar Las Chimeneas Valdemorillo</h1>
+      <p class="lead" data-reveal style="--reveal-delay:80ms">
+        Estamos en el corazón de Valdemorillo, en la Casa de la Cultura. Si quieres reservar mesa,
+        preguntar por la terraza o consultar el próximo concierto, lo más rápido es llamarnos o
+        escribirnos por WhatsApp. Te contesta una persona de verdad: aquí te conocemos por tu nombre.
+      </p>
+    </div>
+  </section>
+
+  <!-- Bloque de datos + mapa -->
+  <section class="section" style="padding-top:0">
+    <div class="container contact">
+      <div class="contact__card card" data-reveal>
+        <dl class="datos">
+          <div>
+            <dt>Dirección</dt>
+            <dd>{site.addressFull}</dd>
+          </div>
+          <div>
+            <dt>Teléfono y WhatsApp</dt>
+            <dd><a class="link-gold" href={telLink}>{site.phoneDisplay}</a></dd>
+          </div>
+          <div>
+            <dt>Horario</dt>
+            <dd>{site.hoursDisplay}</dd>
+          </div>
+          <div>
+            <dt>Valoración</dt>
+            <dd><span class="stars" aria-hidden="true">★★★★★</span> {site.rating} en Google · {site.reviews} reseñas</dd>
+          </div>
+        </dl>
+        <div class="btn-row">
+          <a class="btn btn--lg" href={waLink}>Reservar por WhatsApp</a>
+          <a class="btn btn--ghost btn--lg" href={telLink}>Llamar ahora</a>
+        </div>
+      </div>
+
+      <div class="frame contact__map" data-reveal style="--reveal-delay:80ms">
+        <iframe
+          src={site.mapsEmbed}
+          title="Mapa de la ubicación de Bar Las Chimeneas en Valdemorillo"
+          width="600"
+          height="520"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservar / Llegar / Horario -->
+  <section class="section paper section--tight">
+    <div class="container info-grid">
+      <article data-reveal>
+        <h2 class="h-lg">Cómo reservar mesa</h2>
+        <div class="prose">
+          <p>
+            Reservar es sencillo. Llámanos o mándanos un WhatsApp al {site.phoneDisplay} indicándonos
+            el día, la hora y cuántos vais a ser. Si os apetece la terraza, avísanos al reservar: las
+            plazas al aire libre son limitadas, sobre todo los sábados con música en vivo y los
+            domingos de vermut. Te confirmamos la mesa en el momento.
+          </p>
+        </div>
+      </article>
+
+      <article data-reveal style="--reveal-delay:60ms">
+        <h2 class="h-lg">Cómo llegar</h2>
+        <div class="prose">
+          <p>
+            El Bar Las Chimeneas está en la Casa de la Cultura de Valdemorillo, en pleno centro del
+            pueblo. Es una zona fácil de encontrar a pie desde el núcleo urbano.
+          </p>
+        </div>
+        <p class="pending">[Información sobre aparcamiento y acceso en transporte — pendiente de confirmar por el cliente.]</p>
+      </article>
+
+      <article data-reveal style="--reveal-delay:120ms">
+        <h2 class="h-lg">Horario y días de apertura</h2>
+        <div class="prose">
+          <p>
+            Nuestro horario habitual es de 08:00 a 23:00. La música en vivo suena todos los sábados,
+            y los domingos celebramos el vermut dominical, dos de los momentos con más ambiente de la
+            semana.
+          </p>
+        </div>
+        <p class="pending">[Confirmar días de cierre semanal y posibles cambios de horario en festivos con el cliente.]</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Cierre -->
+  <section class="section section--tight">
+    <div class="container two" data-reveal>
+      <div>
+        <span class="eyebrow">Un plan que merece la visita</span>
+        <h2 class="h-xl">Algo más que una consumición</h2>
+      </div>
+      <div class="prose">
+        <p>
+          Desde 2018 somos punto de encuentro en Valdemorillo: raciones caseras pensadas para
+          compartir, cócteles artesanales, una bodega seleccionada y la terraza con vistas a la
+          sierra. Si buscas algo más que una consumición, este es tu sitio. Escríbenos y reserva tu
+          mesa.
+        </p>
+        <div class="btn-row" style="margin-top:var(--sp-5)">
+          <a class="btn" href={waLink}>Reservar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faq} />
+</Base>
+
+<style>
+  .page-head {
+    padding-top: clamp(var(--sp-7), 6vw, var(--sp-8));
+  }
+  .page-head .display {
+    margin: var(--sp-4) 0 var(--sp-5);
+    max-width: 20ch;
+  }
+  .page-head .lead {
+    max-width: 62ch;
+  }
+
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(var(--sp-5), 4vw, var(--sp-7));
+    align-items: stretch;
+  }
+  .contact__card {
+    padding: clamp(var(--sp-5), 3vw, var(--sp-7));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .datos {
+    display: grid;
+    gap: var(--sp-4);
+    margin-bottom: var(--sp-6);
+  }
+  .datos div {
+    display: grid;
+    gap: 4px;
+    padding-bottom: var(--sp-4);
+    border-bottom: 1px solid var(--line);
+  }
+  .datos dt {
+    font-weight: 800;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .datos dd {
+    font-family: var(--font-display);
+    font-size: var(--step-1);
+    color: var(--cream);
+  }
+  .stars {
+    color: var(--gold-bright);
+    letter-spacing: 1px;
+  }
+  .contact__map {
+    min-height: 360px;
+  }
+  .contact__map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(var(--sp-5), 4vw, var(--sp-7));
+  }
+  .info-grid h2 {
+    margin-bottom: var(--sp-4);
+  }
+
+  .two {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(var(--sp-5), 4vw, var(--sp-8));
+    align-items: start;
+  }
+  .two h2 {
+    margin-top: var(--sp-3);
+  }
+
+  @media (max-width: 860px) {
+    .contact,
+    .info-grid,
+    .two {
+      grid-template-columns: 1fr;
+    }
+    .contact__map {
+      min-height: 320px;
+      aspect-ratio: 4 / 3;
+    }
+  }
+</style>

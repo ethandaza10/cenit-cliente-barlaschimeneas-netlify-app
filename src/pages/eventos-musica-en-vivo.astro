@@ -1,0 +1,258 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import { telLink, waLink, site } from '../data/site';
+
+import hero from '../assets/torreznos-panceta.jpg';
+import postre from '../assets/postre-fruta-braseada.jpg';
+import ensalada from '../assets/ensalada-tomate-ventresca.jpg';
+
+const faq = [
+  {
+    q: '¿Cuándo hay música en vivo en Bar Las Chimeneas?',
+    a: 'Tenemos directo todos los sábados y en el vermut de los domingos. La programación concreta de cada semana la confirmamos por WhatsApp o en nuestras redes.',
+  },
+  {
+    q: '¿Se puede reservar para un grupo o una celebración?',
+    a: 'Sí. Escríbenos por WhatsApp o reserva a través de la web indicando el número de personas y la fecha. Para grupos y eventos conviene avisar con antelación porque las plazas en terraza son limitadas.',
+  },
+  {
+    q: '¿Dónde estáis?',
+    a: 'Estamos en Valdemorillo (Madrid), en el corazón de la Casa de la Cultura. Es un punto de encuentro fácil de localizar en el pueblo.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<Base
+  title="Música en Vivo en Valdemorillo | Bar Las Chimeneas"
+  description="Agenda de música en vivo en Valdemorillo: conciertos los sábados y vermut con directo los domingos en Bar Las Chimeneas. Reserva tu mesa o consulta eventos."
+  path="/eventos-musica-en-vivo"
+  schema={[faqSchema]}
+>
+  <!-- Hero editorial -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div data-reveal>
+        <span class="eyebrow">Eventos · Valdemorillo</span>
+        <h1 class="display hero__title">
+          Música en vivo en Valdemorillo: la agenda de Bar Las Chimeneas
+        </h1>
+        <p class="lead">
+          Directo todos los sábados y vermut con música los domingos, con la sierra de fondo.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn--lg" href={waLink}>Consultar agenda por WhatsApp</a>
+          <a class="btn btn--ghost btn--lg" href={telLink}>Llamar</a>
+        </div>
+      </div>
+      <div class="frame hero__frame" data-reveal style="--reveal-delay:80ms">
+        <Image
+          src={hero}
+          alt="Raciones para compartir en la mesa de Bar Las Chimeneas, ambiente de tarde de directo."
+          width={640}
+          height={480}
+          loading="eager"
+          fetchpriority="high"
+          format="webp"
+          quality={78}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Qué encontrarás -->
+  <section class="section">
+    <div class="container two">
+      <div data-reveal>
+        <span class="eyebrow">Cada semana</span>
+        <h2 class="h-xl">Qué encontrarás cada semana</h2>
+      </div>
+      <div class="prose" data-reveal style="--reveal-delay:80ms">
+        <p>
+          En Bar Las Chimeneas la música en vivo forma parte del plan. Tenemos directo todos los
+          sábados y en el vermut de los domingos, con la terraza y las vistas a la sierra como
+          escenario. Es el momento ideal para juntarte con los tuyos, pedir unas raciones caseras y
+          disfrutar de un buen ambiente sin salir de Valdemorillo. Estamos en el corazón de la Casa
+          de la Cultura, un punto de encuentro fácil de localizar en el pueblo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agenda (pendiente) -->
+  <section class="section paper">
+    <div class="container split">
+      <div class="split__copy" data-reveal>
+        <span class="eyebrow">La programación</span>
+        <h2 class="h-lg">Agenda de eventos y conciertos</h2>
+        <div class="prose">
+          <p>
+            Nuestra agenda va cambiando cada semana, así que la mejor forma de saber quién toca y a
+            qué hora es consultarnos directamente antes de venir. En cuanto tengamos publicada la
+            programación del mes, aquí verás fechas, estilos musicales y horarios para que elijas el
+            día que más te encaje.
+          </p>
+        </div>
+        <p class="pending">[Agenda concreta de eventos y artistas — pendiente de aportar por el cliente.]</p>
+        <a class="btn" href={waLink}>Escríbenos y te contamos qué hay este finde</a>
+      </div>
+      <div class="frame split__media" data-reveal style="--reveal-delay:80ms">
+        <Image
+          src={postre}
+          alt="Postre de fruta braseada servido en una sobremesa de fin de semana."
+          width={560}
+          height={560}
+          format="webp"
+          quality={78}
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Fútbol + eventos privados -->
+  <section class="section">
+    <div class="container two-col">
+      <article class="card panel" data-reveal>
+        <h2 class="h-lg">¿Ponéis el fútbol y otros deportes?</h2>
+        <div class="prose">
+          <p>
+            Muchos vecinos nos preguntan por los partidos. Si vienes a ver algún partido concreto,
+            escríbenos y te confirmamos si lo emitimos y te guardamos sitio.
+          </p>
+        </div>
+        <p class="pending">
+          [Información sobre retransmisiones deportivas — pendiente de confirmar por el cliente: qué
+          partidos se ven, en qué pantallas y si se reserva mesa para los encuentros grandes.]
+        </p>
+      </article>
+      <article class="card panel" data-reveal style="--reveal-delay:80ms">
+        <h2 class="h-lg">Celebraciones y eventos privados</h2>
+        <div class="prose">
+          <p>
+            Un cumpleaños, una reunión de amigos o una celebración especial encajan de maravilla en
+            nuestra terraza y con nuestras raciones para compartir. Cuéntanos qué tienes en mente y
+            vemos juntos cómo montarlo para que salga perfecto.
+          </p>
+        </div>
+        <p class="pending">
+          [Condiciones de eventos privados, aforo y opciones de menú — pendiente de aportar por el
+          cliente.]
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Cómo reservar -->
+  <section class="section paper">
+    <div class="container split split--reverse">
+      <div class="split__copy" data-reveal>
+        <span class="eyebrow">Reservas</span>
+        <h2 class="h-lg">Cómo reservar mesa o grupo</h2>
+        <div class="prose">
+          <p>
+            Reservar es sencillo: puedes hacerlo por WhatsApp o pidiendo mesa a través de la web.
+            Para grupos grandes o si vienes por un evento concreto, avísanos con antelación porque
+            las plazas en terraza son limitadas. Así nos aseguramos de tenerte todo listo cuando
+            llegues.
+          </p>
+        </div>
+        <div class="btn-row">
+          <a class="btn" href={waLink}>Reservar por WhatsApp</a>
+          <a class="btn btn--ghost" href={telLink}>{site.phoneDisplay}</a>
+        </div>
+      </div>
+      <div class="frame split__media" data-reveal style="--reveal-delay:80ms">
+        <Image
+          src={ensalada}
+          alt="Mesa preparada con una ensalada de tomate y ventresca para un grupo."
+          width={560}
+          height={560}
+          format="webp"
+          quality={78}
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faq} />
+</Base>
+
+<style>
+  .hero {
+    padding-block: clamp(var(--sp-7), 7vw, var(--sp-9)) var(--sp-7);
+  }
+  .hero__grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(var(--sp-6), 5vw, var(--sp-8));
+    align-items: center;
+  }
+  .hero__title {
+    margin: var(--sp-4) 0 var(--sp-5);
+    max-width: 16ch;
+  }
+  .hero__frame {
+    aspect-ratio: 4 / 3;
+  }
+
+  .two {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(var(--sp-5), 4vw, var(--sp-8));
+    align-items: start;
+  }
+  .two h2 {
+    margin-top: var(--sp-3);
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(var(--sp-6), 5vw, var(--sp-8));
+    align-items: center;
+  }
+  .split__copy h2 {
+    margin: var(--sp-3) 0 var(--sp-4);
+  }
+  .split__copy .btn,
+  .split__copy .btn-row {
+    margin-top: var(--sp-5);
+  }
+  .split__media {
+    aspect-ratio: 1 / 1;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-5);
+  }
+  .panel {
+    padding: clamp(var(--sp-5), 3vw, var(--sp-6));
+  }
+  .panel h2 {
+    margin-bottom: var(--sp-4);
+  }
+
+  @media (max-width: 860px) {
+    .hero__grid { grid-template-columns: 1fr; }
+    .hero__grid > div:first-child { order: 2; }
+    .two,
+    .split,
+    .two-col { grid-template-columns: 1fr; }
+    .split--reverse .split__copy { order: 2; }
+  }
+</style>

@@ -1,0 +1,473 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import { site, telLink, waLink } from '../data/site';
+
+import hero from '../assets/plato-solomillo-romesco.jpg';
+import torreznos from '../assets/torreznos-panceta.jpg';
+import cremaTomate from '../assets/crema-tomate-flor.jpg';
+import cremaVerde from '../assets/crema-verde-guisantes.jpg';
+import ensalada from '../assets/ensalada-tomate-ventresca.jpg';
+import carrilleras from '../assets/carrilleras-pure.jpg';
+import postre from '../assets/postre-fruta-braseada.jpg';
+import tarta from '../assets/tarta-queso-mermelada.jpg';
+
+const carousel = [
+  { img: torreznos, alt: 'Torreznos crujientes con rúcula y patatas caseras en plato de pizarra.' },
+  { img: cremaTomate, alt: 'Crema de tomate templada decorada con una flor comestible y aceite de oliva.' },
+  { img: carrilleras, alt: 'Carrilleras guisadas en salsa sobre un puré cremoso de patata.' },
+  { img: ensalada, alt: 'Ensalada de tomate con ventresca y cebolla morada, rematada con flores.' },
+  { img: cremaVerde, alt: 'Crema verde de guisantes con un toque de crujiente por encima.' },
+  { img: postre, alt: 'Postre de fruta braseada con crema y frutos secos.' },
+  { img: tarta, alt: 'Porción de tarta de queso con mermelada y menta fresca.' },
+];
+
+const faq = [
+  {
+    q: '¿Dónde está Bar Las Chimeneas en Valdemorillo?',
+    a: 'Estamos en la Casa de la Cultura de Valdemorillo (Madrid). Puedes escribirnos por WhatsApp para indicarte cómo llegar y reservar mesa.',
+  },
+  {
+    q: '¿Tenéis terraza?',
+    a: 'Sí. Contamos con una terraza exterior con vistas a la sierra, una de las más especiales del pueblo. En fines de semana las plazas son limitadas, por lo que conviene reservar.',
+  },
+  {
+    q: '¿Hay música en vivo?',
+    a: 'Sí, ofrecemos música en directo los sábados y los domingos de vermut. Es uno de nuestros planes más populares.',
+  },
+  {
+    q: '¿Qué tipo de comida servís?',
+    a: 'Raciones caseras y tapas madrileñas con toques creativos, pensadas para compartir, además de cócteles artesanales y una bodega seleccionada. [Carta y especialidades concretas pendientes de confirmar].',
+  },
+  {
+    q: '¿Cómo reservo mesa?',
+    a: 'Puedes reservar mesa fácilmente por WhatsApp. Te recomendamos hacerlo con antelación si vienes en grupo o en fin de semana, ya que la terraza tiene plazas limitadas.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a.replace(/\[.*?\]/g, '').trim() },
+  })),
+};
+
+const proofs = [
+  { k: '4,8 ★', v: `Valoración en Google (${site.reviews} reseñas) por el trato personalizado que nos define.` },
+  { k: 'Terraza', v: 'Exterior con vistas a la sierra, una de las más especiales del municipio.' },
+  { k: 'En directo', v: 'Música en vivo los sábados y en el vermut de los domingos.' },
+  { k: 'Desde 2018', v: 'Punto de reunión del pueblo; cercanía y ambiente auténtico.' },
+];
+---
+
+<Base
+  title="Bar en Valdemorillo | Bar Las Chimeneas"
+  description="Bar Las Chimeneas, tu bar en Valdemorillo: raciones caseras, cócteles artesanales, música en vivo y la terraza con vistas a la sierra. Reserva mesa hoy."
+  path="/"
+  schema={[faqSchema]}
+>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <span class="eyebrow">Bar · Valdemorillo · desde 2018</span>
+        <h1 class="display hero__title">
+          Bar Las Chimeneas: tu bar en Valdemorillo con terraza y música en vivo
+        </h1>
+        <p class="lead">
+          Raciones caseras, cócteles artesanales y música en directo, en el corazón del pueblo.
+          Un sitio donde te conocemos por tu nombre.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn--lg" href={telLink}><span aria-hidden="true">☎</span> Reservar mesa</a>
+          <a class="btn btn--ghost btn--lg" href="/carta">Ver la carta</a>
+        </div>
+      </div>
+
+      <div class="hero__media" data-reveal>
+        <div class="frame hero__frame">
+          <Image
+            src={hero}
+            alt="Solomillo laqueado sobre crema de romesco, emplatado en Bar Las Chimeneas."
+            width={720}
+            height={480}
+            loading="eager"
+            fetchpriority="high"
+            format="webp"
+            quality={78}
+          />
+        </div>
+        <span class="hero__ember" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <div class="container">
+      <ul class="trust">
+        <li><strong>4,8 ★</strong> Google</li>
+        <li>Desde 2018</li>
+        <li>Terraza con vistas</li>
+        <li>Música en vivo</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="container two" >
+      <div data-reveal>
+        <span class="eyebrow">El bar del pueblo</span>
+        <h2 class="h-xl">El bar de Valdemorillo donde el tiempo se detiene</h2>
+      </div>
+      <div class="prose" data-reveal style="--reveal-delay:80ms">
+        <p>
+          Si buscas un bar en Valdemorillo para tapear, tomar un vermut o quedar con los tuyos,
+          Bar Las Chimeneas es un punto de encuentro en el corazón del pueblo. Estamos ubicados en
+          la Casa de la Cultura de Valdemorillo (Madrid) y abrimos desde 2018 con una idea sencilla:
+          raciones caseras, buen ambiente y un trato cercano en el que te conocemos por tu nombre.
+          Aquí no vienes solo a consumir; vienes a pasar un buen rato.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ OFRECEMOS + CARRUSEL -->
+  <section class="section paper">
+    <div class="container">
+      <div class="two two--head" data-reveal>
+        <div>
+          <span class="eyebrow">La mesa</span>
+          <h2 class="h-xl">Raciones, tapas, cócteles y bodega</h2>
+        </div>
+        <p class="prose">
+          Nuestra propuesta combina la tradición de las tapas madrileñas con toques creativos
+          pensados para compartir. En la carta encontrarás raciones caseras, entrantes para picar en
+          mesa y una barra con cócteles artesanales y una bodega seleccionada. Tanto si te apetece un
+          aperitivo rápido como una comida sin prisas con amigos o familia, hay opciones para cada
+          momento del día.
+        </p>
+      </div>
+      <p class="pending">[Platos y tapas estrella — pendiente de confirmar con el cliente].</p>
+    </div>
+
+    <div class="carousel" role="region" aria-label="Algunos de nuestros platos">
+      <ul class="carousel__track">
+        {
+          carousel.map((c, i) => (
+            <li class="carousel__item" data-reveal style={`--reveal-delay:${i * 50}ms`}>
+              <div class="frame">
+                <Image src={c.img} alt={c.alt} width={420} height={300} format="webp" quality={75} loading="lazy" />
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- TERRAZA / MÚSICA -->
+  <section class="section">
+    <div class="container split">
+      <div class="frame split__media" data-reveal>
+        <Image
+          src={carrilleras}
+          alt="Plato de carrilleras en salsa sobre puré, listo para compartir en la terraza."
+          width={620}
+          height={620}
+          format="webp"
+          quality={78}
+          loading="lazy"
+        />
+      </div>
+      <div class="split__copy" data-reveal style="--reveal-delay:80ms">
+        <span class="eyebrow">Terraza · directo · ambiente</span>
+        <h2 class="h-lg">Terraza, música en vivo y ambiente</h2>
+        <div class="prose">
+          <p>
+            Uno de nuestros sellos es la terraza exterior con vistas a la sierra, una de las más
+            especiales del municipio. Los sábados y los domingos de vermut tenemos música en vivo,
+            así que es un plan perfecto para grupos, parejas y familias que buscan algo más que una
+            simple consumición. El ambiente es relajado y cercano: un sitio donde apetece quedarse.
+          </p>
+        </div>
+        <a class="link-gold" href="/eventos-musica-en-vivo">Ver la agenda de eventos →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ ELEGIRNOS -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="why__head" data-reveal>
+        <span class="eyebrow">Por qué nosotros</span>
+        <h2 class="h-xl">Por qué elegir Bar Las Chimeneas frente a otros bares del pueblo</h2>
+        <p class="prose">
+          Llevamos desde 2018 siendo un punto de reunión en Valdemorillo, con una valoración de 4,8
+          en Google que refleja el trato personalizado que nos define. Terraza con vistas, música en
+          directo los fines de semana, cócteles artesanales y raciones caseras: la combinación que
+          hace que muchos vecinos nos consideren su bar de referencia. Aquí prima la cercanía y el
+          ambiente auténtico.
+        </p>
+      </div>
+      <ul class="why">
+        {
+          proofs.map((p, i) => (
+            <li class="why__row" data-reveal style={`--reveal-delay:${i * 60}ms`}>
+              <span class="why__k">{p.k}</span>
+              <span class="why__v">{p.v}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- DÓNDE / RESERVAR -->
+  <section class="section paper">
+    <div class="container split split--reverse">
+      <div class="split__copy" data-reveal>
+        <span class="eyebrow">Dónde estamos</span>
+        <h2 class="h-lg">Ven a vernos o reserva tu mesa</h2>
+        <div class="prose">
+          <p>
+            Nos encuentras en la Casa de la Cultura de Valdemorillo (Madrid). Las plazas en terraza
+            son limitadas, así que si vienes en grupo o en fin de semana te recomendamos reservar
+            mesa por WhatsApp con antelación.
+          </p>
+        </div>
+        <dl class="facts">
+          <div><dt>Dirección</dt><dd>{site.addressFull}</dd></div>
+          <div><dt>Teléfono</dt><dd><a class="link-gold" href={telLink}>{site.phoneDisplay}</a></dd></div>
+          <div><dt>Horario</dt><dd>{site.hoursDisplay}</dd></div>
+        </dl>
+        <div class="btn-row">
+          <a class="btn" href={waLink}>Reservar por WhatsApp</a>
+          <a class="btn btn--ghost" href="/contacto">Cómo llegar</a>
+        </div>
+      </div>
+      <div class="frame map" data-reveal style="--reveal-delay:80ms">
+        <iframe
+          src={site.mapsEmbed}
+          title="Mapa de la ubicación de Bar Las Chimeneas en Valdemorillo"
+          width="600"
+          height="440"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faq} />
+</Base>
+
+<style>
+  /* HERO */
+  .hero {
+    position: relative;
+    padding-block: clamp(var(--sp-7), 7vw, var(--sp-9)) var(--sp-7);
+  }
+  .hero__grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(var(--sp-6), 5vw, var(--sp-8));
+    align-items: center;
+  }
+  .hero__title {
+    margin-block: var(--sp-4) var(--sp-5);
+    max-width: 14ch;
+  }
+  .hero__media {
+    position: relative;
+  }
+  .hero__frame {
+    aspect-ratio: 3 / 2;
+    transform: rotate(0.6deg);
+  }
+  .hero__frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero__ember {
+    position: absolute;
+    inset: -18% -12% auto auto;
+    width: 55%;
+    aspect-ratio: 1;
+    background: radial-gradient(circle, rgba(217, 107, 63, 0.35), transparent 65%);
+    filter: blur(24px);
+    z-index: -1;
+    animation: ember 7s ease-in-out infinite alternate;
+  }
+  @keyframes ember {
+    from { transform: translate3d(0, 0, 0) scale(1); opacity: 0.75; }
+    to { transform: translate3d(-8px, 10px, 0) scale(1.08); opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero__ember { animation: none; }
+    .hero__frame { transform: none; }
+  }
+
+  .trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-3) var(--sp-6);
+    align-items: center;
+    list-style: none;
+    padding: var(--sp-5) 0 0;
+    margin-top: var(--sp-6);
+    border-top: 1px solid var(--line);
+    color: var(--cream-dim);
+    font-size: var(--step--1);
+    letter-spacing: 0.02em;
+  }
+  .trust li {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+  }
+  .trust li + li::before {
+    content: '·';
+    color: var(--gold);
+    margin-right: var(--sp-4);
+  }
+  .trust strong {
+    color: var(--gold-bright);
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+  }
+
+  /* Bloques de dos columnas */
+  .two {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(var(--sp-5), 4vw, var(--sp-8));
+    align-items: start;
+  }
+  .two--head {
+    align-items: end;
+    margin-bottom: var(--sp-6);
+  }
+  .two h2 {
+    margin-top: var(--sp-3);
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(var(--sp-6), 5vw, var(--sp-8));
+    align-items: center;
+  }
+  .split__media {
+    aspect-ratio: 1 / 1;
+  }
+  .split__copy h2 {
+    margin: var(--sp-3) 0 var(--sp-4);
+  }
+  .split__copy .link-gold {
+    display: inline-block;
+    margin-top: var(--sp-5);
+  }
+
+  /* Carrusel */
+  .carousel {
+    margin-top: var(--sp-7);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold) transparent;
+  }
+  .carousel__track {
+    display: flex;
+    gap: var(--sp-4);
+    list-style: none;
+    padding: 0 var(--sp-5) var(--sp-4);
+    width: max-content;
+  }
+  .carousel__item {
+    scroll-snap-align: start;
+    flex: 0 0 clamp(240px, 32vw, 340px);
+  }
+  .carousel__item .frame {
+    aspect-ratio: 7 / 5;
+  }
+
+  /* Por qué */
+  .why__head {
+    max-width: 62ch;
+    margin-bottom: var(--sp-6);
+  }
+  .why__head h2 {
+    margin: var(--sp-3) 0 var(--sp-4);
+  }
+  .why {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+  .why__row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: var(--sp-5);
+    align-items: baseline;
+    padding: var(--sp-5) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .why__k {
+    font-family: var(--font-display);
+    font-size: var(--step-2);
+    color: var(--gold-bright);
+    line-height: 1;
+  }
+  .why__v {
+    color: var(--cream-dim);
+    max-width: 52ch;
+  }
+
+  /* Facts + mapa */
+  .facts {
+    display: grid;
+    gap: var(--sp-3);
+    margin: var(--sp-5) 0 var(--sp-6);
+  }
+  .facts div {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: var(--sp-4);
+    padding-block: var(--sp-2);
+    border-bottom: 1px solid rgba(120, 80, 30, 0.2);
+  }
+  .facts dt {
+    font-weight: 800;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ember-ink);
+    padding-top: 3px;
+  }
+  .facts dd {
+    color: #4a382a;
+  }
+  .map {
+    aspect-ratio: 4 / 3;
+  }
+  .map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  @media (max-width: 860px) {
+    .hero__grid { grid-template-columns: 1fr; }
+    .hero__media { order: -1; }
+    .two,
+    .split { grid-template-columns: 1fr; }
+    .split--reverse .split__copy { order: 2; }
+    .why__row { grid-template-columns: 1fr; gap: var(--sp-2); }
+    .why__k { font-size: var(--step-1); }
+  }
+</style>

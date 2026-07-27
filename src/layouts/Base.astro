@@ -1,0 +1,137 @@
+---
+import '@fontsource-variable/fraunces';
+import '@fontsource-variable/mulish';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Ruta canónica, p. ej. "/carta". Por defecto la actual. */
+  path?: string;
+  /** Nodos JSON-LD adicionales (FAQPage, Menu, etc.). */
+  schema?: Record<string, unknown>[];
+}
+
+const { title, description, path, schema = [] } = Astro.props;
+
+const canonicalPath = path ?? Astro.url.pathname;
+const canonical = new URL(canonicalPath, site.domain).href;
+
+// Nodo LocalBusiness común a todas las páginas (datos verificados).
+const business = {
+  '@context': 'https://schema.org',
+  '@type': 'BarOrPub',
+  '@id': `${site.domain}/#business`,
+  name: site.name,
+  url: site.domain,
+  telephone: site.phoneTel,
+  priceRange: '€€',
+  servesCuisine: site.cuisine,
+  image: `${site.domain}/favicon.png`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.street,
+    postalCode: site.postalCode,
+    addressLocality: site.city,
+    addressRegion: site.region,
+    addressCountry: site.country,
+  },
+  openingHours: site.hoursSchema,
+  foundingDate: site.founded,
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: String(site.rating),
+    reviewCount: String(site.reviews),
+  },
+};
+
+const jsonLd = [business, ...schema];
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#17110b" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="es_ES" />
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    {
+      jsonLd.map((node) => (
+        <script type="application/ld+json" set:html={JSON.stringify(node)} />
+      ))
+    }
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <Header />
+    <main id="contenido">
+      <slot />
+    </main>
+    <Footer />
+
+    <script>
+      // Motion con criterio: aparición al hacer scroll. Sólo transform/opacity.
+      // Respeta prefers-reduced-motion (el CSS ya deja todo visible en ese caso).
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const items = document.querySelectorAll('[data-reveal]');
+      if (reduce || !('IntersectionObserver' in window)) {
+        items.forEach((el) => el.classList.add('is-in'));
+      } else {
+        const io = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add('is-in');
+                obs.unobserve(e.target);
+              }
+            });
+          },
+          { rootMargin: '0px 0px -8% 0px', threshold: 0.12 }
+        );
+        items.forEach((el) => io.observe(el));
+      }
+
+      // Header: estado "condensado" al bajar.
+      const header = document.querySelector('[data-header]');
+      if (header) {
+        const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 24);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+      }
+
+      // Menú móvil.
+      const toggle = document.querySelector('[data-menu-toggle]');
+      const nav = document.querySelector('[data-menu]');
+      if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+          const open = nav.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', String(open));
+        });
+        nav.querySelectorAll('a').forEach((a) =>
+          a.addEventListener('click', () => {
+            nav.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+          })
+        );
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+---
+import { site, nav, telLink, waLink } from '../data/site';
+const year = 2026;
+---
+
+<footer class="site-footer">
+  <div class="container foot">
+    <div class="foot__brand">
+      <p class="foot__name">Bar Las Chimeneas</p>
+      <p class="foot__tag">
+        Raciones caseras, terraza con vistas a la sierra y música en vivo en el corazón de
+        Valdemorillo.
+      </p>
+      <p class="foot__rating">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <span>{site.rating} en Google · {site.reviews} reseñas</span>
+      </p>
+    </div>
+
+    <nav class="foot__nav" aria-label="Pie">
+      <p class="foot__h">Explora</p>
+      <ul>
+        {nav.map((i) => <li><a href={i.href}>{i.label}</a></li>)}
+      </ul>
+    </nav>
+
+    <div class="foot__contact">
+      <p class="foot__h">Encuéntranos</p>
+      <address>
+        <p>{site.addressFull}</p>
+        <p>
+          <a class="link-gold" href={telLink}>{site.phoneDisplay}</a> ·
+          <a class="link-gold" href={waLink}>WhatsApp</a>
+        </p>
+        <p>{site.hoursDisplay}</p>
+        <p><a class="link-gold" href={site.mapsUri} target="_blank" rel="noopener">Ver en Google Maps</a></p>
+      </address>
+    </div>
+  </div>
+
+  <div class="container foot__legal">
+    <p>© {year} Bar Las Chimeneas · Valdemorillo, Madrid</p>
+    <p class="foot__note">
+      Nº exacto de la calle y día de cierre semanal, pendientes de confirmar por el negocio.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--ink-2);
+    border-top: 1px solid var(--line);
+    padding-block: var(--sp-8) var(--sp-5);
+    margin-top: var(--sp-2);
+  }
+  .foot {
+    display: grid;
+    grid-template-columns: 1.6fr 0.8fr 1.2fr;
+    gap: var(--sp-7);
+  }
+  .foot__name {
+    font-family: var(--font-display);
+    font-size: var(--step-1);
+    color: var(--cream);
+    margin-bottom: var(--sp-2);
+  }
+  .foot__tag {
+    color: var(--cream-faint);
+    max-width: 38ch;
+    font-size: var(--step--1);
+  }
+  .foot__rating {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+    margin-top: var(--sp-4);
+    font-size: var(--step--1);
+    color: var(--cream-dim);
+  }
+  .stars {
+    color: var(--gold-bright);
+    letter-spacing: 2px;
+  }
+  .foot__h {
+    font-weight: 800;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: var(--sp-4);
+  }
+  .foot__nav ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--sp-2);
+  }
+  .foot__nav a,
+  .foot__contact a:not(.link-gold) {
+    color: var(--cream-dim);
+  }
+  .foot__nav a:hover {
+    color: var(--gold-bright);
+  }
+  address {
+    font-style: normal;
+    color: var(--cream-dim);
+    display: grid;
+    gap: var(--sp-2);
+    font-size: var(--step--1);
+  }
+  .foot__legal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--sp-3);
+    margin-top: var(--sp-7);
+    padding-top: var(--sp-5);
+    border-top: 1px solid var(--line);
+    font-size: 0.78rem;
+    color: var(--cream-faint);
+  }
+  .foot__note {
+    font-style: italic;
+  }
+  @media (max-width: 780px) {
+    .foot {
+      grid-template-columns: 1fr;
+      gap: var(--sp-6);
+    }
+  }
+</style>

@@ -1,0 +1,302 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import { telLink, waLink, site } from '../data/site';
+
+import menuDia from '../assets/menu-del-dia-ejemplo.jpg';
+import cremaTomate from '../assets/crema-tomate-flor.jpg';
+import ensalada from '../assets/ensalada-tomate-ventresca.jpg';
+import torreznos from '../assets/torreznos-panceta.jpg';
+import cremaVerde from '../assets/crema-verde-guisantes.jpg';
+import carrilleras from '../assets/carrilleras-pure.jpg';
+import postre from '../assets/postre-fruta-braseada.jpg';
+import tarta from '../assets/tarta-queso-mermelada.jpg';
+
+const gallery = [
+  { img: torreznos, alt: 'Torreznos crujientes con rúcula y patatas caseras.', tall: true },
+  { img: ensalada, alt: 'Ensalada de tomate con ventresca y cebolla morada.' },
+  { img: cremaTomate, alt: 'Crema de tomate templada con flor comestible.' },
+  { img: carrilleras, alt: 'Carrilleras guisadas sobre puré de patata.' },
+  { img: cremaVerde, alt: 'Crema verde de guisantes con crujiente.', tall: true },
+  { img: postre, alt: 'Postre de fruta braseada con crema.' },
+  { img: tarta, alt: 'Tarta de queso con mermelada y menta.' },
+];
+
+const faq = [
+  {
+    q: '¿Tenéis menú del día en Valdemorillo?',
+    a: 'Estamos actualizando esta información. [Pendiente de confirmar por el negocio si se ofrece menú del día, su precio y qué incluye.] Puedes preguntarnos directamente por WhatsApp mientras tanto.',
+  },
+  {
+    q: '¿Puedo ver la carta con precios antes de ir?',
+    a: 'Sí, nuestra intención es mostrar aquí la carta completa con precios. Estamos ultimando la lista de raciones y tapas para que puedas elegir con toda la información.',
+  },
+  {
+    q: '¿Hay opciones vegetarianas o sin gluten?',
+    a: 'Consúltanos al reservar o al llegar. [Pendiente de confirmar las opciones vegetarianas, sin gluten e infantiles disponibles.] Si nos avisas de tu intolerancia, buscamos la mejor alternativa para ti.',
+  },
+  {
+    q: '¿Se puede pedir comida para llevar?',
+    a: 'Estamos confirmando esta opción. Contáctanos por WhatsApp para saber si tu ración favorita se puede pedir para llevar.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a.replace(/\[.*?\]/g, '').trim() },
+  })),
+};
+---
+
+<Base
+  title="Carta y menú del día en Valdemorillo | Bar Las Chimeneas"
+  description="Descubre la carta de Bar Las Chimeneas en Valdemorillo: raciones caseras, tapas y platos para compartir. Consulta si hay menú del día y opciones para todos."
+  path="/carta"
+  schema={[faqSchema]}
+>
+  <!-- Encabezado -->
+  <section class="section--tight page-head">
+    <div class="container">
+      <span class="eyebrow" data-reveal>La carta</span>
+      <h1 class="display" data-reveal>Carta y menú del día en Valdemorillo</h1>
+      <p class="lead" data-reveal style="--reveal-delay:80ms">
+        En Bar Las Chimeneas, en el corazón de la Casa de la Cultura de Valdemorillo, cocinamos
+        raciones caseras que combinan la tradición de las tapas madrileñas con toques creativos.
+        Cada plato está pensado para compartir en mesa, ya sea en el interior o en nuestra terraza
+        con vistas a la sierra. Aquí tienes la carta para decidir con tranquilidad qué te apetece
+        antes de venir.
+      </p>
+    </div>
+  </section>
+
+  <!-- Menú del día -->
+  <section class="section paper">
+    <div class="container split">
+      <div class="frame menu-poster" data-reveal>
+        <Image
+          src={menuDia}
+          alt="Cartel del menú del día de Bar Las Chimeneas: primeros, segundos y postre por 13,90 €."
+          width={520}
+          height={735}
+          format="webp"
+          quality={80}
+          loading="lazy"
+        />
+      </div>
+      <div class="split__copy" data-reveal style="--reveal-delay:80ms">
+        <span class="eyebrow">Cada día</span>
+        <h2 class="h-lg">Menú del día en Valdemorillo</h2>
+        <div class="prose">
+          <p>
+            El menú del día es la forma más cómoda de comer bien sin complicarte: un primero, un
+            segundo y postre o bebida a un precio cerrado. En cuanto tengamos estos datos, aquí
+            verás cada opción del día para que sepas exactamente qué vas a comer y cuánto cuesta.
+          </p>
+        </div>
+        <p class="pending">
+          [Pendiente de confirmar por el negocio: si ofrecéis menú del día, qué platos incluye, el
+          precio y los días/horas en que está disponible.] La imagen es un ejemplo real de una de
+          nuestras propuestas semanales.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Raciones y tapas + galería -->
+  <section class="section">
+    <div class="container">
+      <div class="two two--head" data-reveal>
+        <div>
+          <span class="eyebrow">Para compartir</span>
+          <h2 class="h-xl">Raciones y tapas para picar</h2>
+        </div>
+        <p class="prose">
+          Nuestra propuesta gira en torno a las raciones caseras y las tapas para compartir, con
+          producto cuidado y platos pensados para acompañar una caña, un vermut de domingo o un
+          cóctel artesanal. Cuando nos paséis la carta actual, incluiremos aquí cada plato con su
+          precio para que puedas elegir sin sorpresas.
+        </p>
+      </div>
+      <p class="pending">[Pendiente: lista de raciones y tapas con sus precios reales.]</p>
+
+      <ul class="masonry">
+        {
+          gallery.map((g, i) => (
+            <li class:list={['masonry__item', { 'masonry__item--tall': g.tall }]} data-reveal style={`--reveal-delay:${i * 45}ms`}>
+              <div class="frame">
+                <Image src={g.img} alt={g.alt} width={480} height={g.tall ? 640 : 360} format="webp" quality={75} loading="lazy" />
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- Opciones + para llevar -->
+  <section class="section paper">
+    <div class="container two-col">
+      <article data-reveal>
+        <h2 class="h-lg">Opciones para todos</h2>
+        <div class="prose">
+          <p>
+            Queremos que cualquiera encuentre su plato. Si tienes alguna alergia o intolerancia,
+            avísanos al reservar o al llegar y te indicamos qué opciones podemos prepararte.
+          </p>
+        </div>
+        <p class="pending">
+          [Pendiente de confirmar: si contáis con opciones vegetarianas, platos sin gluten o menú
+          infantil, y qué platos concretos.]
+        </p>
+      </article>
+      <article data-reveal style="--reveal-delay:80ms">
+        <h2 class="h-lg">Para llevar</h2>
+        <div class="prose">
+          <p>
+            Si prefieres disfrutar de nuestras raciones en casa, en cuanto lo confirmemos aquí te
+            explicamos cómo encargar tus platos favoritos para llevar.
+          </p>
+        </div>
+        <p class="pending">
+          [Pendiente de confirmar: si ofrecemos comida para llevar o a domicilio y cómo hacer el
+          pedido.]
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Reserva -->
+  <section class="section section--tight cta-band">
+    <div class="container cta-band__inner" data-reveal>
+      <div>
+        <h2 class="h-lg">Reserva tu mesa</h2>
+        <p class="prose">
+          La terraza suele tener plazas limitadas, sobre todo los sábados con música en vivo y los
+          domingos de vermut. Reserva mesa por WhatsApp o desde la web para asegurarte tu sitio.
+          Horario de hoy: {site.hoursDisplay.replace('Todos los días, ', '')}.
+        </p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn--lg" href={waLink}>Reservar por WhatsApp</a>
+        <a class="btn btn--ghost btn--lg" href={telLink}>Llamar al {site.phoneDisplay}</a>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faq} />
+</Base>
+
+<style>
+  .page-head {
+    padding-top: clamp(var(--sp-7), 6vw, var(--sp-8));
+  }
+  .page-head .display {
+    margin: var(--sp-4) 0 var(--sp-5);
+    max-width: 18ch;
+  }
+  .page-head .lead {
+    max-width: 60ch;
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: clamp(var(--sp-6), 5vw, var(--sp-8));
+    align-items: center;
+  }
+  .split__copy h2 {
+    margin: var(--sp-3) 0 var(--sp-4);
+  }
+  .menu-poster {
+    aspect-ratio: 52 / 73;
+    max-width: 420px;
+  }
+
+  .two {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(var(--sp-5), 4vw, var(--sp-8));
+    align-items: end;
+  }
+  .two h2 {
+    margin-top: var(--sp-3);
+  }
+  .two--head {
+    margin-bottom: var(--sp-5);
+  }
+
+  .masonry {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--sp-6);
+    columns: 3;
+    column-gap: var(--sp-4);
+  }
+  .masonry__item {
+    break-inside: avoid;
+    margin-bottom: var(--sp-4);
+  }
+  .masonry__item .frame {
+    aspect-ratio: 4 / 3;
+  }
+  .masonry__item--tall .frame {
+    aspect-ratio: 3 / 4;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(var(--sp-6), 5vw, var(--sp-8));
+  }
+  .two-col h2 {
+    margin-bottom: var(--sp-4);
+  }
+
+  .cta-band__inner {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--sp-6);
+    align-items: center;
+    padding: clamp(var(--sp-6), 4vw, var(--sp-7));
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-l);
+  }
+  .cta-band__inner h2 {
+    margin-bottom: var(--sp-3);
+  }
+  .cta-band__inner .btn-row {
+    justify-content: flex-end;
+  }
+
+  @media (max-width: 900px) {
+    .masonry {
+      columns: 2;
+    }
+  }
+  @media (max-width: 780px) {
+    .split,
+    .two,
+    .two-col,
+    .cta-band__inner {
+      grid-template-columns: 1fr;
+    }
+    .cta-band__inner .btn-row {
+      justify-content: flex-start;
+    }
+    .menu-poster {
+      max-width: 320px;
+      margin-inline: auto;
+    }
+  }
+  @media (max-width: 480px) {
+    .masonry {
+      columns: 1;
+    }
+  }
+</style>

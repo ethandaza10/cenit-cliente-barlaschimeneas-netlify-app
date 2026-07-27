@@ -1,0 +1,225 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo-las-chimeneas.png';
+import { nav, telLink, site } from '../data/site';
+
+const current = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === '/' ? current === '/' : current.startsWith(href);
+---
+
+<header class="site-header" data-header>
+  <div class="container bar">
+    <a class="brand" href="/" aria-label={`${site.name} — inicio`}>
+      <Image
+        src={logo}
+        alt=""
+        width={48}
+        height={48}
+        loading="eager"
+        class="brand__mark"
+      />
+      <span class="brand__text">
+        <span class="brand__name">Las Chimeneas</span>
+        <span class="brand__place">Bar · Valdemorillo</span>
+      </span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      data-menu-toggle
+      aria-expanded="false"
+      aria-controls="menu"
+      aria-label="Abrir menú"
+    >
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="menu" data-menu aria-label="Principal">
+      <ul class="nav__list">
+        {
+          nav.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class:list={['nav__link', { 'is-active': isActive(item.href) }]}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <a class="btn nav__cta" href={telLink}>
+        <span aria-hidden="true">☎</span> Reservar
+      </a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: color-mix(in srgb, var(--ink) 82%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  .site-header.is-scrolled {
+    background: color-mix(in srgb, var(--ink) 94%, transparent);
+    border-bottom-color: var(--line);
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-4);
+    min-height: 74px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-3);
+  }
+  .brand__mark {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--line-strong);
+    object-fit: cover;
+  }
+  .brand__text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+  .brand__name {
+    font-family: var(--font-display);
+    font-size: 1.28rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: var(--cream);
+  }
+  .brand__place {
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-6);
+  }
+  .nav__list {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-6);
+    list-style: none;
+    padding: 0;
+  }
+  .nav__link {
+    position: relative;
+    font-weight: 700;
+    font-size: 0.98rem;
+    color: var(--cream-dim);
+    padding-block: 4px;
+    transition: color 0.18s ease;
+  }
+  .nav__link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.22s ease;
+  }
+  .nav__link:hover,
+  .nav__link.is-active {
+    color: var(--cream);
+  }
+  .nav__link:hover::after,
+  .nav__link.is-active::after {
+    transform: scaleX(1);
+  }
+  .nav__cta {
+    padding: 0.6em 1.15em;
+    font-size: 0.95rem;
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 46px;
+    height: 44px;
+    background: transparent;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-s);
+    cursor: pointer;
+  }
+  .menu-toggle span {
+    display: block;
+    height: 2px;
+    width: 22px;
+    margin-inline: auto;
+    background: var(--cream);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  @media (max-width: 860px) {
+    .menu-toggle {
+      display: flex;
+    }
+    .nav {
+      position: fixed;
+      inset: 74px 0 auto 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--sp-4);
+      padding: var(--sp-6) var(--sp-5) var(--sp-7);
+      background: var(--ink-2);
+      border-bottom: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      transform: translateY(-140%);
+      transition: transform 0.32s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+    .nav.is-open {
+      transform: translateY(0);
+    }
+    .nav__list {
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--sp-2);
+    }
+    .nav__link {
+      display: block;
+      padding: var(--sp-3) 0;
+      font-size: 1.2rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .nav__link::after {
+      display: none;
+    }
+    .nav__cta {
+      justify-content: center;
+      padding: 0.85em 1.5em;
+      font-size: 1rem;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .nav {
+      transition: none;
+    }
+  }
+</style>
