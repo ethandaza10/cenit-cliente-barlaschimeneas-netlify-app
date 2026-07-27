@@ -82,9 +82,9 @@ const proofs = [
           Raciones caseras, cócteles artesanales y música en directo, en el corazón del pueblo.
           Un sitio donde te conocemos por tu nombre.
         </p>
-        <div class="btn-row">
-          <a class="btn btn--lg" href={telLink}><span aria-hidden="true">☎</span> Reservar mesa</a>
-          <a class="btn btn--ghost btn--lg" href={link('/carta')}>Ver la carta</a>
+        <div class="btn-row hero__cta">
+          <a class="btn" href={telLink}><span aria-hidden="true">☎</span> Reservar mesa</a>
+          <a class="btn btn--ghost" href={link('/carta')}>Ver la carta</a>
         </div>
       </div>
 
@@ -280,6 +280,18 @@ const proofs = [
   .hero__title {
     margin-block: var(--sp-4) var(--sp-5);
     max-width: 14ch;
+  }
+  /* CTA del hero: los dos botones, juntos y en una fila */
+  .hero__cta {
+    flex-wrap: nowrap;
+  }
+  @media (max-width: 480px) {
+    .hero__cta {
+      flex-wrap: wrap;
+    }
+    .hero__cta .btn {
+      flex: 1 1 auto;
+    }
   }
   .hero__media {
     position: relative;
