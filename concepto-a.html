@@ -1,0 +1,336 @@
+<!--
+  CONCEPTO A — "La Chimenea de Oro"
+  Idea: la identidad real del bar (oro sobre negro, tres chimeneas, clave de sol)
+  llevada a una experiencia editorial NOCTURNA y premium; la música como hilo,
+  el oro usado con avaricia sobre un carbón cálido. Firma = filete dorado fino +
+  las tres chimeneas como divisor recurrente.
+  NOTA: comp de la HOME para elegir estilo, no el sitio final.
+-->
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bar en Valdemorillo | Bar Las Chimeneas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --carbon:#141110;      /* fondo */
+    --carbon-2:#1d1917;    /* superficie */
+    --oro:#c9a24b;         /* acento */
+    --oro-claro:#e3c883;
+    --crema:#f4eee2;       /* texto claro */
+    --crema-suave:#c9c1b2; /* texto atenuado */
+    --terracota:#8a3b2b;
+    --linea:rgba(201,162,75,.28);
+    --max:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--carbon);color:var(--crema);
+    font-family:'Jost',-apple-system,sans-serif;font-weight:300;
+    line-height:1.7;letter-spacing:.01em;
+    -webkit-font-smoothing:antialiased;
+  }
+  .serif{font-family:'Cormorant Garamond',Georgia,serif}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+
+  /* firma: filete + tres chimeneas */
+  .chimeneas{display:inline-flex;align-items:flex-end;gap:5px;height:22px}
+  .chimeneas i{display:block;width:6px;background:var(--oro);border-radius:2px 2px 0 0;opacity:.9}
+  .chimeneas i:nth-child(1){height:14px}
+  .chimeneas i:nth-child(2){height:22px}
+  .chimeneas i:nth-child(3){height:17px}
+  .divisor{display:flex;align-items:center;justify-content:center;gap:18px;margin:0;color:var(--linea)}
+  .divisor::before,.divisor::after{content:"";height:1px;flex:1;background:var(--linea)}
+
+  .kicker{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--oro);font-weight:400}
+
+  /* NAV */
+  header.nav{position:sticky;top:0;z-index:30;background:rgba(20,17,16,.72);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;max-width:var(--max);margin:0 auto}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{height:46px;width:auto}
+  .brand b{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;letter-spacing:.18em;color:var(--crema)}
+  nav.links{display:flex;gap:30px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--crema-suave)}
+  nav.links a:hover{color:var(--oro)}
+  .btn{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--oro);color:var(--oro);
+       padding:11px 22px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;border-radius:2px;transition:.25s}
+  .btn:hover{background:var(--oro);color:var(--carbon)}
+  .btn-solid{background:var(--oro);color:var(--carbon);border-color:var(--oro)}
+  .btn-solid:hover{background:var(--oro-claro);border-color:var(--oro-claro)}
+  @media(max-width:860px){nav.links{display:none}}
+
+  /* HERO editorial a sangre */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden}
+  .hero .bg{position:absolute;inset:0}
+  .hero .bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.42) saturate(1.05)}
+  .hero::after{content:"";position:absolute;inset:0;background:
+     linear-gradient(180deg,rgba(20,17,16,.55) 0%,rgba(20,17,16,.15) 40%,rgba(20,17,16,.94) 100%)}
+  .hero-in{position:relative;z-index:2;width:100%;max-width:var(--max);margin:0 auto;padding:0 32px 68px}
+  .hero .kicker{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-weight:500;color:var(--crema);
+     font-size:clamp(44px,7.2vw,104px);line-height:.98;letter-spacing:-.01em;max-width:15ch}
+  .hero h1 em{font-style:italic;color:var(--oro-claro)}
+  .hero .sub{margin-top:26px;max-width:52ch;color:var(--crema-suave);font-size:17px}
+  .hero .acts{margin-top:34px;display:flex;gap:16px;flex-wrap:wrap}
+  .meta-strip{display:flex;gap:34px;flex-wrap:wrap;margin-top:44px;padding-top:22px;border-top:1px solid var(--linea);
+      font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--crema-suave)}
+  .meta-strip b{color:var(--oro);font-weight:400}
+
+  section{padding:104px 0}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:26px}
+  h2.title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(32px,4.6vw,58px);line-height:1.04;letter-spacing:-.01em}
+  h2.title em{font-style:italic;color:var(--oro-claro)}
+  .lead{color:var(--crema-suave);font-size:17.5px;max-width:60ch}
+
+  /* Intro editorial asimétrica */
+  .intro{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+  .intro .fig{position:relative}
+  .intro .fig img{width:100%;height:520px;object-fit:cover;border-radius:3px}
+  .intro .fig .tag{position:absolute;left:-18px;bottom:28px;background:var(--carbon);border:1px solid var(--oro);
+      color:var(--oro);padding:12px 18px;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+  @media(max-width:860px){.intro{grid-template-columns:1fr;gap:36px}.intro .fig img{height:360px}.intro .fig .tag{left:14px}}
+
+  /* Oferta: lista editorial numerada, ritmo distinto */
+  .oferta{border-top:1px solid var(--linea)}
+  .row{display:grid;grid-template-columns:auto 1fr auto;gap:40px;align-items:baseline;
+       padding:34px 0;border-bottom:1px solid var(--linea)}
+  .row .n{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--oro);min-width:52px}
+  .row h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:27px;margin-bottom:8px}
+  .row p{color:var(--crema-suave);max-width:66ch;font-size:16px}
+  .row .price{white-space:nowrap;color:var(--oro-claro);font-family:'Cormorant Garamond',serif;font-size:22px}
+  @media(max-width:720px){.row{grid-template-columns:auto 1fr;gap:22px}.row .price{grid-column:2}}
+
+  /* Galería asimétrica de platos reales */
+  .galeria{background:var(--carbon-2)}
+  .mosaico{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:44px}
+  .mosaico figure{position:relative;overflow:hidden;border-radius:3px}
+  .mosaico img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease;filter:saturate(1.04)}
+  .mosaico figure:hover img{transform:scale(1.06)}
+  .mosaico figcaption{position:absolute;left:14px;bottom:12px;font-size:12px;letter-spacing:.16em;
+     text-transform:uppercase;color:var(--crema);text-shadow:0 1px 8px rgba(0,0,0,.7)}
+  .g-a{grid-column:span 3;height:340px}
+  .g-b{grid-column:span 3;height:340px}
+  .g-c{grid-column:span 2;height:270px}
+  .g-d{grid-column:span 2;height:270px}
+  .g-e{grid-column:span 2;height:270px}
+  @media(max-width:720px){.mosaico{grid-template-columns:1fr 1fr}.g-a,.g-b,.g-c,.g-d,.g-e{grid-column:span 1;height:200px}}
+
+  /* Música — banda a sangre */
+  .musica{position:relative;overflow:hidden}
+  .musica .bg{position:absolute;inset:0}
+  .musica .bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.34)}
+  .musica::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,17,16,.92),rgba(20,17,16,.5))}
+  .musica .in{position:relative;z-index:2}
+  .clef{font-family:'Cormorant Garamond',serif;font-size:64px;color:var(--oro);line-height:0}
+
+  /* Por qué — cifras */
+  .cifras{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linea);border:1px solid var(--linea);border-radius:3px;overflow:hidden;margin-top:48px}
+  .cifras div{background:var(--carbon);padding:38px 28px;text-align:center}
+  .cifras .big{font-family:'Cormorant Garamond',serif;font-size:52px;color:var(--oro);line-height:1}
+  .cifras small{display:block;margin-top:10px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--crema-suave)}
+  @media(max-width:720px){.cifras{grid-template-columns:1fr}}
+
+  /* FAQ */
+  .faq details{border-bottom:1px solid var(--linea);padding:22px 0}
+  .faq summary{cursor:pointer;list-style:none;font-family:'Cormorant Garamond',serif;font-size:23px;
+     display:flex;justify-content:space-between;gap:20px;align-items:center}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary .plus{color:var(--oro);font-family:'Jost',sans-serif;font-size:26px;font-weight:300;transition:.3s}
+  .faq details[open] summary .plus{transform:rotate(45deg)}
+  .faq p{color:var(--crema-suave);margin-top:14px;max-width:74ch}
+
+  /* CTA reserva */
+  .reserva{text-align:center;border-top:1px solid var(--linea)}
+  .reserva h2{margin:22px 0 14px}
+  .reserva .datos{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:18px;color:var(--crema-suave);font-size:15px}
+  .reserva .datos span{border:1px solid var(--linea);padding:9px 16px;border-radius:2px}
+
+  footer{background:var(--carbon-2);border-top:1px solid var(--linea);padding:56px 0 40px;color:var(--crema-suave);font-size:14px}
+  .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+  footer b{color:var(--crema);font-family:'Cormorant Garamond',serif;font-weight:500;letter-spacing:.14em}
+  footer a:hover{color:var(--oro)}
+  .foot-bottom{margin-top:40px;padding-top:22px;border-top:1px solid var(--linea);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;letter-spacing:.08em}
+  @media(max-width:720px){.foot{grid-template-columns:1fr}}
+  .pending{display:flex;align-items:center;justify-content:center;height:100%;min-height:200px;background:repeating-linear-gradient(45deg,#1d1917,#1d1917 12px,#191512 12px,#191512 24px);color:var(--crema-suave);font-size:12px;letter-spacing:.18em;text-transform:uppercase;border:1px dashed var(--linea)}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+  .rv.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top">
+      <img src="assets/global-logo-1.jpeg" alt="Logo Bar Las Chimeneas">
+      <b>LAS CHIMENEAS</b>
+    </a>
+    <nav class="links">
+      <a href="#carta">Carta</a>
+      <a href="#musica">Música en vivo</a>
+      <a href="#nosotros">El bar</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn btn-solid" href="https://wa.me/34639984727">Reservar</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="bg"><img src="assets/home-fondo-2.jpg" alt="Interior del Bar Las Chimeneas en Valdemorillo"></div>
+  <div class="hero-in">
+    <div class="kicker"><span class="chimeneas"><i></i><i></i><i></i></span> Bar · Valdemorillo, Madrid · desde 2018</div>
+    <h1 class="serif">Tu bar en Valdemorillo con <em>terraza</em> y <em>música en vivo</em></h1>
+    <p class="sub">Raciones caseras, cócteles artesanales y una terraza con vistas a la sierra. Un punto de encuentro en el corazón del pueblo donde te conocemos por tu nombre.</p>
+    <div class="acts">
+      <a class="btn btn-solid" href="https://wa.me/34639984727">Reservar por WhatsApp</a>
+      <a class="btn" href="#carta">Ver la carta</a>
+    </div>
+    <div class="meta-strip">
+      <div><b>4,8 ★</b> · 82 reseñas en Google</div>
+      <div>Terraza con vistas a la <b>sierra</b></div>
+      <div>Música en vivo <b>sáb. y domingos</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section id="nosotros">
+  <div class="wrap intro">
+    <div class="txt rv">
+      <div class="eyebrow"><span class="kicker">La casa</span><span class="chimeneas"><i></i><i></i><i></i></span></div>
+      <h2 class="title serif">El bar de Valdemorillo donde <em>el tiempo se detiene</em></h2>
+      <p class="lead" style="margin-top:22px">Si buscas un bar en Valdemorillo para tapear, tomar un vermut o quedar con los tuyos, Bar Las Chimeneas es un punto de encuentro en el corazón del pueblo. Estamos en la Casa de la Cultura de Valdemorillo y abrimos desde 2018 con una idea sencilla: raciones caseras, buen ambiente y un trato cercano. Aquí no vienes solo a consumir; vienes a pasar un buen rato.</p>
+    </div>
+    <div class="fig rv">
+      <img src="assets/global-galeria-5.jpg" alt="Ambiente del Bar Las Chimeneas">
+      <span class="tag">Casa de la Cultura</span>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section class="oferta" id="carta">
+  <div class="wrap">
+    <div class="eyebrow rv"><span class="kicker">Qué ofrecemos</span><span class="chimeneas"><i></i><i></i><i></i></span></div>
+    <h2 class="title serif rv">Raciones, tapas, <em>cócteles</em> y bodega</h2>
+    <p class="lead rv" style="margin:18px 0 10px">Tradición de las tapas madrileñas con toques creativos, pensadas para compartir en mesa. Para un aperitivo rápido o una comida sin prisas.</p>
+    <div class="lista">
+      <div class="row rv"><span class="n serif">01</span><div><h3 class="serif">Menú del día</h3><p>Primer plato, segundo, bebida y postre. La forma más cómoda de comer bien sin complicarte.</p></div><span class="price serif">13,90 €</span></div>
+      <div class="row rv"><span class="n serif">02</span><div><h3 class="serif">Raciones caseras y tapas</h3><p>Croquetas caseras, secreto ibérico, huevos rotos, tortilla… producto cuidado para picar y compartir.</p></div><span class="price serif">Para compartir</span></div>
+      <div class="row rv"><span class="n serif">03</span><div><h3 class="serif">Especialidades de la casa</h3><p>Solomillo con romesco de avellanas, rabo de toro, hamburguesas gourmet y postres caseros.</p></div><span class="price serif">De la carta</span></div>
+      <div class="row rv"><span class="n serif">04</span><div><h3 class="serif">Barra: cócteles y bodega</h3><p>Cócteles artesanales, vermut de domingo y una bodega seleccionada para cada momento del día.</p></div><span class="price serif">Barra</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria">
+  <div class="wrap">
+    <div class="eyebrow rv"><span class="kicker">De nuestra cocina</span><span class="chimeneas"><i></i><i></i><i></i></span></div>
+    <h2 class="title serif rv">Platos que hablan por <em>nosotros</em></h2>
+    <div class="mosaico">
+      <figure class="g-a rv"><img src="assets/carta-galeria-4.png" alt="Huevos rotos con jamón"><figcaption>Huevos rotos con jamón</figcaption></figure>
+      <figure class="g-b rv"><img src="assets/global-galeria-15.jpg" alt="Rabo de toro en salsa de vino tinto"><figcaption>Rabo de toro al vino tinto</figcaption></figure>
+      <figure class="g-c rv"><img src="assets/global-galeria-12.png" alt="Croquetas caseras"><figcaption>Croquetas caseras</figcaption></figure>
+      <figure class="g-d rv"><img src="assets/global-galeria-17.png" alt="Hamburguesa gourmet"><figcaption>Hamburguesa gourmet</figcaption></figure>
+      <figure class="g-e rv"><img src="assets/global-galeria-16.jpg" alt="Tarta de queso con mermelada de arándanos"><figcaption>Tarta de queso casera</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- MUSICA -->
+<section class="musica" id="musica">
+  <div class="bg"><img src="assets/eventos-musica-en-vivo-seccion-3.jpg" alt="Música en vivo en Bar Las Chimeneas"></div>
+  <div class="wrap in">
+    <div class="clef serif rv">&#119070;</div>
+    <div class="eyebrow rv"><span class="kicker">Terraza · música · ambiente</span></div>
+    <h2 class="title serif rv" style="max-width:16ch">Los fines de semana <em>suenan en directo</em></h2>
+    <p class="lead rv" style="margin-top:20px">Uno de nuestros sellos es la terraza exterior con vistas a la sierra, una de las más especiales del municipio. Los sábados y los domingos de vermut tenemos música en vivo: un plan perfecto para grupos, parejas y familias que buscan algo más que una simple consumición.</p>
+    <div class="acts rv" style="margin-top:30px;display:flex;gap:16px;flex-wrap:wrap">
+      <a class="btn btn-solid" href="https://wa.me/34639984727">Reservar mesa para el finde</a>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE -->
+<section id="porque">
+  <div class="wrap">
+    <div class="eyebrow rv"><span class="kicker">Por qué elegirnos</span><span class="chimeneas"><i></i><i></i><i></i></span></div>
+    <h2 class="title serif rv">El bar de referencia de <em>muchos vecinos</em></h2>
+    <p class="lead rv" style="margin:18px 0 0">Desde 2018 siendo punto de reunión en Valdemorillo, con una valoración de 4,8 en Google que refleja el trato personalizado que nos define. Terraza con vistas, música en directo, cócteles artesanales y raciones caseras.</p>
+    <div class="cifras rv">
+      <div><div class="big serif">4,8★</div><small>82 reseñas en Google</small></div>
+      <div><div class="big serif">2018</div><small>Punto de encuentro del pueblo</small></div>
+      <div><div class="big serif">08–23h</div><small>Horario de hoy</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" style="padding-top:40px">
+  <div class="wrap">
+    <div class="eyebrow rv"><span class="kicker">Preguntas frecuentes</span></div>
+    <details class="rv" open><summary class="serif">¿Tenéis terraza?<span class="plus">+</span></summary><p>Sí. Contamos con una terraza exterior con vistas a la sierra, una de las más especiales del pueblo. En fines de semana las plazas son limitadas, por lo que conviene reservar.</p></details>
+    <details class="rv"><summary class="serif">¿Hay música en vivo?<span class="plus">+</span></summary><p>Sí, ofrecemos música en directo los sábados y los domingos de vermut. Es uno de nuestros planes más populares.</p></details>
+    <details class="rv"><summary class="serif">¿Qué tipo de comida servís?<span class="plus">+</span></summary><p>Raciones caseras y tapas madrileñas con toques creativos, pensadas para compartir, además de cócteles artesanales y una bodega seleccionada.</p></details>
+    <details class="rv"><summary class="serif">¿Cómo reservo mesa?<span class="plus">+</span></summary><p>Puedes reservar mesa fácilmente por WhatsApp al 639 98 47 27. Te recomendamos hacerlo con antelación si vienes en grupo o en fin de semana, ya que la terraza tiene plazas limitadas.</p></details>
+  </div>
+</section>
+
+<!-- RESERVA -->
+<section class="reserva" id="contacto">
+  <div class="wrap">
+    <div class="divisor" style="margin-bottom:26px"><span class="chimeneas"><i></i><i></i><i></i></span></div>
+    <span class="kicker">Dónde estamos y cómo reservar</span>
+    <h2 class="title serif">Reserva tu mesa <em>hoy</em></h2>
+    <p class="lead" style="margin:0 auto">Nos encuentras en la Casa de la Cultura de Valdemorillo. Las plazas en terraza son limitadas: si vienes en grupo o en fin de semana, reserva con antelación.</p>
+    <div class="acts" style="justify-content:center;display:flex;gap:16px;margin-top:26px">
+      <a class="btn btn-solid" href="https://wa.me/34639984727">WhatsApp · 639 98 47 27</a>
+      <a class="btn" href="tel:+34639984727">Llamar</a>
+    </div>
+    <div class="datos">
+      <span>Casa de Cultura, C. la Paz, s/n · 28210 Valdemorillo, Madrid</span>
+      <span>Hoy 08:00 – 23:00</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <b>LAS CHIMENEAS</b>
+        <p style="margin-top:12px;max-width:38ch">Tu bar en Valdemorillo desde 2018: raciones caseras, terraza con vistas a la sierra y música en vivo los fines de semana.</p>
+      </div>
+      <div>
+        <b style="font-size:14px;letter-spacing:.2em;text-transform:uppercase">Visítanos</b>
+        <p style="margin-top:12px">Casa de Cultura, C. la Paz, s/n<br>28210 Valdemorillo, Madrid</p>
+        <p style="margin-top:8px">Hoy 08:00 – 23:00</p>
+      </div>
+      <div>
+        <b style="font-size:14px;letter-spacing:.2em;text-transform:uppercase">Reservas</b>
+        <p style="margin-top:12px"><a href="https://wa.me/34639984727">WhatsApp 639 98 47 27</a><br><a href="tel:+34639984727">Llamar 639 98 47 27</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© Bar Las Chimeneas · Valdemorillo</span>
+      <span>4,8 ★ en Google · 82 reseñas</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
