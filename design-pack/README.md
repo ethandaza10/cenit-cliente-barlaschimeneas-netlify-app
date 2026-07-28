@@ -21,6 +21,21 @@ Sobre `sistema-diseno/` (tokens y principios base).
   ponla en tu `~/.claude/agents/` global para que sea tu diseñador por defecto en todo.
 - **Para crear tu propio pack (p. ej. "Picasso"):** forkea este, cambia los agentes, mantén el contrato.
 
+## Cómo se ejecuta (importante — léelo antes de construir)
+El flujo tiene **dos fases**; no construyas todo de golpe:
+
+**Fase 1 — Conceptos (para elegir estilo):** lanza `director-arte` en modo conceptos → **3 direcciones distintas**,
+maquetadas como **3 HTML autocontenidos de la home** (`concepto-a/b/c.html`) que se abren con doble clic. El cliente
+elige uno (+ notas). NO construyas el resto hasta que haya elegido.
+
+**Fase 2 — Construcción (con el concepto aprobado):** en orden `director-arte` (fija la dirección elegida) →
+`arquitecto-ux` → `disenador-ui` → `frontend-seo` → `motion`. **Cada rol deja su ENTREGABLE** en disco
+(`direccion-visual.md`, `ux/*.md`, `ui/*.md`…): es la prueba de que se aplicó su criterio.
+
+**Revisión (innegociable):** `revisor-diseno` y `anti-generico` se ejecutan **como subagentes INDEPENDIENTES**
+(Task tool, contexto limpio) — NO encarnados por quien construyó, o la revisión no vale (te autoapruebas). Si dan
+`rehacer`, itera hasta `apto`. La garantía de calidad = entregables por rol + revisión independiente + Validador de CÉNIT.
+
 ## Contrato
 Entrada = `/kit-de-obra`. Salida = una web que pasa el Validador de CÉNIT. Ver `PACK-CONTRATO.md`.
 Cualquier pack que respete el contrato es intercambiable y comparable objetivamente.

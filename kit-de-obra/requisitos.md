@@ -16,7 +16,7 @@
 - Schema: LocalBusiness (subtipo específico) coherente con lo visible y con la ficha de Google
 - Accesibilidad: WCAG 2.2 AA
 - Responsive: mobile-first
-- Imágenes: con width/height o aspect-ratio (evitar CLS), formatos modernos, lazy-load fuera del viewport
+- Imágenes: componente de imagen del framework (Astro <Image>/<Picture>), NUNCA <img> crudo para fotos: srcset responsive CON densidades 1x y 2x (retina, o se ven borrosas), AVIF+WebP a calidad ~80, servidas al tamaño real de display partiendo del original en máxima resolución (no ampliar), width/height o aspect-ratio (CLS 0), lazy-load fuera del viewport y preload solo en el LCP
 - debe cumplir criterios de diseño premium; el revisor lo verifica
 
 ## Objetivos de rendimiento (Core Web Vitals, campo (CrUX p75), no laboratorio)

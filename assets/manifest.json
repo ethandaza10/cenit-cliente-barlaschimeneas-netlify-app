@@ -1,0 +1,107 @@
+{
+  "nota": "Cada imagen y DÓNDE va. Coloca cada archivo en su `pagina` y su `hueco` (hero/galeria/logo/fondo/seccion). Usa SOLO estas fotos; si un hueco necesario no tiene imagen, deja \"Foto real pendiente\" — nunca inventes una foto.",
+  "assets": [
+    {
+      "archivo": "assets/global-logo-1.jpeg",
+      "pagina": "global",
+      "hueco": "logo",
+      "descripcion": "logolaschimeneas.jpeg"
+    },
+    {
+      "archivo": "assets/home-fondo-2.jpg",
+      "pagina": "/",
+      "hueco": "fondo",
+      "descripcion": "IMG_20260417_104614.jpg"
+    },
+    {
+      "archivo": "assets/eventos-musica-en-vivo-seccion-3.jpg",
+      "pagina": "/eventos-musica-en-vivo",
+      "hueco": "seccion",
+      "descripcion": "IMG_20260418_153036.jpg"
+    },
+    {
+      "archivo": "assets/carta-galeria-4.png",
+      "pagina": "/carta",
+      "hueco": "galeria",
+      "descripcion": "Huevosrotos 1.png"
+    },
+    {
+      "archivo": "assets/global-galeria-5.jpg",
+      "pagina": "global",
+      "hueco": "galeria",
+      "descripcion": "IMG_20260211_112726.jpg"
+    },
+    {
+      "archivo": "assets/global-galeria-6.jpg",
+      "pagina": "global",
+      "hueco": "galeria",
+      "descripcion": "IMG_20260313_133817.jpg"
+    },
+    {
+      "archivo": "assets/global-galeria-7.jpg",
+      "pagina": "global",
+      "hueco": "galeria",
+      "descripcion": "IMG_20260416_141404.jpg"
+    },
+    {
+      "archivo": "assets/global-galeria-8.jpg",
+      "pagina": "global",
+      "hueco": "galeria",
+      "descripcion": "IMG_20260409_150231.jpg"
+    },
+    {
+      "archivo": "assets/global-galeria-9.jpg",
+      "pagina": "global",
+      "hueco": "galeria",
+      "descripcion": "IMG_20260319_113920.jpg"
+    },
+    {
+      "archivo": "assets/global-galeria-10.jpg",
+      "pagina": "global",
+      "hueco": "galeria",
+      "descripcion": "IMG-20260323-WA0013.jpg"
+    },
+    {
+      "archivo": "assets/global-galeria-11.jpg",
+      "pagina": "global",
+      "hueco": "galeria",
+      "descripcion": "IMG_20260319_114104.jpg"
+    },
+    {
+      "archivo": "assets/global-galeria-12.png",
+      "pagina": "global",
+      "hueco": "galeria",
+      "descripcion": "Croquetas 1.png"
+    },
+    {
+      "archivo": "assets/global-galeria-13.jpg",
+      "pagina": "global",
+      "hueco": "galeria",
+      "descripcion": "IMG_20260220_123516.jpg"
+    },
+    {
+      "archivo": "assets/global-galeria-14.png",
+      "pagina": "global",
+      "hueco": "galeria",
+      "descripcion": "tortilla3.png"
+    },
+    {
+      "archivo": "assets/global-galeria-15.jpg",
+      "pagina": "global",
+      "hueco": "galeria",
+      "descripcion": "Rabo de toro en salsa de vino tinto.jpg"
+    },
+    {
+      "archivo": "assets/global-galeria-16.jpg",
+      "pagina": "global",
+      "hueco": "galeria",
+      "descripcion": "Tarta de queso con mermelada de arandanos.jpg"
+    },
+    {
+      "archivo": "assets/global-galeria-17.png",
+      "pagina": "global",
+      "hueco": "galeria",
+      "descripcion": "Hamburguesa opcion 1.png"
+    }
+  ]
+}

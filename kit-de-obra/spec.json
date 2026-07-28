@@ -1,6 +1,6 @@
 {
   "cenit_build_spec": "1.0",
-  "generated_at": "2026-07-27T16:08:01.953Z",
+  "generated_at": "2026-07-28T16:14:53.107Z",
   "client": {
     "slug": "barlaschimeneas-netlify-app",
     "name": "barlaschimeneas.netlify.app",
@@ -30,7 +30,7 @@
     "schema": "LocalBusiness (subtipo específico) coherente con lo visible y con la ficha de Google",
     "accessibility": "WCAG 2.2 AA",
     "responsive": "mobile-first",
-    "images": "con width/height o aspect-ratio (evitar CLS), formatos modernos, lazy-load fuera del viewport",
+    "images": "componente de imagen del framework (Astro <Image>/<Picture>), NUNCA <img> crudo para fotos: srcset responsive CON densidades 1x y 2x (retina, o se ven borrosas), AVIF+WebP a calidad ~80, servidas al tamaño real de display partiendo del original en máxima resolución (no ampliar), width/height o aspect-ratio (CLS 0), lazy-load fuera del viewport y preload solo en el LCP",
     "no_generic_ai_look": "debe cumplir criterios de diseño premium; el revisor lo verifica"
   },
   "performance_targets": {
@@ -127,9 +127,9 @@
         ]
       },
       "client_facts": {
-        "tipo_eventos": "",
-        "eventos_privados": "",
-        "agenda_actualizable": ""
+        "tipo_eventos": "Conciertos en directo, música en vivo y eventos gastronómicos.",
+        "eventos_privados": "Sí. Ponemos nuestras instalaciones a disposición de nuestros clientes para celebrar cumpleaños, reuniones familiares, comidas de empresa y todo tipo de celebraciones. Diseñamos menús personalizados para que cada evento sea una experiencia especial.",
+        "agenda_actualizable": "El propietario, semanalmente."
       }
     },
     {
@@ -204,8 +204,10 @@
         ]
       },
       "client_facts": {
-        "telefono_whatsapp": "918 99 88 77",
-        "direccion_completa": "Calle Real 15, 28210 Valdemorillo, Madrid"
+        "parking_acceso": "Aparcamiento público muy cerca del establecimiento y fácil acceso.",
+        "redes_sociales": "Sí, contamos con Instagram y ficha de Google Business.",
+        "telefono_whatsapp": "639984727",
+        "direccion_completa": "Calle La Paz 51, Casa Cultura Valdemorillo."
       }
     },
     {
@@ -285,7 +287,11 @@
           "No se ha confirmado el número de años en activo (la web indica 'Desde 2018', pero el contador muestra '0+ Años')."
         ]
       },
-      "client_facts": {}
+      "client_facts": {
+        "menu_dia": "13,90 €, incluye primer plato, segundo plato, bebida y postre.",
+        "para_llevar": "Sí, ofrecemos comida para llevar.",
+        "opciones_dieteticas": "Disponemos de opciones vegetarianas y adaptamos algunos platos según las necesidades del cliente."
+      }
     },
     {
       "path": "/",
@@ -364,71 +370,325 @@
           "Número de reseñas que respaldan el 4,8 en Google, para dar contexto verificable."
         ]
       },
-      "client_facts": {}
+      "client_facts": {
+        "ambiente_local": "Local acogedor situado en la Casa de Cultura de Valdemorillo, con terraza y un ambiente familiar, ideal para disfrutar de una buena comida o de nuestros eventos.",
+        "especialidades": "Croquetas caseras, secreto ibérico, solomillo con Romesco de Avellanas, hamburguesas gourmet, y postres caseros.",
+        "fotos_disponibles": "Sí. Disponemos de fotografías del local, la terraza, los platos y los eventos."
+      }
     }
   ],
   "design_brief": {
-    "tone": "Profesional, premium pero cercano. Tradición Española.",
-    "notes": "Me gustaría tener un banner en la cabecera que sea unna foto de un plato super bonito y apetitoso. que trannsmita comida premium y de calidad desde que entran. En alguna sección un carrusel de fotos de algunos de nuestros platos. En la sección de eventos también algunas fotos .",
+    "tone": "Cercano, pero premieum",
+    "notes": "Las fotos que he subido para galería son para usar o bien algunas e la home si hacen falta o en la sección de carta, son algunos de nuestros platos.",
     "assets": [
       {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms3e9qau-flequw.svg",
-        "name": "las-chimeneas-logo.svg",
-        "type": "logo"
+        "url": "/api/asset/barlaschimeneas-netlify-app/ms4uhmgc-eb13qt.jpeg",
+        "kind": "image",
+        "name": "logolaschimeneas.jpeg",
+        "page": "global",
+        "role": "logo",
+        "type": "foto",
+        "uploaded": true
       },
       {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms3ebaar-7tjaki.jpg",
-        "name": "Rabo de toro en salsa de vino tinto",
-        "type": "foto"
+        "url": "/api/asset/barlaschimeneas-netlify-app/ms4uj0or-dvtq1c.jpg",
+        "kind": "image",
+        "name": "IMG_20260417_104614.jpg",
+        "page": "/",
+        "role": "fondo",
+        "type": "foto",
+        "uploaded": true
       },
       {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms3ebajv-btaj2o.jpg",
-        "name": "IMG-20260323-WA0013.jpg",
-        "type": "foto"
+        "url": "/api/asset/barlaschimeneas-netlify-app/ms4ujuqg-et37bg.jpg",
+        "kind": "image",
+        "name": "IMG_20260418_153036.jpg",
+        "page": "/eventos-musica-en-vivo",
+        "role": "seccion",
+        "type": "foto",
+        "uploaded": true
       },
       {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms3ebcul-8siyyu.jpg",
-        "name": "muse de chocolate",
-        "type": "foto"
+        "url": "/api/asset/barlaschimeneas-netlify-app/ms4um77j-6zccpf.png",
+        "kind": "image",
+        "name": "Huevosrotos 1.png",
+        "page": "/carta",
+        "role": "galeria",
+        "type": "foto",
+        "uploaded": true
       },
       {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms3ebdlg-b05dwk.jpg",
+        "url": "/api/asset/barlaschimeneas-netlify-app/ms4umd5t-5zw4sf.jpg",
+        "kind": "image",
+        "name": "IMG_20260211_112726.jpg",
+        "page": "",
+        "role": "galeria",
+        "type": "foto",
+        "uploaded": true
+      },
+      {
+        "url": "/api/asset/barlaschimeneas-netlify-app/ms4umm3b-6afmci.jpg",
+        "kind": "image",
         "name": "IMG_20260313_133817.jpg",
-        "type": "foto"
+        "page": "",
+        "role": "galeria",
+        "type": "foto",
+        "uploaded": true
       },
       {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms3ebds2-78b2gc.jpg",
-        "name": "pabellón criollo",
-        "type": "foto"
+        "url": "/api/asset/barlaschimeneas-netlify-app/ms4unszo-enict.jpg",
+        "kind": "image",
+        "name": "IMG_20260416_141404.jpg",
+        "page": "",
+        "role": "galeria",
+        "type": "foto",
+        "uploaded": true
       },
       {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms3ebe49-6i9qfq.jpg",
-        "name": "Tarta de queso con mermelada de arandanos",
-        "type": "foto"
+        "url": "/api/asset/barlaschimeneas-netlify-app/ms4uo2hn-5x1tdy.jpg",
+        "kind": "image",
+        "name": "IMG_20260409_150231.jpg",
+        "page": "",
+        "role": "galeria",
+        "type": "foto",
+        "uploaded": true
       },
       {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms3ebeoq-6h5wyp.png",
-        "name": "Tortilla de patatas",
-        "type": "foto"
+        "url": "/api/asset/barlaschimeneas-netlify-app/ms4uoa58-a1aqxt.jpg",
+        "kind": "image",
+        "name": "IMG_20260319_113920.jpg",
+        "page": "",
+        "role": "galeria",
+        "type": "foto",
+        "uploaded": true
+      },
+      {
+        "url": "/api/asset/barlaschimeneas-netlify-app/ms4uognn-avbmmc.jpg",
+        "kind": "image",
+        "name": "IMG-20260323-WA0013.jpg",
+        "page": "",
+        "role": "galeria",
+        "type": "foto",
+        "uploaded": true
+      },
+      {
+        "url": "/api/asset/barlaschimeneas-netlify-app/ms4uot6y-1vgndu.jpg",
+        "kind": "image",
+        "name": "IMG_20260319_114104.jpg",
+        "page": "",
+        "role": "galeria",
+        "type": "foto",
+        "uploaded": true
+      },
+      {
+        "url": "/api/asset/barlaschimeneas-netlify-app/ms4up49f-6fudxy.png",
+        "kind": "image",
+        "name": "Croquetas 1.png",
+        "page": "",
+        "role": "galeria",
+        "type": "foto",
+        "uploaded": true
+      },
+      {
+        "url": "/api/asset/barlaschimeneas-netlify-app/ms4upfq8-7hifmz.jpg",
+        "kind": "image",
+        "name": "IMG_20260220_123516.jpg",
+        "page": "",
+        "role": "galeria",
+        "type": "foto",
+        "uploaded": true
+      },
+      {
+        "url": "/api/asset/barlaschimeneas-netlify-app/ms4uppoc-20swyn.png",
+        "kind": "image",
+        "name": "tortilla3.png",
+        "page": "",
+        "role": "galeria",
+        "type": "foto",
+        "uploaded": true
+      },
+      {
+        "url": "/api/asset/barlaschimeneas-netlify-app/ms4upz4x-25xqta.jpg",
+        "kind": "image",
+        "name": "Rabo de toro en salsa de vino tinto.jpg",
+        "page": "",
+        "role": "galeria",
+        "type": "foto",
+        "uploaded": true
+      },
+      {
+        "url": "/api/asset/barlaschimeneas-netlify-app/ms4uq60g-bw1cm4.jpg",
+        "kind": "image",
+        "name": "Tarta de queso con mermelada de arandanos.jpg",
+        "page": "",
+        "role": "galeria",
+        "type": "foto",
+        "uploaded": true
+      },
+      {
+        "url": "/api/asset/barlaschimeneas-netlify-app/ms4uqi6l-3ken7w.png",
+        "kind": "image",
+        "name": "Hamburguesa opcion 1.png",
+        "page": "",
+        "role": "galeria",
+        "type": "foto",
+        "uploaded": true
       }
     ],
-    "palette": "Tierra, chimenea, calidos.",
+    "palette": "Tierra, crema, cálidos.",
     "references": [
       {
-        "url": "https://barlaschimeneas.netlify.app/",
-        "note": "Inspirarnos en el efecto cenizas. y los colores, pero hacerlo más serio. que inspire tradición."
+        "url": "https://abya.es/?gad_source=1&gad_campaignid=23837348876&gbraid=0AAAAAqmB6OxHXARRgliAqZkgwrf-SQjJ0&gclid=CjwKCAjwpqHTBhAcEiwAj2AfujIn7kyCzsXWOYn1HJQEsljnyNthLpg-wo5mHTIKPwPeAV7eSRWm2RoC5owQAvD_BwE",
+        "note": "Me gusta mucho el estilo. como se introducen las imagenes, el motion. "
       }
     ],
     "style_tags": [
       "elegante",
       "minimalista",
-      "clásico",
-      "artesanal"
+      "lujo"
     ],
-    "typography": "Elegante.",
-    "updated_at": "2026-07-27T15:45:40.541Z"
+    "typography": "Elegante, premium.",
+    "updated_at": "2026-07-28T16:11:02.553Z",
+    "approved_direction": ""
   },
-  "assets": [],
+  "assets": [
+    {
+      "type": "foto",
+      "page": "global",
+      "role": "logo",
+      "description": "logolaschimeneas.jpeg",
+      "url": "/api/asset/barlaschimeneas-netlify-app/ms4uhmgc-eb13qt.jpeg",
+      "uploaded": true
+    },
+    {
+      "type": "foto",
+      "page": "/",
+      "role": "fondo",
+      "description": "IMG_20260417_104614.jpg",
+      "url": "/api/asset/barlaschimeneas-netlify-app/ms4uj0or-dvtq1c.jpg",
+      "uploaded": true
+    },
+    {
+      "type": "foto",
+      "page": "/eventos-musica-en-vivo",
+      "role": "seccion",
+      "description": "IMG_20260418_153036.jpg",
+      "url": "/api/asset/barlaschimeneas-netlify-app/ms4ujuqg-et37bg.jpg",
+      "uploaded": true
+    },
+    {
+      "type": "foto",
+      "page": "/carta",
+      "role": "galeria",
+      "description": "Huevosrotos 1.png",
+      "url": "/api/asset/barlaschimeneas-netlify-app/ms4um77j-6zccpf.png",
+      "uploaded": true
+    },
+    {
+      "type": "foto",
+      "page": "global",
+      "role": "galeria",
+      "description": "IMG_20260211_112726.jpg",
+      "url": "/api/asset/barlaschimeneas-netlify-app/ms4umd5t-5zw4sf.jpg",
+      "uploaded": true
+    },
+    {
+      "type": "foto",
+      "page": "global",
+      "role": "galeria",
+      "description": "IMG_20260313_133817.jpg",
+      "url": "/api/asset/barlaschimeneas-netlify-app/ms4umm3b-6afmci.jpg",
+      "uploaded": true
+    },
+    {
+      "type": "foto",
+      "page": "global",
+      "role": "galeria",
+      "description": "IMG_20260416_141404.jpg",
+      "url": "/api/asset/barlaschimeneas-netlify-app/ms4unszo-enict.jpg",
+      "uploaded": true
+    },
+    {
+      "type": "foto",
+      "page": "global",
+      "role": "galeria",
+      "description": "IMG_20260409_150231.jpg",
+      "url": "/api/asset/barlaschimeneas-netlify-app/ms4uo2hn-5x1tdy.jpg",
+      "uploaded": true
+    },
+    {
+      "type": "foto",
+      "page": "global",
+      "role": "galeria",
+      "description": "IMG_20260319_113920.jpg",
+      "url": "/api/asset/barlaschimeneas-netlify-app/ms4uoa58-a1aqxt.jpg",
+      "uploaded": true
+    },
+    {
+      "type": "foto",
+      "page": "global",
+      "role": "galeria",
+      "description": "IMG-20260323-WA0013.jpg",
+      "url": "/api/asset/barlaschimeneas-netlify-app/ms4uognn-avbmmc.jpg",
+      "uploaded": true
+    },
+    {
+      "type": "foto",
+      "page": "global",
+      "role": "galeria",
+      "description": "IMG_20260319_114104.jpg",
+      "url": "/api/asset/barlaschimeneas-netlify-app/ms4uot6y-1vgndu.jpg",
+      "uploaded": true
+    },
+    {
+      "type": "foto",
+      "page": "global",
+      "role": "galeria",
+      "description": "Croquetas 1.png",
+      "url": "/api/asset/barlaschimeneas-netlify-app/ms4up49f-6fudxy.png",
+      "uploaded": true
+    },
+    {
+      "type": "foto",
+      "page": "global",
+      "role": "galeria",
+      "description": "IMG_20260220_123516.jpg",
+      "url": "/api/asset/barlaschimeneas-netlify-app/ms4upfq8-7hifmz.jpg",
+      "uploaded": true
+    },
+    {
+      "type": "foto",
+      "page": "global",
+      "role": "galeria",
+      "description": "tortilla3.png",
+      "url": "/api/asset/barlaschimeneas-netlify-app/ms4uppoc-20swyn.png",
+      "uploaded": true
+    },
+    {
+      "type": "foto",
+      "page": "global",
+      "role": "galeria",
+      "description": "Rabo de toro en salsa de vino tinto.jpg",
+      "url": "/api/asset/barlaschimeneas-netlify-app/ms4upz4x-25xqta.jpg",
+      "uploaded": true
+    },
+    {
+      "type": "foto",
+      "page": "global",
+      "role": "galeria",
+      "description": "Tarta de queso con mermelada de arandanos.jpg",
+      "url": "/api/asset/barlaschimeneas-netlify-app/ms4uq60g-bw1cm4.jpg",
+      "uploaded": true
+    },
+    {
+      "type": "foto",
+      "page": "global",
+      "role": "galeria",
+      "description": "Hamburguesa opcion 1.png",
+      "url": "/api/asset/barlaschimeneas-netlify-app/ms4uqi6l-3ken7w.png",
+      "uploaded": true
+    }
+  ],
   "acceptance": {
     "validator": "CÉNIT Validador (Fase 4.4)",
     "must_pass": [

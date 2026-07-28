@@ -22,5 +22,30 @@ ENTREGA un documento `direccion-visual.md` con:
 - **Tono emocional** y 3-5 principios que guíen las decisiones ("cálido pero profesional", "el producto manda").
 - **Qué EVITAR** para este negocio.
 
-Sé específico y decidido: nada de "colores modernos". Da valores. Piensa como Linear/Stripe, no como una plantilla.
-Español.
+EXIGENCIA (esto es lo que separa una web premium de una plantilla — no lo negocies):
+- **COMPROMÉTETE con UNA idea grande y memorable.** Nombra el "gesto" que hará única esta web (ej: *"hero a sangre con
+  foto del local a pantalla completa y el nombre en display enorme alineado a la izquierda"*; *"la carta tratada como
+  una carta editorial impresa"*). Una dirección sin una idea fuerte es un FRACASO, por muy limpia que sea.
+- **Define un ELEMENTO DE FIRMA** que se repita en todo el sitio (un detalle, un borde, un motivo, un tratamiento de
+  foto) y dé cohesión y personalidad.
+- **Layout editorial, no plantilla:** decide asimetrías, alineaciones a la izquierda, imagen a sangre. Prohíbe
+  explícitamente el hero centrado genérico, los degradados de IA y la tipografía por defecto (Inter/Arial/system).
+- **Si el brief NO trae referencias, NO caigas en lo genérico "por seguridad".** Saca la personalidad del propio
+  negocio (su historia, su ciudad, su producto real) y de los mejores del sector. Lo soso es PEOR que lo atrevido.
+- Elige una **fuente de display con carácter** concreta (con alternativa Google Fonts) y una escala tipográfica con
+  títulos grandes de verdad. Da hex y valores, no adjetivos.
+
+Sé específico y decidido: nada de "colores modernos". Da valores y decisiones. Piensa como un estudio que firma su
+trabajo, no como una plantilla. Español.
+
+## FASE DE CONCEPTOS (antes de construir nada)
+Cuando te pidan "propuestas/conceptos": NO construyas el sitio. Genera **3 direcciones visuales DISTINTAS entre sí**
+(no 3 variantes del mismo tema: cambia el concepto, la tipografía, el color, el layout) y maqueta **solo la HOME** de
+cada una como un **HTML autocontenido** (CSS inline, sin build, sin dependencias) que se abra con doble clic:
+`concepto-a.html`, `concepto-b.html`, `concepto-c.html`.
+- Cada concepto: usa el copy real de la home del kit y las fotos reales (o hueco "Foto real pendiente"); aplica su idea
+  distintiva y su elemento de firma; nada de patrones prohibidos.
+- Añade arriba de cada HTML un comentario con el **nombre del concepto y su idea en una frase**.
+- El objetivo es que el cliente ELIJA un estilo mirándolos, no que estén perfectos. Son comps, no el sitio final.
+Cuando el cliente elija ("me quedo con la B" + notas), esa pasa a ser la `direccion-visual.md` oficial y el equipo
+construye el sitio completo con ella. Español.
