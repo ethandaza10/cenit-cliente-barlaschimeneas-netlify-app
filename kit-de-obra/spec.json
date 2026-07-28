@@ -1,6 +1,6 @@
 {
   "cenit_build_spec": "1.0",
-  "generated_at": "2026-07-28T16:14:53.107Z",
+  "generated_at": "2026-07-28T17:36:11.469Z",
   "client": {
     "slug": "barlaschimeneas-netlify-app",
     "name": "barlaschimeneas.netlify.app",
@@ -10,7 +10,9 @@
     "goal": null
   },
   "build": {
-    "agent_pack": "cenit-default"
+    "agent_pack": "cenit-default",
+    "design_version": "d1",
+    "design_version_name": "Diseño 1"
   },
   "tech": {
     "stack_default": "astro",
@@ -380,161 +382,6 @@
   "design_brief": {
     "tone": "Cercano, pero premieum",
     "notes": "Las fotos que he subido para galería son para usar o bien algunas e la home si hacen falta o en la sección de carta, son algunos de nuestros platos.",
-    "assets": [
-      {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms4uhmgc-eb13qt.jpeg",
-        "kind": "image",
-        "name": "logolaschimeneas.jpeg",
-        "page": "global",
-        "role": "logo",
-        "type": "foto",
-        "uploaded": true
-      },
-      {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms4uj0or-dvtq1c.jpg",
-        "kind": "image",
-        "name": "IMG_20260417_104614.jpg",
-        "page": "/",
-        "role": "fondo",
-        "type": "foto",
-        "uploaded": true
-      },
-      {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms4ujuqg-et37bg.jpg",
-        "kind": "image",
-        "name": "IMG_20260418_153036.jpg",
-        "page": "/eventos-musica-en-vivo",
-        "role": "seccion",
-        "type": "foto",
-        "uploaded": true
-      },
-      {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms4um77j-6zccpf.png",
-        "kind": "image",
-        "name": "Huevosrotos 1.png",
-        "page": "/carta",
-        "role": "galeria",
-        "type": "foto",
-        "uploaded": true
-      },
-      {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms4umd5t-5zw4sf.jpg",
-        "kind": "image",
-        "name": "IMG_20260211_112726.jpg",
-        "page": "",
-        "role": "galeria",
-        "type": "foto",
-        "uploaded": true
-      },
-      {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms4umm3b-6afmci.jpg",
-        "kind": "image",
-        "name": "IMG_20260313_133817.jpg",
-        "page": "",
-        "role": "galeria",
-        "type": "foto",
-        "uploaded": true
-      },
-      {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms4unszo-enict.jpg",
-        "kind": "image",
-        "name": "IMG_20260416_141404.jpg",
-        "page": "",
-        "role": "galeria",
-        "type": "foto",
-        "uploaded": true
-      },
-      {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms4uo2hn-5x1tdy.jpg",
-        "kind": "image",
-        "name": "IMG_20260409_150231.jpg",
-        "page": "",
-        "role": "galeria",
-        "type": "foto",
-        "uploaded": true
-      },
-      {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms4uoa58-a1aqxt.jpg",
-        "kind": "image",
-        "name": "IMG_20260319_113920.jpg",
-        "page": "",
-        "role": "galeria",
-        "type": "foto",
-        "uploaded": true
-      },
-      {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms4uognn-avbmmc.jpg",
-        "kind": "image",
-        "name": "IMG-20260323-WA0013.jpg",
-        "page": "",
-        "role": "galeria",
-        "type": "foto",
-        "uploaded": true
-      },
-      {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms4uot6y-1vgndu.jpg",
-        "kind": "image",
-        "name": "IMG_20260319_114104.jpg",
-        "page": "",
-        "role": "galeria",
-        "type": "foto",
-        "uploaded": true
-      },
-      {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms4up49f-6fudxy.png",
-        "kind": "image",
-        "name": "Croquetas 1.png",
-        "page": "",
-        "role": "galeria",
-        "type": "foto",
-        "uploaded": true
-      },
-      {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms4upfq8-7hifmz.jpg",
-        "kind": "image",
-        "name": "IMG_20260220_123516.jpg",
-        "page": "",
-        "role": "galeria",
-        "type": "foto",
-        "uploaded": true
-      },
-      {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms4uppoc-20swyn.png",
-        "kind": "image",
-        "name": "tortilla3.png",
-        "page": "",
-        "role": "galeria",
-        "type": "foto",
-        "uploaded": true
-      },
-      {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms4upz4x-25xqta.jpg",
-        "kind": "image",
-        "name": "Rabo de toro en salsa de vino tinto.jpg",
-        "page": "",
-        "role": "galeria",
-        "type": "foto",
-        "uploaded": true
-      },
-      {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms4uq60g-bw1cm4.jpg",
-        "kind": "image",
-        "name": "Tarta de queso con mermelada de arandanos.jpg",
-        "page": "",
-        "role": "galeria",
-        "type": "foto",
-        "uploaded": true
-      },
-      {
-        "url": "/api/asset/barlaschimeneas-netlify-app/ms4uqi6l-3ken7w.png",
-        "kind": "image",
-        "name": "Hamburguesa opcion 1.png",
-        "page": "",
-        "role": "galeria",
-        "type": "foto",
-        "uploaded": true
-      }
-    ],
     "palette": "Tierra, crema, cálidos.",
     "references": [
       {
@@ -548,8 +395,8 @@
       "lujo"
     ],
     "typography": "Elegante, premium.",
-    "updated_at": "2026-07-28T16:11:02.553Z",
-    "approved_direction": ""
+    "updated_at": "2026-07-28T17:35:41.169Z",
+    "approved_direction": "Me quedo con la opción C"
   },
   "assets": [
     {

@@ -1,5 +1,8 @@
 # Brief de Diseño
 
+> **DIRECCIÓN APROBADA (el cliente ya eligió — constrúyela, no re-elijas):**
+> Me quedo con la opción C
+
 - **Estilo:** elegante, minimalista, lujo
 - **Tono:** Cercano, pero premieum
 - **Paleta:** Tierra, crema, cálidos.
