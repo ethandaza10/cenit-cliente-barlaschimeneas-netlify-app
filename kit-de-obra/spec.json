@@ -1,10 +1,11 @@
 {
   "cenit_build_spec": "1.0",
-  "generated_at": "2026-07-29T09:23:37.291Z",
+  "generated_at": "2026-07-29T23:03:36.045Z",
   "client": {
     "slug": "barlaschimeneas-netlify-app",
     "name": "Bar las chimeneas",
     "domain": "barlaschimeneas.netlify.app",
+    "site_url": "https://www.barlaschimeneas.com",
     "sector": "Hostelería",
     "city": "Valdemorillo",
     "goal": null
@@ -794,7 +795,7 @@
     ],
     "note": "La web construida se re-audita con el Auditor de CÉNIT como parte de la aceptación."
   },
-  "build_instructions": "Clona el repo, revisa /kit-de-obra, y ejecuta Claude Code con el pack de agentes declarado en cenit.build.json. Construye cada página del array `pages` respetando `tech` y `performance_targets`. No inventes datos del negocio: usa `copy` y `client_facts`; lo listado en `copy.gaps` queda pendiente de que el cliente lo aporte.",
+  "build_instructions": "Clona el repo, revisa /kit-de-obra, y ejecuta Claude Code con el pack de agentes declarado en cenit.build.json. Construye cada página del array `pages` respetando `tech` y `performance_targets`. Configura el `site` del framework (Astro `site`) con `client.site_url` EXACTAMENTE: de ahí salen el canonical autorreferente y el sitemap.xml. No inventes datos del negocio: usa `copy` y `client_facts`; lo listado en `copy.gaps` queda pendiente de que el cliente lo aporte.",
   "_readiness": {
     "pages_total": 7,
     "pages_with_copy": 7,

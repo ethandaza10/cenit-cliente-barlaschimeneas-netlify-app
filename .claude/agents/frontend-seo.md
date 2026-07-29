@@ -12,6 +12,7 @@ ENTRADA: `ui/*.md` + `direccion-visual.md` + `/kit-de-obra` (copy por página, `
 
 OBLIGATORIO (lo mide el Validador):
 - **HTML semántico**: un solo `<h1>` por página, jerarquía correcta de encabezados, landmarks (`header/main/nav/footer`).
+- **DOMINIO FINAL (crítico para SEO):** configura el `site` de Astro (`astro.config.mjs` → `site: '<client.site_url>'`) con el `client.site_url` del kit EXACTAMENTE. De ahí salen el `canonical` autorreferente y el `sitemap.xml`; si te lo saltas, apuntarían al dominio de pruebas y Google indexaría mal. Usa `@astrojs/sitemap` para que el sitemap se genere sobre ese `site`. Enlaces internos **relativos** (`/servicios`, nunca la URL absoluta del dominio de pruebas). `robots.txt` debe apuntar a `<site_url>/sitemap.xml`.
 - **SEO por página**: `<title>` <60, meta description 120-160, canonical autorreferente, la keyword principal en title y H1 de forma natural (nada de stuffing).
 - **JSON-LD**: usa el `local_business` del spec; tipo más específico (Restaurant, Dentist…); coherente con lo visible.
 - **Ficheros**: `sitemap.xml` y `robots.txt`.
