@@ -4,41 +4,39 @@ import Base from '../layouts/Base.astro';
 import Faq from '../components/Faq.astro';
 import { telLink, waLink, site } from '../data/site';
 
-import menuDia from '../assets/menu-del-dia-ejemplo.jpg';
-import cremaTomate from '../assets/crema-tomate-flor.jpg';
-import ensalada from '../assets/ensalada-tomate-ventresca.jpg';
-import torreznos from '../assets/torreznos-panceta.jpg';
-import cremaVerde from '../assets/crema-verde-guisantes.jpg';
-import carrilleras from '../assets/carrilleras-pure.jpg';
-import postre from '../assets/postre-fruta-braseada.jpg';
-import tarta from '../assets/tarta-queso-mermelada.jpg';
+import huevosRotos from '../assets/huevos-rotos.png';
+import croquetas from '../assets/croquetas.png';
+import raboDeToro from '../assets/rabo-de-toro.jpg';
+import tortilla from '../assets/tortilla.png';
+import hamburguesa from '../assets/hamburguesa.png';
+import tarta from '../assets/tarta-queso.jpg';
 
+// SOLO fotos reales del cliente (mapa en /assets/manifest.json). No se inventa ninguna.
 const gallery = [
-  { img: torreznos, label: 'Torreznos caseros', alt: 'Torreznos crujientes con rúcula y patatas caseras.', tall: true },
-  { img: ensalada, label: 'Ensalada de ventresca', alt: 'Ensalada de tomate con ventresca y cebolla morada.' },
-  { img: cremaTomate, label: 'Crema de tomate', alt: 'Crema de tomate templada con flor comestible.' },
-  { img: carrilleras, label: 'Carrilleras en salsa', alt: 'Carrilleras guisadas sobre puré de patata.' },
-  { img: cremaVerde, label: 'Crema de guisantes', alt: 'Crema verde de guisantes con crujiente.', tall: true },
-  { img: postre, label: 'Fruta braseada', alt: 'Postre de fruta braseada con crema.' },
-  { img: tarta, label: 'Tarta de queso', alt: 'Tarta de queso con mermelada y menta.' },
+  { img: huevosRotos, label: 'Huevos rotos', alt: 'Plato de huevos rotos de Bar Las Chimeneas, para compartir.', tall: true },
+  { img: croquetas, label: 'Croquetas caseras', alt: 'Ración de croquetas caseras.' },
+  { img: raboDeToro, label: 'Rabo de toro al vino tinto', alt: 'Rabo de toro guisado en salsa de vino tinto.' },
+  { img: tortilla, label: 'Tortilla de la casa', alt: 'Tortilla de patata casera.', tall: true },
+  { img: hamburguesa, label: 'Hamburguesa gourmet', alt: 'Hamburguesa gourmet de la carta.' },
+  { img: tarta, label: 'Tarta de queso casera', alt: 'Tarta de queso casera con mermelada de arándanos.' },
 ];
 
 const faq = [
   {
     q: '¿Tenéis menú del día en Valdemorillo?',
-    a: 'Estamos actualizando esta información. [Pendiente de confirmar por el negocio si se ofrece menú del día, su precio y qué incluye.] Puedes preguntarnos directamente por WhatsApp mientras tanto.',
+    a: 'Sí. Nuestro menú del día cuesta 13,90 € e incluye primer plato, segundo plato, bebida y postre. Los platos concretos van cambiando cada día; consúltanos por WhatsApp o al llegar qué hay hoy.',
   },
   {
-    q: '¿Puedo ver la carta con precios antes de ir?',
-    a: 'Sí, nuestra intención es mostrar aquí la carta completa con precios. Estamos ultimando la lista de raciones y tapas para que puedas elegir con toda la información.',
+    q: '¿Dónde puedo ver los platos y precios de la carta?',
+    a: 'Como nuestra propuesta cambia según la temporada y el producto, te recomendamos consultar la carta del día directamente en el bar o llamándonos por teléfono. Así te contamos lo más fresco de cada jornada.',
   },
   {
     q: '¿Hay opciones vegetarianas o sin gluten?',
-    a: 'Consúltanos al reservar o al llegar. [Pendiente de confirmar las opciones vegetarianas, sin gluten e infantiles disponibles.] Si nos avisas de tu intolerancia, buscamos la mejor alternativa para ti.',
+    a: 'Disponemos de opciones vegetarianas y adaptamos algunos platos según tus necesidades. Si tienes una alergia o intolerancia, avísanos al reservar o al llegar y buscamos la mejor alternativa para ti.',
   },
   {
     q: '¿Se puede pedir comida para llevar?',
-    a: 'Estamos confirmando esta opción. Contáctanos por WhatsApp para saber si tu ración favorita se puede pedir para llevar.',
+    a: 'Sí, ofrecemos comida para llevar. Escríbenos por WhatsApp con lo que te apetezca y te lo preparamos para recoger.',
   },
 ];
 
@@ -51,13 +49,31 @@ const faqSchema = {
     acceptedAnswer: { '@type': 'Answer', text: f.a.replace(/\[.*?\]/g, '').trim() },
   })),
 };
+
+// Menú del día (dato real y visible en la página): 13,90 €.
+const menuSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Menu',
+  name: 'Menú del día — Bar Las Chimeneas',
+  hasMenuSection: {
+    '@type': 'MenuSection',
+    name: 'Menú del día',
+    description: 'Primer plato, segundo plato, bebida y postre. Recetas diferentes cada jornada.',
+    offers: {
+      '@type': 'Offer',
+      price: '13.90',
+      priceCurrency: 'EUR',
+      availability: 'https://schema.org/InStock',
+    },
+  },
+};
 ---
 
 <Base
   title="Carta y menú del día en Valdemorillo | Bar Las Chimeneas"
   description="Descubre la carta de Bar Las Chimeneas en Valdemorillo: raciones caseras, tapas y platos para compartir. Consulta si hay menú del día y opciones para todos."
   path="/carta"
-  schema={[faqSchema]}
+  schema={[menuSchema, faqSchema]}
 >
   <!-- Encabezado -->
   <section class="section--tight page-head">
@@ -67,9 +83,8 @@ const faqSchema = {
       <p class="lead" data-reveal style="--reveal-delay:80ms">
         En Bar Las Chimeneas, en el corazón de la Casa de la Cultura de Valdemorillo, cocinamos
         raciones caseras que combinan la tradición de las tapas madrileñas con toques creativos.
-        Cada plato está pensado para compartir en mesa, ya sea en el interior o en nuestra terraza
-        con vistas a la sierra. Aquí tienes la carta para decidir con tranquilidad qué te apetece
-        antes de venir.
+        Cada plato está pensado para compartir en mesa, ya sea en el interior o en nuestra terraza.
+        Aquí tienes la carta para decidir con tranquilidad qué te apetece antes de venir.
       </p>
     </div>
   </section>
@@ -77,31 +92,31 @@ const faqSchema = {
   <!-- Menú del día -->
   <section class="section paper">
     <div class="container split">
-      <div class="frame menu-poster" data-reveal>
-        <Image
-          src={menuDia}
-          alt="Cartel del menú del día de Bar Las Chimeneas: primeros, segundos y postre por 13,90 €."
-          width={520}
-          height={735}
-          format="webp" densities={[1, 2]}
-          quality={80}
-          loading="lazy"
-        />
-      </div>
+      <aside class="pizarra" data-reveal aria-label="Menú del día">
+        <span class="pizarra__hand">el de cada día</span>
+        <h2 class="pizarra__title">Menú del día</h2>
+        <p class="pizarra__price">13,90 €</p>
+        <ul class="pizarra__list">
+          <li>Primer plato</li>
+          <li>Segundo plato</li>
+          <li>Bebida</li>
+          <li>Postre</li>
+        </ul>
+        <p class="pizarra__foot">Comer bien sin complicarte, en el corazón de Valdemorillo.</p>
+      </aside>
       <div class="split__copy" data-reveal style="--reveal-delay:80ms">
         <span class="eyebrow">Cada día</span>
         <h2 class="h-lg">Menú del día en Valdemorillo</h2>
         <div class="prose">
           <p>
-            El menú del día es la forma más cómoda de comer bien sin complicarte: un primero, un
-            segundo y postre o bebida a un precio cerrado. En cuanto tengamos estos datos, aquí
-            verás cada opción del día para que sepas exactamente qué vas a comer y cuánto cuesta.
+            El menú del día es la forma más cómoda de comer bien sin complicarte: primer plato,
+            segundo plato, bebida y postre por <strong>13,90&nbsp;€</strong>. Los platos concretos
+            van cambiando cada día, así que lo mejor es preguntarnos por WhatsApp o al llegar qué
+            hay hoy.
           </p>
         </div>
         <p class="pending">
-          [Pendiente de confirmar por el negocio: si ofrecéis menú del día, qué platos incluye, el
-          precio y los días/horas en que está disponible.] La imagen es un ejemplo real de una de
-          nuestras propuestas semanales.
+          ¿Quieres saber el menú de hoy? Escríbenos por WhatsApp y te contamos los platos del día.
         </p>
       </div>
     </div>
@@ -117,12 +132,12 @@ const faqSchema = {
         </div>
         <p class="prose">
           Nuestra propuesta gira en torno a las raciones caseras y las tapas para compartir, con
-          producto cuidado y platos pensados para acompañar una caña, un vermut de domingo o un
-          cóctel artesanal. Cuando nos paséis la carta actual, incluiremos aquí cada plato con su
-          precio para que puedas elegir sin sorpresas.
+          producto cuidado y platos pensados para acompañar una caña, un vermut o un buen refresco.
+          Consúltanos la carta del día y los precios directamente en el bar o por teléfono; nuestra
+          propuesta cambia según el mercado y la temporada.
         </p>
       </div>
-      <p class="pending">[Pendiente: lista de raciones y tapas con sus precios reales.]</p>
+      <p class="pending">Nuestra carta cambia con la temporada y el mercado. Te contamos los platos del día y sus precios en el bar o por WhatsApp.</p>
 
       <ul class="masonry">
         {
@@ -146,28 +161,24 @@ const faqSchema = {
         <h2 class="h-lg">Opciones para todos</h2>
         <div class="prose">
           <p>
-            Queremos que cualquiera encuentre su plato. Si tienes alguna alergia o intolerancia,
-            avísanos al reservar o al llegar y te indicamos qué opciones podemos prepararte.
+            Disponemos de <strong>opciones vegetarianas</strong> y adaptamos algunos platos según
+            las necesidades de cada cliente. Si tienes una alergia o intolerancia, avísanos al
+            reservar o al llegar y te indicamos qué podemos prepararte.
           </p>
         </div>
         <p class="pending">
-          [Pendiente de confirmar: si contáis con opciones vegetarianas, platos sin gluten o menú
-          infantil, y qué platos concretos.]
+          ¿Tienes una alergia o preferencia concreta? Coméntanoslo al reservar o al llegar y
+          buscamos la mejor opción para ti.
         </p>
       </article>
       <article data-reveal style="--reveal-delay:80ms">
         <h2 class="h-lg">Para llevar</h2>
         <div class="prose">
           <p>
-            Si prefieres disfrutar de nuestras raciones en casa, en cuanto lo confirmemos aquí te
-            explicamos cómo encargar tus platos favoritos para llevar.
+            Sí, <strong>ofrecemos comida para llevar</strong>: puedes disfrutar de nuestras
+            raciones en casa. Escríbenos por WhatsApp con lo que te apetezca y te lo preparamos.
           </p>
         </div>
-        <p class="pending">
-          [Pendiente de confirmar: si ofrecemos comida para llevar o a domicilio y cómo hacer el
-          pedido.]
-        </p>
-      </article>
     </div>
   </section>
 
@@ -177,9 +188,9 @@ const faqSchema = {
       <div>
         <h2 class="h-lg">Reserva tu mesa</h2>
         <p class="prose">
-          La terraza suele tener plazas limitadas, sobre todo los sábados con música en vivo y los
-          domingos de vermut. Reserva mesa por WhatsApp o desde la web para asegurarte tu sitio.
-          Horario de hoy: {site.hoursDisplay.replace('Todos los días, ', '')}.
+          La terraza suele tener plazas limitadas, sobre todo los fines de semana y los días con
+          menú o evento en directo. Reserva mesa por WhatsApp o desde la web para asegurarte tu sitio.
+          Horario: {site.hoursDisplay}.
         </p>
       </div>
       <div class="btn-row">
@@ -213,10 +224,7 @@ const faqSchema = {
   .split__copy h2 {
     margin: var(--sp-3) 0 var(--sp-4);
   }
-  .menu-poster {
-    aspect-ratio: 52 / 73;
-    max-width: 420px;
-  }
+  /* estilos de .pizarra* en global.css (se comparten con la home) */
 
   .two {
     display: grid;

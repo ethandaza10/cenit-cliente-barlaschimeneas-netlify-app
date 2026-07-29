@@ -1,65 +1,80 @@
-# Dirección visual — Bar Las Chimeneas (Valdemorillo)
+# Dirección visual — Bar Las Chimeneas
 
-> Entregable de `director-arte`. Traduce el brief y la referencia en decisiones concretas
-> para que el resto del pack construya sin improvisar. Inspirar, **no** copiar.
+> **Dirección aprobada por el cliente: «Concepto C — Pizarra & Vermut».**
+> Fijada el 2026-07-28 tras revisar los 3 conceptos. Este documento es la fuente única
+> de verdad estética; todo el equipo (UX, UI, frontend, motion) construye a partir de aquí.
 
-## Concepto (una frase)
-**"El calor de la lumbre, servido con oficio."** El visitante debe sentir, desde el primer
-segundo, el ambiente cálido de una taberna de pueblo con cocina de nivel: apetito inmediato,
-tradición española y trato cercano. Premium, pero sin distancia.
+## Concepto en una frase
+El bar de pueblo contado **desde su pizarra de raciones y el vermut de los domingos**: un
+bistró contemporáneo, cálido y táctil, donde el visitante siente que entra a un sitio con
+carácter y con gente que le va a conocer por su nombre —no a una plantilla de restaurante.
 
-## Principio extraído de la referencia
-De `barlaschimeneas.netlify.app` tomamos **el ambiente de brasa/ceniza y la paleta cálida sobre
-oscuro**, pero lo llevamos a un registro **más serio y clásico**: menos efecto "fuego digital",
-más materia noble (madera, dorado bruñido, papel cálido). El fuego se sugiere, no se grita.
+## La idea grande (el "gesto")
+La web se compone como una **pizarra de bar**: fondo verde oliva profundo (pizarra), rótulos
+en **mayúsculas condensadas** (como la tiza rotulada del local) y un **acento manuscrito** que
+aparece como anotaciones a mano (vermut, findes, "te guardamos sitio"). La **carta se trata
+como la pizarra de raciones** —líneas con puntos de guía y precio a la derecha—, no como una
+rejilla de tarjetas. Ese contraste "rótulo impreso + tiza a mano" es lo que hace que sea ESTE
+bar y no cualquiera.
 
-## Paleta (roles y hex)
-| Rol | Token | Hex |
-|---|---|---|
-| Fondo base (carbón cálido) | `--ink` | `#17110B` |
-| Fondo alterno | `--ink-2` | `#1F160E` |
-| Superficie / tarjeta | `--surface` | `#271C12` |
-| Papel cálido (secciones claras, texto sobre oscuro) | `--cream` | `#F3E9DA` |
-| Texto atenuado | `--cream-dim` | `#CDBBA4` |
-| Acento marca (oro bruñido, del logo) | `--gold` | `#C79A4B` |
-| Oro claro (brillo, hairlines vivos) | `--gold-bright` | `#E4BE72` |
-| Acento cálido / CTA (brasa-terracota) | `--ember` | `#B04A26` |
-| Profundidad (vino) | `--wine` | `#5E2A22` |
-| Hairline | `--line` | `rgba(199,154,75,.22)` |
+## Elemento de firma (se repite en todo el sitio)
+1. **Acento manuscrito (Caveat)** en ámbar claro, ligeramente rotado, para anotaciones cortas.
+2. **Filete/divisor de puntos (dashed)** color tiza — el trazo de la pizarra.
+3. **Antetítulos condensados** (Bebas Neue) con tracking amplio en ámbar.
 
-Dos acentos con papeles distintos: **oro** = marca, filetes, detalles finos; **brasa/terracota**
-= acción (reservar, llamar). Nunca el azul de plantilla. Contraste AA garantizado en todo texto.
+## Paleta (hex y papel)
+| Rol | Token | Hex | Uso |
+|---|---|---|---|
+| Fondo pizarra | `--ink` | `#20241a` | Fondo dominante (verde oliva muy oscuro) |
+| Superficie | `--surface` | `#2b3123` | Tarjetas, cabecera, footer |
+| Superficie 2 | `--surface-2` | `#333a29` | Hover / capas |
+| Texto | `--cream` | `#efe9db` | Texto principal sobre pizarra |
+| Texto atenuado | `--cream-dim` | `#b7b2a2` | Cuerpo secundario |
+| **Acento** | `--amber` | `#e0a536` | **Un solo acento**, con avaricia: CTA, cifras, antetítulos |
+| Acento claro | `--amber-bright` | `#f0c877` | Manuscrito, hovers |
+| Vermut | `--vermut` | `#b04a2f` | Banda de música/vermut, énfasis puntual |
+| Tiza / líneas | `--line` | `rgba(234,228,212,.16)` | Divisores de puntos, bordes |
+| Papel (break) | `--paper` | `#efe7d3` | Paneles claros de respiro (carta/menú) |
+
+Contraste AA garantizado: ámbar `#e0a536` sobre pizarra `#20241a` (texto grande y cifras);
+CTA = texto `#241d0c` sobre ámbar (ratio alto). Cuerpo = crema sobre pizarra.
 
 ## Tipografía
-- **Display / títulos:** *Fraunces* (variable, óptica alta). Serif de contraste con alma
-  artesanal y clásica — evita el cliché de *Playfair*. Pesos 500–900, cursiva para acentos.
-- **Cuerpo / UI:** *Mulish* (variable). Sans humanista, cálido y legible; nada de *Inter* genérico.
-- **Escala modular ~1.25.** Interlineado generoso en cuerpo (1.65). Antetítulos ("eyebrow") en
-  Mulish, versalitas con `letter-spacing` y en oro.
-- Autoalojadas (`@fontsource-variable`) → sin peticiones externas (privacidad + CWV).
+- **Display / rótulos:** `Bebas Neue` (condensada, mayúsculas, mucho carácter). Titulares GRANDES.
+  Alternativa web-safe: Oswald / Anton.
+- **Manuscrita (firma):** `Caveat` (variable). SOLO para anotaciones cortas, nunca párrafos.
+- **Cuerpo:** `Libre Franklin` (variable, humanista, legible). Interlineado generoso (~1.7).
+- Escala muy contrastada: héroes 56–120px; el salto rótulo↔cuerpo es parte del estilo.
 
 ## Sistema visual
-- **Espaciado:** escala 4/8/12/16/24/32/48/64/96/128. El aire manda; secciones con `padding`
-  vertical amplio (96–128px en desktop). Ritmo alternando fondos oscuro ↔ papel.
-- **Radios:** 2–4px en botones/inputs, 6–10px en imágenes/tarjetas. Nada "burbuja".
-- **Filetes de oro** finos como recurso clásico (separadores, marcos de foto), con criterio.
-- **Sombra:** una sola, cálida y profunda (`0 24px 60px -30px rgba(0,0,0,.7)`), no diez.
-- **Imagen:** la comida es la protagonista. Fotos a sangre, grandes, con leve viñeteado cálido
-  para integrarlas en el fondo oscuro. Todas con `width/height` (cero CLS).
-- **Textura:** grano de película muy sutil + un resplandor de brasa tenue en el hero (CSS,
-  `transform/opacity`, se apaga con `prefers-reduced-motion`). Sugerir la lumbre, no distraer.
-- **Iconografía:** trazo fino, lineal, temática de mesa/hogar. Nunca emojis como iconos.
+- **Espaciado** generoso (escala 4/8/12/16/24/32/48/64/96). El aire comunica calidad.
+- **Radios** discretos (4–8px); nada de "todo redondeado".
+- **Sombras** mínimas; la profundidad la dan el color y el contraste, no diez sombras.
+- **Tratamiento de foto:** foto real a buen tamaño, cálida, con leve saturación; en el hero
+  entra a sangre por un lado con velo lateral hacia la pizarra (no foto centrada de catálogo).
+- **Divisores:** línea de **puntos** (dashed) color tiza; nunca líneas sólidas grises.
+- **Iconografía:** mínima; el carácter lo dan la tipografía y el manuscrito, no iconitos.
 
-## Tono emocional — 5 principios que mandan
-1. **Apetito primero.** La primera pantalla huele a comida buena. La foto manda.
-2. **Cálido pero sobrio.** Elegante y tradicional; el lujo está en la calma, no en el brillo.
-3. **De pueblo, con orgullo.** Se tiene que notar que es Valdemorillo y este bar, no cualquiera.
-4. **Menos, mejor.** Minimalismo clásico: pocos elementos, muy cuidados.
-5. **Confianza tangible.** Datos reales, valoración real, foto real. Cero humo.
+## Tono emocional y principios
+1. **Cercano con carácter** — de barrio, pero cuidado. Ni frío ni cursi.
+2. **La pizarra manda** — rótulo condensado + anotación a mano en todo.
+3. **Un acento (ámbar), con avaricia** — nada de arcoíris ni degradados de IA.
+4. **Foto real como protagonista** — solo lo que es de ESTE bar; hueco marcado si falta.
+5. **Ritmo, no uniformidad** — secciones de distinto alto y peso; la carta respira distinto.
 
 ## Qué EVITAR (para este negocio)
-- El "hero de manual": título centrado + subtítulo gris + dos botones. **No.**
-- Degradados morados/azules, glass, sombras suaves en todo, tarjetas idénticas con iconito.
-- Stock genérico o ilustraciones tipo *undraw*. Aquí hay fotos reales de sus platos: úsalas.
-- Copy de humo ("eleva tu experiencia"). El copy del kit es concreto; respétalo.
-- Sobrecargar de "fuego" animado (el defecto de la referencia). Sobriedad.
+- Hero centrado + subtítulo gris + dos botones (uno relleno, uno "outline").
+- Rejilla de 3–4 tarjetas idénticas con iconito; todo centrado y del mismo alto.
+- Degradados morado/azul "de IA"; "glass" y sombras suaves por todas partes.
+- Tipografía por defecto (Inter/Arial/system) sin voz.
+- **Fotos inventadas / de stock / de "platos parecidos".** SOLO fotos reales del cliente
+  (mapa en `/assets/manifest.json`); si falta un hueco → "Foto real pendiente", nunca inventar.
+- Copy de humo ("Bienvenidos", "calidad y confianza").
+
+## Mapa de fotos reales (de `/assets/manifest.json`) → dónde van
+- `home` fondo → interior del local (hero home).
+- `/eventos-musica-en-vivo` sección → foto de música/directo.
+- `/carta` galería → huevos rotos + platos reales (croquetas, rabo de toro, tortilla,
+  hamburguesa, tarta de queso). Especialidades sin foto (secreto ibérico, solomillo-romesco)
+  → van en la pizarra SIN foto (texto), no se inventa imagen.
+- Ambiente (IMG globales) → home / respiro.

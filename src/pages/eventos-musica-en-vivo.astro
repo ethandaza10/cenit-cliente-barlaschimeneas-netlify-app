@@ -4,14 +4,15 @@ import Base from '../layouts/Base.astro';
 import Faq from '../components/Faq.astro';
 import { telLink, waLink, site } from '../data/site';
 
-import hero from '../assets/torreznos-panceta.jpg';
-import postre from '../assets/postre-fruta-braseada.jpg';
-import ensalada from '../assets/ensalada-tomate-ventresca.jpg';
+// SOLO fotos reales del cliente (mapa en /assets/manifest.json). No se inventa ninguna.
+import hero from '../assets/musica-directo.jpg';
+import ambiente1 from '../assets/ambiente-terraza.jpg';
+import ambiente2 from '../assets/ambiente-2.jpg';
 
 const faq = [
   {
     q: '¿Cuándo hay música en vivo en Bar Las Chimeneas?',
-    a: 'Tenemos directo todos los sábados y en el vermut de los domingos. La programación concreta de cada semana la confirmamos por WhatsApp o en nuestras redes.',
+    a: 'Solemos organizar conciertos, música en directo o eventos gastronómicos cada 15 días aproximadamente; según el mes, al menos una vez al mes. Pregúntanos por el próximo evento para no perdértelo.',
   },
   {
     q: '¿Se puede reservar para un grupo o una celebración?',
@@ -36,7 +37,7 @@ const faqSchema = {
 
 <Base
   title="Música en Vivo en Valdemorillo | Bar Las Chimeneas"
-  description="Agenda de música en vivo en Valdemorillo: conciertos los sábados y vermut con directo los domingos en Bar Las Chimeneas. Reserva tu mesa o consulta eventos."
+  description="Conciertos, música en vivo y eventos cada quincena en Valdemorillo. Celebra tu cumpleaños o comida de empresa en Bar Las Chimeneas. Reserva tu mesa."
   path="/eventos-musica-en-vivo"
   schema={[faqSchema]}
 >
@@ -44,12 +45,13 @@ const faqSchema = {
   <section class="hero">
     <div class="container hero__grid">
       <div data-reveal>
+        <span class="hand hero__hand">los findes, en directo</span>
         <span class="eyebrow">Eventos · Valdemorillo</span>
         <h1 class="display hero__title">
           Música en vivo en Valdemorillo: la agenda de Bar Las Chimeneas
         </h1>
         <p class="lead">
-          Directo todos los sábados y vermut con música los domingos, con la sierra de fondo.
+          Conciertos y eventos en directo aproximadamente cada quincena, con terraza y ambiente familiar.
         </p>
         <div class="btn-row">
           <a class="btn btn--lg" href={waLink}>Consultar agenda por WhatsApp</a>
@@ -59,7 +61,7 @@ const faqSchema = {
       <div class="frame hero__frame" data-reveal style="--reveal-delay:80ms">
         <Image
           src={hero}
-          alt="Raciones para compartir en la mesa de Bar Las Chimeneas, ambiente de tarde de directo."
+          alt="Música en vivo en Bar Las Chimeneas, con la terraza como escenario."
           width={640}
           height={480}
           loading="eager"
@@ -75,16 +77,17 @@ const faqSchema = {
   <section class="section">
     <div class="container two">
       <div data-reveal>
-        <span class="eyebrow">Cada semana</span>
-        <h2 class="h-xl">Qué encontrarás cada semana</h2>
+        <span class="eyebrow">Cada quincena</span>
+        <h2 class="h-xl">Un plan diferente cada quincena en el corazón de Valdemorillo</h2>
       </div>
       <div class="prose" data-reveal style="--reveal-delay:80ms">
         <p>
-          En Bar Las Chimeneas la música en vivo forma parte del plan. Tenemos directo todos los
-          sábados y en el vermut de los domingos, con la terraza y las vistas a la sierra como
-          escenario. Es el momento ideal para juntarte con los tuyos, pedir unas raciones caseras y
-          disfrutar de un buen ambiente sin salir de Valdemorillo. Estamos en el corazón de la Casa
-          de la Cultura, un punto de encuentro fácil de localizar en el pueblo.
+          En Bar Las Chimeneas la buena comida siempre viene acompañada de ambiente. Ubicados junto a
+          la Casa de la Cultura de Valdemorillo, organizamos conciertos en directo, música en vivo y
+          eventos gastronómicos aproximadamente cada 15 días (según el mes, al menos una vez al mes).
+          Es nuestra forma de entender la hostelería: que cada visita sea una experiencia y no solo
+          una consumición. Si buscas música en vivo en Valdemorillo con raciones caseras, terraza y
+          trato cercano, este es tu sitio.
         </p>
       </div>
     </div>
@@ -104,13 +107,13 @@ const faqSchema = {
             día que más te encaje.
           </p>
         </div>
-        <p class="pending">[Agenda concreta de eventos y artistas — pendiente de aportar por el cliente.]</p>
+        <p class="pending">Publicaremos aquí la programación del mes en cuanto esté cerrada. Mientras tanto, pregúntanos por el próximo evento.</p>
         <a class="btn" href={waLink}>Escríbenos y te contamos qué hay este finde</a>
       </div>
       <div class="frame split__media" data-reveal style="--reveal-delay:80ms">
         <Image
-          src={postre}
-          alt="Postre de fruta braseada servido en una sobremesa de fin de semana."
+          src={ambiente1}
+          alt="Ambiente del Bar Las Chimeneas en una sobremesa de fin de semana."
           width={560}
           height={560}
           format="webp" densities={[1, 2]}
@@ -133,8 +136,8 @@ const faqSchema = {
           </p>
         </div>
         <p class="pending">
-          [Información sobre retransmisiones deportivas — pendiente de confirmar por el cliente: qué
-          partidos se ven, en qué pantallas y si se reserva mesa para los encuentros grandes.]
+          ¿Vienes con tu grupo a ver un partido concreto? Escríbenos y te confirmamos qué tenemos
+          previsto ese día.
         </p>
       </article>
       <article class="card panel" data-reveal style="--reveal-delay:80ms">
@@ -147,8 +150,8 @@ const faqSchema = {
           </p>
         </div>
         <p class="pending">
-          [Condiciones de eventos privados, aforo y opciones de menú — pendiente de aportar por el
-          cliente.]
+          ¿Tienes una fecha en mente? Escríbenos y te preparamos una propuesta personalizada, con
+          menú a medida para tu celebración.
         </p>
       </article>
     </div>
@@ -175,8 +178,8 @@ const faqSchema = {
       </div>
       <div class="frame split__media" data-reveal style="--reveal-delay:80ms">
         <Image
-          src={ensalada}
-          alt="Mesa preparada con una ensalada de tomate y ventresca para un grupo."
+          src={ambiente2}
+          alt="Rincón del Bar Las Chimeneas preparado para recibir a un grupo."
           width={560}
           height={560}
           format="webp" densities={[1, 2]}
@@ -200,8 +203,15 @@ const faqSchema = {
     gap: clamp(var(--sp-6), 5vw, var(--sp-8));
     align-items: center;
   }
+  .hero__hand {
+    display: block;
+    font-size: clamp(1.5rem, 3.4vw, 2.3rem);
+    transform: rotate(-2deg);
+    transform-origin: left;
+    margin-bottom: var(--sp-2);
+  }
   .hero__title {
-    margin: var(--sp-4) 0 var(--sp-5);
+    margin: var(--sp-3) 0 var(--sp-5);
     max-width: 16ch;
   }
   .hero__frame {

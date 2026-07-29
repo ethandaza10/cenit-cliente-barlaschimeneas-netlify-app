@@ -1,0 +1,60 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { legal } from '../data/legal';
+---
+<Legal
+  title="Política de Privacidad | Bar Las Chimeneas Valdemorillo"
+  description="Política de privacidad de Bar Las Chimeneas (Valdemorillo): quién trata tus datos, con qué finalidad y cómo ejercer tus derechos según el RGPD."
+  path="/privacidad"
+  h1="Política de Privacidad"
+>
+  <h2>Responsable del tratamiento</h2>
+  <p>El responsable del tratamiento de los datos personales que puedas facilitar a través de esta web o de nuestros canales de contacto es:</p>
+  <ul>
+    <li>Titular: {legal.responsable}</li>
+    <li>NIF: {legal.nif}</li>
+    <li>Domicilio: {legal.domicilio}</li>
+    <li>Correo electrónico de contacto: <a href={`mailto:${legal.email}`}>{legal.email}</a></li>
+  </ul>
+  <p>Esta política explica de forma transparente cómo tratamos tus datos cuando visitas nuestra web, reservas mesa o te pones en contacto con nosotros.</p>
+
+  <h2>Qué datos recogemos y con qué finalidad</h2>
+  <p>Tratamos únicamente los datos que tú nos facilitas voluntariamente y los que se generan de forma automática al navegar por la web.</p>
+  <ul>
+    <li><strong>Datos de reserva o contacto:</strong> nombre, teléfono, correo electrónico y cualquier información que incluyas en tu mensaje. Finalidad: gestionar tu reserva de mesa, atender tus consultas y responderte.</li>
+    <li><strong>Datos de navegación:</strong> información técnica y de uso recogida mediante herramientas de análisis (utilizamos Google Analytics y Google Search Console). Finalidad: entender cómo se usa la web y mejorar nuestros contenidos y servicios.</li>
+  </ul>
+  <p>No utilizamos tus datos para finalidades distintas de las aquí indicadas sin informarte previamente.</p>
+
+  <h2>Base jurídica del tratamiento</h2>
+  <p>Tratamos tus datos amparándonos en las siguientes bases legales previstas en el RGPD:</p>
+  <ul>
+    <li>Tu consentimiento, que otorgas al enviarnos una reserva, un mensaje o al aceptar las cookies analíticas.</li>
+    <li>La ejecución de la relación con el cliente cuando solicitas una reserva o un servicio.</li>
+    <li>Nuestro interés legítimo en analizar el uso de la web para mejorarla.</li>
+  </ul>
+  <p>Puedes retirar tu consentimiento en cualquier momento sin que ello afecte a la licitud del tratamiento previo.</p>
+
+  <h2>Conservación de los datos</h2>
+  <p>Conservamos tus datos durante el tiempo estrictamente necesario para la finalidad para la que se recogieron y, posteriormente, durante los plazos legalmente exigibles. Cuando ya no sean necesarios, se eliminan de forma segura. [Plazo concreto de conservación — pendiente de definir por el cliente].</p>
+
+  <h2>Destinatarios y transferencias</h2>
+  <p>Tus datos no se ceden a terceros salvo obligación legal. Al utilizar herramientas de Google (Google Analytics y Google Search Console), determinada información de navegación puede ser tratada por Google LLC, que puede implicar transferencias internacionales de datos amparadas en las garantías previstas por dicho proveedor. Puedes consultar la política de privacidad de Google para más detalle.</p>
+
+  <h2>Tus derechos</h2>
+  <p>Como titular de los datos, la normativa de protección de datos (RGPD y LOPDGDD) te reconoce los siguientes derechos:</p>
+  <ul>
+    <li>Acceso: saber qué datos tuyos tratamos.</li>
+    <li>Rectificación: corregir datos inexactos o incompletos.</li>
+    <li>Supresión: solicitar que eliminemos tus datos.</li>
+    <li>Oposición: oponerte a determinados tratamientos.</li>
+    <li>Limitación: pedir que restrinjamos el tratamiento.</li>
+    <li>Portabilidad: recibir tus datos en un formato estructurado.</li>
+  </ul>
+  <p>Para ejercer cualquiera de estos derechos, escríbenos a <a href={`mailto:${legal.email}`}>{legal.email}</a> indicando tu solicitud. Si consideras que no hemos atendido correctamente tu petición, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>).</p>
+
+  <h2>Seguridad de tus datos</h2>
+  <p>Aplicamos medidas técnicas y organizativas razonables para proteger tus datos personales frente a accesos no autorizados, pérdida o uso indebido. Tratamos tu información con la misma cercanía y cuidado con el que atendemos a cada cliente que entra por nuestra puerta.</p>
+
+  <p class="note">Documento orientativo — debe revisarlo un asesor legal antes de publicar.</p>
+</Legal>

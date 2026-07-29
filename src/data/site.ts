@@ -12,30 +12,34 @@
  *   3. El cartel real del menú del día del propio bar (foto): "Calle la paz, Valdemorillo
  *      (Casa de Cultura) — Tel: 639 98 47 27".
  *
- * Por tanto teléfono = 639 98 47 27 y dirección = Casa de Cultura, C. la Paz, Valdemorillo.
- * PENDIENTE de que el cliente confirme el número exacto de la calle (s/n o 53) y el
- * día de cierre semanal. No se inventa nada.
+ * Por tanto teléfono = 639 98 47 27 y dirección = Calle La Paz 51, Casa de la Cultura,
+ * Valdemorillo (número 51 confirmado por el cliente en client_facts de /contacto).
+ * Horario y nº de reseñas actualizados a los datos confirmados del kit (client_facts + local_business).
+ * No se inventa nada.
  */
 
 export const site = {
   name: 'Bar Las Chimeneas',
   legalName: 'Bar, Restaurante Las Chimeneas',
+  owner: 'Danny Barrios',
+  relaunchYear: '2025',
   city: 'Valdemorillo',
   region: 'Madrid',
   country: 'ES',
   postalCode: '28210',
-  // Número exacto (s/n vs 53) pendiente de confirmar por el cliente.
-  street: 'Casa de Cultura, C. la Paz',
-  addressFull: 'Casa de Cultura, C. la Paz, 28210 Valdemorillo, Madrid',
+  street: 'Calle La Paz 51, Casa de la Cultura',
+  streetSchema: 'Calle La Paz 51',
+  addressFull: 'Calle La Paz 51, Casa de la Cultura, 28210 Valdemorillo, Madrid',
   phoneDisplay: '639 98 47 27',
   phoneTel: '+34639984727',
   whatsapp: '34639984727',
-  hoursDisplay: 'Todos los días, 08:00 – 23:00',
-  hoursSchema: 'Mo-Su 08:00-23:00',
+  // Horario real confirmado por el cliente (client_facts): domingo cerrado.
+  hoursDisplay: 'Lun–Vie 9:00–23:00 · Sáb 13:00–17:00 y 19:00–23:00 · Dom cerrado',
+  hoursSchema: ['Mo-Fr 09:00-23:00', 'Sa 13:00-17:00', 'Sa 19:00-23:00'],
   rating: 4.8,
-  reviews: 82,
+  reviews: 83,
   founded: '2018',
-  cuisine: 'Tapas y raciones madrileñas',
+  cuisine: 'Cocina casera, menú del día y tapas',
   mapsUri:
     'https://maps.google.com/?cid=5165903861513153668',
   mapsEmbed:

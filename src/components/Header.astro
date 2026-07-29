@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import logo from '../assets/logo-las-chimeneas.png';
+import logo from '../assets/logo-chimeneas.jpeg';
 import { nav, telLink, site, link } from '../data/site';
 
 // Normaliza la ruta actual quitando la `base` para poder comparar con las
@@ -55,9 +55,7 @@ const isActive = (href: string) =>
           ))
         }
       </ul>
-      <a class="btn nav__cta" href={telLink}>
-        <span aria-hidden="true">☎</span> Reservar
-      </a>
+      <a class="btn nav__cta" href={telLink}>Reservar mesa</a>
     </nav>
   </div>
 </header>
@@ -103,16 +101,17 @@ const isActive = (href: string) =>
   }
   .brand__name {
     font-family: var(--font-display);
-    font-size: 1.28rem;
-    font-weight: 600;
-    letter-spacing: 0.01em;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     color: var(--cream);
   }
   .brand__place {
-    font-size: 0.68rem;
-    letter-spacing: 0.22em;
+    font-size: 0.66rem;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--amber);
   }
 
   .nav {
@@ -129,8 +128,11 @@ const isActive = (href: string) =>
   }
   .nav__link {
     position: relative;
-    font-weight: 700;
-    font-size: 0.98rem;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.16rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--cream-dim);
     padding-block: 4px;
     transition: color 0.18s ease;
@@ -142,7 +144,7 @@ const isActive = (href: string) =>
     bottom: -2px;
     width: 100%;
     height: 2px;
-    background: var(--gold);
+    background: var(--amber);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.22s ease;

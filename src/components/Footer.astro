@@ -1,5 +1,6 @@
 ---
 import { site, nav, telLink, waLink, link } from '../data/site';
+import { legalNav } from '../data/legal';
 const year = 2026;
 ---
 
@@ -8,8 +9,7 @@ const year = 2026;
     <div class="foot__brand">
       <p class="foot__name">Bar Las Chimeneas</p>
       <p class="foot__tag">
-        Raciones caseras, terraza con vistas a la sierra y música en vivo en el corazón de
-        Valdemorillo.
+        Cocina casera, menú del día, terraza y música en vivo en el corazón de Valdemorillo.
       </p>
       <p class="foot__rating">
         <span class="stars" aria-hidden="true">★★★★★</span>
@@ -40,9 +40,9 @@ const year = 2026;
 
   <div class="container foot__legal">
     <p>© {year} Bar Las Chimeneas · Valdemorillo, Madrid</p>
-    <p class="foot__note">
-      Nº exacto de la calle y día de cierre semanal, pendientes de confirmar por el negocio.
-    </p>
+    <nav class="foot__legal-nav" aria-label="Legal">
+      {legalNav.map((i) => <a href={link(i.href)}>{i.label}</a>)}
+    </nav>
   </div>
 </footer>
 
@@ -120,8 +120,17 @@ const year = 2026;
     font-size: 0.78rem;
     color: var(--cream-faint);
   }
-  .foot__note {
-    font-style: italic;
+  .foot__legal-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-4);
+  }
+  .foot__legal-nav a {
+    color: var(--cream-dim);
+    transition: color 0.18s ease;
+  }
+  .foot__legal-nav a:hover {
+    color: var(--amber-bright);
   }
   @media (max-width: 780px) {
     .foot {

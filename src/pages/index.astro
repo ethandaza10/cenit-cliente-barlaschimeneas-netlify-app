@@ -4,46 +4,52 @@ import Base from '../layouts/Base.astro';
 import Faq from '../components/Faq.astro';
 import { site, telLink, waLink, link } from '../data/site';
 
-import hero from '../assets/plato-solomillo-romesco.jpg';
-import torreznos from '../assets/torreznos-panceta.jpg';
-import cremaTomate from '../assets/crema-tomate-flor.jpg';
-import cremaVerde from '../assets/crema-verde-guisantes.jpg';
-import ensalada from '../assets/ensalada-tomate-ventresca.jpg';
-import carrilleras from '../assets/carrilleras-pure.jpg';
-import postre from '../assets/postre-fruta-braseada.jpg';
-import tarta from '../assets/tarta-queso-mermelada.jpg';
+import hero from '../assets/local-interior.jpg';
+import musica from '../assets/musica-directo.jpg';
+import croquetas from '../assets/croquetas.png';
+import huevosRotos from '../assets/huevos-rotos.png';
+import raboDeToro from '../assets/rabo-de-toro.jpg';
+import tortilla from '../assets/tortilla.png';
+import hamburguesa from '../assets/hamburguesa.png';
+import tarta from '../assets/tarta-queso.jpg';
 
+// SOLO fotos reales del cliente (mapa en /assets/manifest.json). No se inventa ninguna.
 const carousel = [
-  { img: torreznos, label: 'Torreznos caseros', alt: 'Torreznos crujientes con rúcula y patatas caseras en plato de pizarra.' },
-  { img: cremaTomate, label: 'Crema de tomate', alt: 'Crema de tomate templada decorada con una flor comestible y aceite de oliva.' },
-  { img: carrilleras, label: 'Carrilleras en salsa', alt: 'Carrilleras guisadas en salsa sobre un puré cremoso de patata.' },
-  { img: ensalada, label: 'Ensalada de ventresca', alt: 'Ensalada de tomate con ventresca y cebolla morada, rematada con flores.' },
-  { img: cremaVerde, label: 'Crema de guisantes', alt: 'Crema verde de guisantes con un toque de crujiente por encima.' },
-  { img: postre, label: 'Fruta braseada', alt: 'Postre de fruta braseada con crema y frutos secos.' },
-  { img: tarta, label: 'Tarta de queso', alt: 'Porción de tarta de queso con mermelada y menta fresca.' },
+  { img: croquetas, label: 'Croquetas caseras', alt: 'Ración de croquetas caseras de Bar Las Chimeneas.' },
+  { img: huevosRotos, label: 'Huevos rotos', alt: 'Plato de huevos rotos de Bar Las Chimeneas, para compartir.' },
+  { img: raboDeToro, label: 'Rabo de toro al vino tinto', alt: 'Rabo de toro guisado en salsa de vino tinto.' },
+  { img: tortilla, label: 'Tortilla de la casa', alt: 'Tortilla de patata casera de Bar Las Chimeneas.' },
+  { img: hamburguesa, label: 'Hamburguesa gourmet', alt: 'Hamburguesa gourmet de la carta de Bar Las Chimeneas.' },
+  { img: tarta, label: 'Tarta de queso casera', alt: 'Porción de tarta de queso casera con mermelada de arándanos.' },
 ];
 
 const faq = [
   {
     q: '¿Dónde está Bar Las Chimeneas en Valdemorillo?',
-    a: 'Estamos en la Casa de la Cultura de Valdemorillo (Madrid). Puedes escribirnos por WhatsApp para indicarte cómo llegar y reservar mesa.',
+    a: 'Estamos en la Casa de la Cultura de Valdemorillo (Madrid), un espacio céntrico y de fácil acceso. Contamos con terraza y un ambiente familiar y acogedor.',
   },
   {
-    q: '¿Tenéis terraza?',
-    a: 'Sí. Contamos con una terraza exterior con vistas a la sierra, una de las más especiales del pueblo. En fines de semana las plazas son limitadas, por lo que conviene reservar.',
+    q: '¿Qué horario tiene el bar?',
+    a: 'Abrimos de lunes a viernes de 9:00 a 23:00 y los sábados de 13:00 a 17:00 y de 19:00 a 23:00. Los domingos permanecemos cerrados.',
   },
   {
-    q: '¿Hay música en vivo?',
-    a: 'Sí, ofrecemos música en directo los sábados y los domingos de vermut. Es uno de nuestros planes más populares.',
+    q: '¿Ofrecen menú del día?',
+    a: 'Sí. El menú del día es nuestra especialidad y se elabora cada día con recetas diferentes, cocina casera con un toque premium preparada al momento por nuestro chef.',
   },
   {
-    q: '¿Qué tipo de comida servís?',
-    a: 'Raciones caseras y tapas madrileñas con toques creativos, pensadas para compartir, además de cócteles artesanales y una bodega seleccionada. [Carta y especialidades concretas pendientes de confirmar].',
+    q: '¿Se puede reservar mesa?',
+    a: 'Sí, recomendamos reservar, sobre todo para la terraza y los días con menú o evento en directo. Contáctanos para confirmar tu mesa.',
   },
   {
-    q: '¿Cómo reservo mesa?',
-    a: 'Puedes reservar mesa fácilmente por WhatsApp. Te recomendamos hacerlo con antelación si vienes en grupo o en fin de semana, ya que la terraza tiene plazas limitadas.',
+    q: '¿Es un sitio para ir en familia o en grupo?',
+    a: 'Totalmente. Es un local familiar y acogedor, ideal para familias, parejas, trabajadores y grupos de amigos que buscan buena comida, buen ambiente y una excelente relación calidad-precio.',
   },
+];
+
+// Reseñas reales de clientes recogidas en el copy del kit.
+const reviews = [
+  { t: 'Dani cocina de lujo, cada día un menú diferente que sorprende. Todo buenísimo y el servicio excelente.', a: 'Reseña de cliente en Google' },
+  { t: 'La comida exquisita y el trato del personal es espectacular. Volveremos.', a: 'Reseña de cliente en Google' },
 ];
 
 const faqSchema = {
@@ -57,16 +63,16 @@ const faqSchema = {
 };
 
 const proofs = [
-  { k: '4,8 ★', v: `Valoración en Google (${site.reviews} reseñas) por el trato personalizado que nos define.` },
-  { k: 'Terraza', v: 'Exterior con vistas a la sierra, una de las más especiales del municipio.' },
-  { k: 'En directo', v: 'Música en vivo los sábados y en el vermut de los domingos.' },
-  { k: 'Desde 2018', v: 'Punto de reunión del pueblo; cercanía y ambiente auténtico.' },
+  { k: '4,8 ★', v: `Valoración en Google (${site.reviews} reseñas) por la cocina y el trato cercano.` },
+  { k: '13,90 €', v: 'Menú del día casero, con recetas diferentes elaboradas al momento cada jornada.' },
+  { k: 'Desde 2025', v: 'Danny Barrios cambió el concepto: en un año, uno de los bares de referencia del pueblo.' },
+  { k: 'En directo', v: 'Conciertos y eventos cada quincena; terraza y ambiente familiar.' },
 ];
 ---
 
 <Base
-  title="Bar en Valdemorillo | Bar Las Chimeneas"
-  description="Bar Las Chimeneas, tu bar en Valdemorillo: raciones caseras, cócteles artesanales, música en vivo y la terraza con vistas a la sierra. Reserva mesa hoy."
+  title="Bar en Valdemorillo | Las Chimeneas · Cocina y Terraza"
+  description="Bar en Valdemorillo con menú del día casero, tapas, terraza y música en vivo. Ambiente familiar en la Casa de Cultura. Reserva tu mesa en Las Chimeneas."
   path="/"
   schema={[faqSchema]}
 >
@@ -74,17 +80,18 @@ const proofs = [
   <section class="hero">
     <div class="container hero__grid">
       <div class="hero__copy">
-        <span class="eyebrow">Bar · Valdemorillo · desde 2018</span>
+        <span class="hand hero__hand">aquí te sentirás como en casa</span>
+        <span class="eyebrow">Bar · Menú del día · Música en vivo</span>
         <h1 class="display hero__title">
-          Bar Las Chimeneas: tu bar en Valdemorillo con terraza y música en vivo
+          Bar Las Chimeneas: cocina casera, terraza y música en el corazón de Valdemorillo
         </h1>
         <p class="lead">
-          Raciones caseras, cócteles artesanales y música en directo, en el corazón del pueblo.
-          Un sitio donde te conocemos por tu nombre.
+          Menú del día casero que cambia cada jornada, tapas para compartir y eventos en directo.
+          Un local familiar donde te atendemos por tu nombre.
         </p>
         <div class="btn-row hero__cta">
-          <a class="btn" href={telLink}><span aria-hidden="true">☎</span> Reservar mesa</a>
-          <a class="btn btn--ghost" href={link('/carta')}>Ver la carta</a>
+          <a class="btn" href={waLink}>Reservar por WhatsApp</a>
+          <a class="btn btn--ghost" href={link('/carta')}>Ver el menú del día</a>
         </div>
       </div>
 
@@ -92,7 +99,7 @@ const proofs = [
         <div class="frame hero__frame">
           <Image
             src={hero}
-            alt="Solomillo laqueado sobre crema de romesco, emplatado en Bar Las Chimeneas."
+            alt="Interior del Bar Las Chimeneas: barra de ladrillo y ambiente familiar en Valdemorillo."
             width={720}
             height={480}
             loading="eager"
@@ -107,53 +114,69 @@ const proofs = [
 
     <div class="container">
       <ul class="trust">
-        <li><strong>4,8 ★</strong> Google</li>
-        <li>Desde 2018</li>
-        <li>Terraza con vistas</li>
-        <li>Música en vivo</li>
+        <li><strong>4,8 ★</strong> Google · {site.reviews} reseñas</li>
+        <li>Menú del día 13,90 €</li>
+        <li>Ambiente familiar y terraza</li>
+        <li>Eventos en directo</li>
       </ul>
     </div>
   </section>
 
-  <!-- INTRO -->
+  <!-- INTRO: Danny 2025 -->
   <section class="section">
     <div class="container two" >
       <div data-reveal>
-        <span class="eyebrow">El bar del pueblo</span>
-        <h2 class="h-xl">El bar de Valdemorillo donde el tiempo se detiene</h2>
+        <span class="eyebrow">Desde 2025, nuevo concepto</span>
+        <h2 class="h-xl">Un bar en Valdemorillo pensado para que te quedes</h2>
       </div>
       <div class="prose" data-reveal style="--reveal-delay:80ms">
         <p>
-          Si buscas un bar en Valdemorillo para tapear, tomar un vermut o quedar con los tuyos,
-          Bar Las Chimeneas es un punto de encuentro en el corazón del pueblo. Estamos ubicados en
-          la Casa de la Cultura de Valdemorillo (Madrid) y abrimos desde 2018 con una idea sencilla:
-          raciones caseras, buen ambiente y un trato cercano en el que te conocemos por tu nombre.
-          Aquí no vienes solo a consumir; vienes a pasar un buen rato.
+          Bar Las Chimeneas es mucho más que un sitio donde tomar algo: es un lugar acogedor en pleno
+          corazón de Valdemorillo, dentro de la Casa de Cultura, donde vienes a comer bien y te quedas
+          por el ambiente. Desde 2025, Danny Barrios ha cogido las riendas del local y ha cambiado por
+          completo el concepto, apostando por una cocina casera con un toque creativo elaborada al
+          momento con ingredientes de calidad. En solo un año, ese trabajo ha convertido a Las
+          Chimeneas en uno de los bares de referencia del pueblo.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- QUÉ OFRECEMOS + CARRUSEL -->
+  <!-- MENÚ DEL DÍA (protagonista) + CARRUSEL DE TAPAS REALES -->
   <section class="section paper">
     <div class="container">
-      <div class="two two--head" data-reveal>
-        <div>
+      <div class="menudia" data-reveal>
+        <aside class="pizarra" aria-label="Menú del día">
+          <span class="pizarra__hand">nuestra seña de identidad</span>
+          <h2 class="pizarra__title">Menú del día</h2>
+          <p class="pizarra__price">13,90 €</p>
+          <ul class="pizarra__list">
+            <li>Primer plato</li>
+            <li>Segundo plato</li>
+            <li>Bebida</li>
+            <li>Postre</li>
+          </ul>
+          <p class="pizarra__foot">Recetas diferentes cada jornada, elaboradas al momento.</p>
+        </aside>
+        <div class="menudia__copy">
           <span class="eyebrow">La mesa</span>
-          <h2 class="h-xl">Raciones, tapas, cócteles y bodega</h2>
+          <h2 class="h-lg">Menú del día, tapas y platos para compartir</h2>
+          <div class="prose">
+            <p>
+              Nuestra seña de identidad es el menú del día, elaborado cada jornada con recetas
+              diferentes salidas de la creatividad de nuestro chef: comida de calidad con un toque
+              premium, porque todos merecen comer al mejor nivel. Y si prefieres picar y compartir,
+              nuestras tapas y raciones caseras son famosas en el municipio: croquetas caseras,
+              secreto ibérico, solomillo con romesco de avellanas, hamburguesas gourmet y postres
+              caseros que no querrás dejar en el plato.
+            </p>
+          </div>
+          <a class="link-gold" href={link('/carta')}>Ver la carta y el menú del día →</a>
         </div>
-        <p class="prose">
-          Nuestra propuesta combina la tradición de las tapas madrileñas con toques creativos
-          pensados para compartir. En la carta encontrarás raciones caseras, entrantes para picar en
-          mesa y una barra con cócteles artesanales y una bodega seleccionada. Tanto si te apetece un
-          aperitivo rápido como una comida sin prisas con amigos o familia, hay opciones para cada
-          momento del día.
-        </p>
       </div>
-      <p class="pending">[Platos y tapas estrella — pendiente de confirmar con el cliente].</p>
     </div>
 
-    <div class="carousel" role="region" aria-label="Algunos de nuestros platos">
+    <div class="carousel" role="region" aria-label="Algunas de nuestras tapas y platos">
       <ul class="carousel__track">
         {
           carousel.map((c, i) => (
@@ -174,24 +197,27 @@ const proofs = [
     <div class="container split">
       <div class="frame split__media" data-reveal>
         <Image
-          src={carrilleras}
-          alt="Plato de carrilleras en salsa sobre puré, listo para compartir en la terraza."
+          src={musica}
+          alt="Música en vivo en el Bar Las Chimeneas, con la terraza como escenario."
           width={620}
           height={620}
           format="webp" densities={[1, 2]}
           quality={82}
           loading="lazy"
         />
+        <span class="frame__cap">en directo, cada quincena</span>
       </div>
       <div class="split__copy" data-reveal style="--reveal-delay:80ms">
-        <span class="eyebrow">Terraza · directo · ambiente</span>
-        <h2 class="h-lg">Terraza, música en vivo y ambiente</h2>
+        <span class="eyebrow">Terraza · familia · directo</span>
+        <h2 class="h-lg">Ambiente familiar, terraza y eventos en directo</h2>
         <div class="prose">
           <p>
-            Uno de nuestros sellos es la terraza exterior con vistas a la sierra, una de las más
-            especiales del municipio. Los sábados y los domingos de vermut tenemos música en vivo,
-            así que es un plan perfecto para grupos, parejas y familias que buscan algo más que una
-            simple consumición. El ambiente es relajado y cercano: un sitio donde apetece quedarse.
+            Las Chimeneas es un local acogedor con terraza y un ambiente familiar, ideal para venir
+            con la familia, en pareja o con un grupo de amigos. Aquí caben los vecinos que buscan su
+            menú del día, los que quieren tomar unas tapas tranquilos y los que se acercan a
+            disfrutar de nuestros conciertos y eventos en directo, parte habitual de nuestra
+            programación. Cuidamos cada detalle del servicio para que cada visita sea una experiencia
+            completa, no solo una comida.
           </p>
         </div>
         <a class="link-gold" href={link('/eventos-musica-en-vivo')}>Ver la agenda de eventos →</a>
@@ -204,13 +230,12 @@ const proofs = [
     <div class="container">
       <div class="why__head" data-reveal>
         <span class="eyebrow">Por qué nosotros</span>
-        <h2 class="h-xl">Por qué elegir Bar Las Chimeneas frente a otros bares del pueblo</h2>
+        <h2 class="h-xl">Por qué elegir Las Chimeneas frente a otros bares del pueblo</h2>
         <p class="prose">
-          Llevamos desde 2018 siendo un punto de reunión en Valdemorillo, con una valoración de 4,8
-          en Google que refleja el trato personalizado que nos define. Terraza con vistas, música en
-          directo los fines de semana, cócteles artesanales y raciones caseras: la combinación que
-          hace que muchos vecinos nos consideren su bar de referencia. Aquí prima la cercanía y el
-          ambiente auténtico.
+          Lo que nos diferencia es una cocina casera que cambia constantemente, con menús del día
+          creativos y platos elaborados al momento. Organizamos música y eventos en directo, cuidamos
+          el trato —aquí te atienden con nombre y sonrisa— y buscamos que salgas con ganas de volver.
+          Detrás está Danny Barrios y un equipo comprometido con la calidad y la atención al cliente.
         </p>
       </div>
       <ul class="why">
@@ -219,6 +244,17 @@ const proofs = [
             <li class="why__row" data-reveal style={`--reveal-delay:${i * 60}ms`}>
               <span class="why__k">{p.k}</span>
               <span class="why__v">{p.v}</span>
+            </li>
+          ))
+        }
+      </ul>
+
+      <ul class="quotes" aria-label="Lo que dicen nuestros clientes">
+        {
+          reviews.map((r, i) => (
+            <li class="quote" data-reveal style={`--reveal-delay:${i * 80}ms`}>
+              <p class="quote__t">“{r.t}”</p>
+              <p class="quote__a">{r.a}</p>
             </li>
           ))
         }
@@ -277,9 +313,16 @@ const proofs = [
     gap: clamp(var(--sp-6), 5vw, var(--sp-8));
     align-items: center;
   }
+  .hero__hand {
+    display: block;
+    font-size: clamp(1.6rem, 3.6vw, 2.5rem);
+    transform: rotate(-2deg);
+    transform-origin: left;
+    margin-bottom: var(--sp-3);
+  }
   .hero__title {
-    margin-block: var(--sp-4) var(--sp-5);
-    max-width: 14ch;
+    margin-block: var(--sp-3) var(--sp-5);
+    max-width: 16ch;
   }
   /* CTA del hero: los dos botones, juntos y en una fila */
   .hero__cta {
@@ -383,6 +426,62 @@ const proofs = [
   .split__copy .link-gold {
     display: inline-block;
     margin-top: var(--sp-5);
+  }
+
+  /* Menú del día (pizarra + copy) */
+  .menudia {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: clamp(var(--sp-6), 5vw, var(--sp-8));
+    align-items: center;
+  }
+  .menudia__copy h2 {
+    margin: var(--sp-3) 0 var(--sp-4);
+  }
+  .menudia__copy .link-gold {
+    display: inline-block;
+    margin-top: var(--sp-5);
+  }
+  @media (max-width: 780px) {
+    .menudia {
+      grid-template-columns: 1fr;
+    }
+    .menudia .pizarra {
+      margin-inline: auto;
+    }
+  }
+
+  /* Reseñas reales */
+  .quotes {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--sp-7);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-4);
+  }
+  .quote {
+    padding: var(--sp-5) var(--sp-6);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--amber);
+    border-radius: var(--radius-m);
+  }
+  .quote__t {
+    font-family: var(--font-hand);
+    font-size: 1.7rem;
+    line-height: 1.3;
+    color: var(--cream);
+  }
+  .quote__a {
+    margin-top: var(--sp-3);
+    font-size: var(--step--1);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+  @media (max-width: 720px) {
+    .quotes { grid-template-columns: 1fr; }
   }
 
   /* Carrusel */

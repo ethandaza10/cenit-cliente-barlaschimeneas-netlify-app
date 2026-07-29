@@ -1,0 +1,56 @@
+---
+import Base from './Base.astro';
+import { link } from '../data/site';
+interface Props { title: string; description: string; path: string; h1: string; }
+const { title, description, path, h1 } = Astro.props;
+---
+<Base title={title} description={description} path={path}>
+  <article class="legal">
+    <div class="container legal__wrap">
+      <header class="legal__head">
+        <a class="legal__back" href={link('/')}>← Volver al inicio</a>
+        <h1 class="h-xl">{h1}</h1>
+      </header>
+      <div class="legal__body">
+        <slot />
+      </div>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .legal { padding-block: clamp(var(--sp-7), 6vw, var(--sp-9)); }
+  .legal__wrap { max-width: 760px; }
+  .legal__back {
+    display: inline-block;
+    font-family: var(--font-display);
+    letter-spacing: 0.08em;
+    color: var(--amber);
+    margin-bottom: var(--sp-4);
+  }
+  .legal__back:hover { color: var(--amber-bright); }
+  .legal__head { margin-bottom: var(--sp-6); }
+  .legal__body :global(h2) {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: var(--step-2);
+    color: var(--cream);
+    margin-top: var(--sp-7);
+    margin-bottom: var(--sp-3);
+  }
+  .legal__body :global(h2:first-child) { margin-top: 0; }
+  .legal__body :global(p) { color: var(--cream-dim); margin-bottom: var(--sp-3); max-width: 68ch; }
+  .legal__body :global(ul) { color: var(--cream-dim); margin: 0 0 var(--sp-4) var(--sp-5); display: grid; gap: var(--sp-2); }
+  .legal__body :global(a) { color: var(--amber-bright); text-decoration: underline; text-underline-offset: 3px; }
+  .legal__body :global(strong) { color: var(--cream); }
+  .legal__body :global(.note) {
+    margin-top: var(--sp-6);
+    padding: var(--sp-4);
+    border-left: 3px solid var(--amber);
+    background: rgba(224, 165, 54, 0.08);
+    font-style: italic;
+    font-size: var(--step--1);
+    color: var(--cream-dim);
+  }
+</style>

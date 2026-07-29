@@ -1,0 +1,146 @@
+---
+// Banner de consentimiento (RGPD/LSSI). Las cookies analíticas (Google Analytics 4)
+// NO se cargan hasta que el usuario ACEPTA. Recuerda la elección en localStorage y
+// permite cambiarla. Enlaza a la Política de Cookies.
+import { analytics } from '../data/legal';
+import { link } from '../data/site';
+const GA4 = analytics.ga4;
+---
+
+<div class="cc" data-cookie-banner hidden>
+  <div class="cc__inner">
+    <p class="cc__text">
+      Usamos cookies técnicas necesarias y, solo si lo aceptas, cookies de análisis (Google
+      Analytics) para mejorar la web. Puedes aceptarlas, rechazarlas o configurarlas.
+      <a href={link('/cookies')}>Más información</a>.
+    </p>
+    <div class="cc__actions">
+      <a class="btn btn--ghost cc__cfg" href={link('/cookies')}>Configurar</a>
+      <button class="btn btn--ghost" type="button" data-cookie-reject>Rechazar</button>
+      <button class="btn" type="button" data-cookie-accept>Aceptar</button>
+    </div>
+  </div>
+</div>
+
+<button class="cc-reopen" type="button" data-cookie-reopen hidden aria-label="Configurar cookies">
+  Cookies
+</button>
+
+<script is:inline define:vars={{ GA4 }}>
+  (function () {
+    var KEY = 'cc-consent-v1';
+    var banner = document.querySelector('[data-cookie-banner]');
+    var reopen = document.querySelector('[data-cookie-reopen]');
+
+    // Consent Mode v2: por defecto DENEGADO hasta que el usuario decida.
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+    });
+
+    var gaLoaded = false;
+    function loadGA() {
+      if (gaLoaded || !GA4) return;
+      gaLoaded = true;
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4;
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', GA4, { anonymize_ip: true });
+    }
+
+    function show() { if (banner) banner.hidden = false; if (reopen) reopen.hidden = true; }
+    function hide() { if (banner) banner.hidden = true; if (reopen) reopen.hidden = false; }
+
+    function apply(consent) {
+      if (consent === 'granted') loadGA();
+      hide();
+    }
+
+    var saved = null;
+    try { saved = localStorage.getItem(KEY); } catch (e) {}
+    if (saved === 'granted') { apply('granted'); }
+    else if (saved === 'denied') { hide(); }
+    else { show(); }
+
+    function decide(value) {
+      try { localStorage.setItem(KEY, value); } catch (e) {}
+      apply(value);
+    }
+
+    var a = document.querySelector('[data-cookie-accept]');
+    var r = document.querySelector('[data-cookie-reject]');
+    if (a) a.addEventListener('click', function () { decide('granted'); });
+    if (r) r.addEventListener('click', function () { decide('denied'); });
+    if (reopen) reopen.addEventListener('click', show);
+  })();
+</script>
+
+<style>
+  .cc {
+    position: fixed;
+    left: var(--sp-4);
+    right: var(--sp-4);
+    bottom: var(--sp-4);
+    z-index: 300;
+    max-width: 720px;
+    margin-inline: auto;
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow);
+    padding: var(--sp-5);
+  }
+  .cc__inner {
+    display: grid;
+    gap: var(--sp-4);
+  }
+  .cc__text {
+    color: var(--cream-dim);
+    font-size: var(--step--1);
+    line-height: 1.55;
+  }
+  .cc__text a {
+    color: var(--amber-bright);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .cc__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+    justify-content: flex-end;
+  }
+  .cc__actions .btn {
+    font-size: 1rem;
+    padding: 0.6em 1.2em;
+  }
+  .cc-reopen {
+    position: fixed;
+    left: var(--sp-4);
+    bottom: var(--sp-4);
+    z-index: 250;
+    background: var(--surface);
+    color: var(--cream-dim);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 0.5em 1em;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+  }
+  .cc-reopen:hover { opacity: 1; }
+  @media (min-width: 640px) {
+    .cc__inner { grid-template-columns: 1fr auto; align-items: center; }
+  }
+</style>

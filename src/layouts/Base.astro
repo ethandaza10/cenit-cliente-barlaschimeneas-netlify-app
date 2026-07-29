@@ -1,9 +1,11 @@
 ---
-import '@fontsource-variable/fraunces';
-import '@fontsource-variable/mulish';
+import '@fontsource/bebas-neue';
+import '@fontsource-variable/caveat';
+import '@fontsource-variable/libre-franklin';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 import { site, link } from '../data/site';
 
 interface Props {
@@ -43,7 +45,7 @@ const business = {
   image: new URL(link('/favicon.png'), siteBase).href,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: site.street,
+    streetAddress: site.streetSchema,
     postalCode: site.postalCode,
     addressLocality: site.city,
     addressRegion: site.region,
@@ -64,13 +66,14 @@ const jsonLd = [business, ...schema];
 <!doctype html>
 <html lang="es">
   <head>
+    <script is:inline>document.documentElement.classList.add('js');</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <meta name="robots" content={robotsContent} />
-    <meta name="theme-color" content="#17110b" />
+    <meta name="theme-color" content="#20241a" />
     <link rel="icon" type="image/png" href={link('/favicon.png')} />
 
     <!-- Open Graph -->
@@ -96,6 +99,7 @@ const jsonLd = [business, ...schema];
       <slot />
     </main>
     <Footer />
+    <CookieBanner />
 
     <script>
       // Motion con criterio: aparición al hacer scroll. Sólo transform/opacity.

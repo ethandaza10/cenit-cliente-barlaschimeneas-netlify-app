@@ -8,20 +8,24 @@ import { site, telLink, waLink } from '../data/site';
 // tres fuentes. Se sustituyen por los reales; el resto del copy se respeta.
 const faq = [
   {
-    q: '¿Cuál es el teléfono del Bar Las Chimeneas en Valdemorillo?',
-    a: `Puedes llamarnos o escribirnos por WhatsApp al ${site.phoneDisplay}. Es la vía más rápida para reservar o resolver cualquier duda.`,
+    q: '¿Cuál es la dirección de Bar Las Chimeneas en Valdemorillo?',
+    a: `Estamos en la ${site.addressFull}, un punto céntrico y muy conocido del municipio.`,
   },
   {
-    q: '¿Dónde está exactamente el bar?',
-    a: `En la ${site.addressFull}, en pleno centro del pueblo y en el corazón de la Casa de la Cultura.`,
-  },
-  {
-    q: '¿Cómo reservo mesa?',
-    a: `Llamándonos o enviándonos un WhatsApp al ${site.phoneDisplay} con el día, la hora y el número de personas. Si quieres terraza, indícalo al reservar porque las plazas son limitadas.`,
+    q: '¿Cuál es el teléfono para reservar?',
+    a: `Puedes llamarnos o escribirnos por WhatsApp al ${site.phoneDisplay}. Te atenderemos para reservar mesa o resolver cualquier duda.`,
   },
   {
     q: '¿Qué horario tenéis?',
-    a: 'Abrimos de 08:00 a 23:00. Los sábados hay música en vivo y los domingos, vermut dominical.',
+    a: 'Abrimos de lunes a viernes de 9:00 a 23:00 y los sábados de 13:00 a 17:00 y de 19:00 a 23:00. Los domingos permanecemos cerrados.',
+  },
+  {
+    q: '¿Hay aparcamiento cerca?',
+    a: 'Sí. Muy cerca del establecimiento hay aparcamiento público y el acceso es sencillo, tanto si vienes en coche como andando desde el centro.',
+  },
+  {
+    q: '¿Cómo reservo mesa en la terraza?',
+    a: `Llámanos o mándanos un WhatsApp al ${site.phoneDisplay} indicando día, hora y número de personas. En terraza las plazas son limitadas, así que mejor reservar con antelación, sobre todo los fines de semana.`,
   },
 ];
 
@@ -44,6 +48,7 @@ const faqSchema = {
 >
   <section class="section--tight page-head">
     <div class="container">
+      <span class="hand" data-reveal style="display:block;font-size:clamp(1.5rem,3.4vw,2.3rem);transform:rotate(-2deg);transform-origin:left;margin-bottom:var(--sp-2)">te guardamos sitio</span>
       <span class="eyebrow" data-reveal>Contacto y reservas</span>
       <h1 class="display" data-reveal>Contacto y reservas — Bar Las Chimeneas Valdemorillo</h1>
       <p class="lead" data-reveal style="--reveal-delay:80ms">
@@ -104,33 +109,32 @@ const faqSchema = {
           <p>
             Reservar es sencillo. Llámanos o mándanos un WhatsApp al {site.phoneDisplay} indicándonos
             el día, la hora y cuántos vais a ser. Si os apetece la terraza, avísanos al reservar: las
-            plazas al aire libre son limitadas, sobre todo los sábados con música en vivo y los
-            domingos de vermut. Te confirmamos la mesa en el momento.
+            plazas al aire libre son limitadas, sobre todo los fines de semana y los días con menú o
+            evento en directo. Te confirmamos la mesa en el momento.
           </p>
         </div>
       </article>
 
       <article data-reveal style="--reveal-delay:60ms">
-        <h2 class="h-lg">Cómo llegar</h2>
+        <h2 class="h-lg">Cómo llegar y aparcamiento</h2>
         <div class="prose">
           <p>
-            El Bar Las Chimeneas está en la Casa de la Cultura de Valdemorillo, en pleno centro del
-            pueblo. Es una zona fácil de encontrar a pie desde el núcleo urbano.
+            El Bar Las Chimeneas está dentro de la Casa de la Cultura de Valdemorillo, un punto muy
+            conocido y de fácil acceso en el municipio. Cerca del establecimiento dispones de
+            aparcamiento público, así que llegar en coche y encontrar sitio no será un problema.
           </p>
         </div>
-        <p class="pending">[Información sobre aparcamiento y acceso en transporte — pendiente de confirmar por el cliente.]</p>
       </article>
 
       <article data-reveal style="--reveal-delay:120ms">
-        <h2 class="h-lg">Horario y días de apertura</h2>
+        <h2 class="h-lg">Horario de apertura</h2>
         <div class="prose">
           <p>
-            Nuestro horario habitual es de 08:00 a 23:00. La música en vivo suena todos los sábados,
-            y los domingos celebramos el vermut dominical, dos de los momentos con más ambiente de la
-            semana.
+            Abrimos de lunes a viernes de 9:00 a 23:00 y los sábados de 13:00 a 17:00 y de 19:00 a
+            23:00. Los domingos permanecemos cerrados. Antes de venir a un evento concreto, puedes
+            confirmar el horario del día llamándonos o consultando nuestra ficha de Google.
           </p>
         </div>
-        <p class="pending">[Confirmar días de cierre semanal y posibles cambios de horario en festivos con el cliente.]</p>
       </article>
     </div>
   </section>
@@ -144,10 +148,11 @@ const faqSchema = {
       </div>
       <div class="prose">
         <p>
-          Desde 2018 somos punto de encuentro en Valdemorillo: raciones caseras pensadas para
-          compartir, cócteles artesanales, una bodega seleccionada y la terraza con vistas a la
-          sierra. Si buscas algo más que una consumición, este es tu sitio. Escríbenos y reserva tu
-          mesa.
+          Desde 2025, con Danny Barrios al frente, Las Chimeneas se ha convertido en uno de los
+          sitios favoritos de Valdemorillo para comer, compartir y disfrutar: menú del día casero que
+          cambia cada jornada, tapas para compartir, terraza y un ambiente familiar donde te
+          atendemos por tu nombre. Si buscas algo más que una consumición, este es tu sitio.
+          Escríbenos y reserva tu mesa.
         </p>
         <div class="btn-row" style="margin-top:var(--sp-5)">
           <a class="btn" href={waLink}>Reservar por WhatsApp</a>

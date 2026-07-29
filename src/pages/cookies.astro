@@ -1,0 +1,35 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { legal } from '../data/legal';
+---
+<Legal
+  title="Política de Cookies | Bar Las Chimeneas Valdemorillo"
+  description="Consulta la política de cookies de Bar Las Chimeneas (Valdemorillo): qué cookies usamos, para qué sirven y cómo aceptarlas, rechazarlas o configurarlas."
+  path="/cookies"
+  h1="Política de Cookies"
+>
+  <h2>¿Qué son las cookies?</h2>
+  <p>Las cookies son pequeños archivos de texto que un sitio web instala en tu dispositivo (ordenador, móvil o tablet) cuando lo visitas. Sirven para recordar información sobre tu navegación, hacer que la web funcione correctamente y ayudarnos a entender cómo se utiliza para mejorarla. Esta página te explica qué cookies utiliza la web de Bar Las Chimeneas y cómo puedes gestionarlas en cualquier momento.</p>
+
+  <h2>¿Quién es el responsable?</h2>
+  <p>El responsable del tratamiento de los datos obtenidos a través de las cookies es {legal.responsable} (NIF {legal.nif}), con domicilio en {legal.domicilio}. Para cualquier consulta relacionada con esta política puedes escribir a <a href={`mailto:${legal.email}`}>{legal.email}</a>.</p>
+
+  <h2>¿Qué cookies usa esta web?</h2>
+  <p>En nuestra web utilizamos dos tipos de cookies:</p>
+  <ul>
+    <li><strong>Cookies técnicas o necesarias:</strong> imprescindibles para que la página funcione correctamente y para recordar tus preferencias de consentimiento; estas no requieren tu autorización.</li>
+    <li><strong>Cookies de análisis o medición de terceros:</strong> usamos Google Analytics y Google Search Console para conocer de forma estadística cómo interactúan los visitantes con la web (páginas más vistas, tiempo de navegación, dispositivos empleados). Esta información nos ayuda a mejorar nuestros contenidos y servicios. Estas cookies analíticas solo se activan si das tu consentimiento.</li>
+  </ul>
+  <p>[Tabla detallada de cookies con nombre, proveedor, finalidad y caducidad — pendiente de completar con los datos técnicos exactos.]</p>
+
+  <h2>¿Cómo aceptar, rechazar o configurar las cookies?</h2>
+  <p>La primera vez que visitas la web aparece un banner de consentimiento donde puedes: aceptar todas las cookies, rechazarlas (manteniendo solo las técnicas necesarias) o configurar cuáles permites. Puedes cambiar tu decisión cuando quieras volviendo a abrir el panel de configuración de cookies del sitio (botón «Cookies» en la esquina inferior). Además, puedes gestionar o eliminar las cookies desde la configuración de tu navegador: en Google Chrome, Mozilla Firefox, Microsoft Edge y Safari encontrarás en sus ajustes de privacidad la opción de bloquear o borrar cookies. Ten en cuenta que, si desactivas las cookies técnicas, algunas funciones de la web podrían no funcionar correctamente.</p>
+
+  <h2>Cookies de terceros: Google</h2>
+  <p>Google Analytics y Google Search Console son servicios prestados por Google. La información que generan estas cookies sobre tu uso de la web puede ser tratada por Google conforme a sus propias políticas de privacidad. Te recomendamos revisar la política de privacidad de Google para conocer con detalle cómo tratan estos datos y las opciones que ofrecen para inhabilitar su seguimiento.</p>
+
+  <h2>Actualizaciones de esta política</h2>
+  <p>Podemos actualizar esta política de cookies para adaptarla a cambios legales, técnicos o en los servicios que utilizamos. Te recomendamos revisarla periódicamente para estar informado sobre cómo usamos las cookies. Consulta también nuestra <a href="/privacidad">Política de Privacidad</a> y el <a href="/aviso-legal">Aviso Legal</a>.</p>
+
+  <p class="note">Documento orientativo — debe revisarlo un asesor legal antes de publicar.</p>
+</Legal>
