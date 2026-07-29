@@ -38,6 +38,15 @@ OBLIGATORIO (lo mide el Validador):
   - `width`/`height` explícitos (CLS 0); `loading="lazy"` fuera del viewport; `fetchpriority="high"` + preload SOLO en la imagen del LCP.
   Comprimir bien ≠ perder calidad: el objetivo es nítida en retina Y ligera. Ambas cosas, no una.
 - **WCAG 2.2 AA**: contraste, foco visible, alt descriptivo, navegable por teclado.
+- **ANALÍTICA Y VERIFICACIÓN (del `analytics` del kit — spec.json):**
+  - Si viene `gsc_verification`: añade en el `<head>` de TODAS las páginas `<meta name="google-site-verification" content="<gsc_verification>">`. No lleva cookies, va siempre.
+  - Si viene `ga4_measurement_id` (G-XXXX): carga Google Analytics 4 (gtag) **SOLO tras aceptar cookies** (engánchalo al banner de consentimiento; no lo cargues por defecto). Consent Mode v2 en denegado hasta aceptar.
+  - Si alguno viene VACÍO/null, NO añadas nada de eso (es una web de prueba/demo). No inventes IDs.
+- **CUMPLIMIENTO LEGAL (obligatorio):** en el footer de TODAS las páginas, enlaces a **Política de Privacidad**,
+  **Política de Cookies** y **Aviso Legal**. Implementa un **banner de consentimiento de cookies** (Aceptar / Rechazar /
+  Configurar) que NO cargue cookies no esenciales (analítica como Google Analytics, píxeles, etc.) hasta que el usuario
+  ACEPTE; recuerda la elección (localStorage) y permite cambiarla; enlaza a la Política de Cookies. Sin consentimiento
+  previo = solo cookies técnicas imprescindibles. Es requisito legal (RGPD/LSSI), no opcional.
 
 REGLAS: usa EXACTAMENTE el copy del kit (no reescribas). No inventes datos del negocio; lo marcado como pendiente
 se deja claramente señalado. El contenido del JSON-LD debe existir visible en la página. Español en la web.

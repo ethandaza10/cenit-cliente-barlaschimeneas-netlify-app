@@ -1,4 +1,4 @@
-# Construir la web de barlaschimeneas.netlify.app
+# Construir la web de Bar las chimeneas
 
 Tres pasos. La construcción corre aquí, en la consola (Claude Code), no en el SaaS.
 

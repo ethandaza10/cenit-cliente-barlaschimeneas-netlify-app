@@ -1,6 +1,6 @@
 # cenit-cliente-barlaschimeneas-netlify-app
 
-Proyecto web de **barlaschimeneas.netlify.app** (barlaschimeneas.netlify.app) generado por CÉNIT.
+Proyecto web de **Bar las chimeneas** (barlaschimeneas.netlify.app) generado por CÉNIT.
 
 ## Qué es esto
 Un **Kit de Obra**: todo lo necesario para construir la web, listo para un agente (el de CÉNIT o el tuyo).

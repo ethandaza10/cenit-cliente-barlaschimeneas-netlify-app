@@ -1,11 +1,11 @@
 {
   "cenit_build_spec": "1.0",
-  "generated_at": "2026-07-28T17:36:11.469Z",
+  "generated_at": "2026-07-29T09:23:37.291Z",
   "client": {
     "slug": "barlaschimeneas-netlify-app",
-    "name": "barlaschimeneas.netlify.app",
+    "name": "Bar las chimeneas",
     "domain": "barlaschimeneas.netlify.app",
-    "sector": "Bar",
+    "sector": "Hostelería",
     "city": "Valdemorillo",
     "goal": null
   },
@@ -55,7 +55,7 @@
     "name": "Bar, Restaurante Las Chimeneas",
     "type": "Bar",
     "rating": 4.8,
-    "reviews": 82,
+    "reviews": 83,
     "address": "Casa de Cultura, C. la Paz, s/n, 28210 Valdemorillo, Madrid",
     "phone": "639 98 47 27",
     "maps_uri": "https://maps.google.com/?cid=5165903861513153668&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
@@ -80,58 +80,66 @@
       "exists_already": false,
       "priority": 4,
       "copy": {
-        "meta_title": "Música en Vivo en Valdemorillo | Bar Las Chimeneas",
-        "meta_description": "Agenda de música en vivo en Valdemorillo: conciertos los sábados y vermut con directo los domingos en Bar Las Chimeneas. Reserva tu mesa o consulta eventos.",
-        "h1": "Música en vivo en Valdemorillo: la agenda de Bar Las Chimeneas",
+        "meta_title": "Música en vivo en Valdemorillo | Bar Las Chimeneas",
+        "meta_description": "Conciertos, música en vivo y eventos en Valdemorillo. Vive el vermut con directo, ve el fútbol y celebra tu cumpleaños o comida de empresa en Bar Las Chimeneas.",
+        "h1": "Música en vivo y eventos en Valdemorillo: Bar Las Chimeneas",
         "sections": [
           {
-            "text": "En Bar Las Chimeneas la música en vivo forma parte del plan. Tenemos directo todos los sábados y en el vermut de los domingos, con la terraza y las vistas a la sierra como escenario. Es el momento ideal para juntarte con los tuyos, pedir unas raciones caseras y disfrutar de un buen ambiente sin salir de Valdemorillo. Estamos en el corazón de la Casa de la Cultura, un punto de encuentro fácil de localizar en el pueblo.",
-            "heading": "Qué encontrarás cada semana"
+            "text": "En Bar Las Chimeneas la buena comida siempre viene acompañada de ambiente. Ubicados junto a la Casa de la Cultura de Valdemorillo, organizamos conciertos en directo, música en vivo y eventos gastronómicos aproximadamente cada 15 días (según el mes, al menos una vez al mes). Es nuestra forma de entender la hostelería: que cada visita sea una experiencia y no solo una consumición. Si buscas música en vivo en Valdemorillo con raciones caseras, terraza y trato cercano, este es tu sitio.",
+            "heading": "Un plan diferente cada quincena en el corazón de Valdemorillo"
           },
           {
-            "text": "Nuestra agenda va cambiando cada semana, así que la mejor forma de saber quién toca y a qué hora es consultarnos directamente antes de venir. [Agenda concreta de eventos y artistas — pendiente de aportar por el cliente]. En cuanto tengamos publicada la programación del mes, aquí verás fechas, estilos musicales y horarios para que elijas el día que más te encaje.",
-            "heading": "Agenda de eventos y conciertos"
+            "text": "Nuestra programación combina conciertos y música en directo con eventos gastronómicos especiales, incluido el ambiente del vermut de fin de semana. La agenda la actualiza el propietario cada quincena, así que la mejor forma de no perderte nada es seguir nuestras novedades y preguntarnos por el próximo evento. [Calendario concreto de conciertos y fechas — pendiente de aportar por el cliente para publicarlo aquí y que puedas planificar tu visita.]",
+            "heading": "¿Qué eventos hay y cuándo?"
           },
           {
-            "text": "Muchos vecinos nos preguntan por los partidos. [Información sobre retransmisiones deportivas — pendiente de confirmar por el cliente: qué partidos se ven, en qué pantallas y si se reserva mesa para los encuentros grandes]. Si vienes a ver algún partido concreto, escríbenos y te confirmamos si lo emitimos y te guardamos sitio.",
-            "heading": "¿Ponéis el fútbol y otros deportes?"
+            "text": "En Bar Las Chimeneas nos gusta que la sobremesa se alargue con un buen partido. [Detalle pendiente: confirmar si se retransmiten partidos de fútbol y qué competiciones/pantallas hay disponibles para reflejarlo con exactitud.] Si vienes con tu grupo a ver un partido, escríbenos y te decimos qué tenemos previsto ese día.",
+            "heading": "Ver el fútbol y otros deportes"
           },
           {
-            "text": "Un cumpleaños, una reunión de amigos o una celebración especial encajan de maravilla en nuestra terraza y con nuestras raciones para compartir. [Condiciones de eventos privados, aforo y opciones de menú — pendiente de aportar por el cliente]. Cuéntanos qué tienes en mente y vemos juntos cómo montarlo para que salga perfecto.",
-            "heading": "Celebraciones y eventos privados"
+            "text": "Sí, ponemos nuestras instalaciones a tu disposición para celebrar cumpleaños, reuniones familiares, comidas de empresa y todo tipo de celebraciones. Diseñamos menús personalizados para que cada evento sea una experiencia especial, con la cocina casera y creativa que nos define y un servicio que hace que cada cliente se sienta como en casa. Tú pones el motivo, nosotros cuidamos cada detalle.",
+            "heading": "Cumpleaños, comidas de empresa y eventos privados"
           },
           {
-            "text": "Reservar es sencillo: puedes hacerlo por WhatsApp o pidiendo mesa a través de la web. Para grupos grandes o si vienes por un evento concreto, avísanos con antelación porque las plazas en terraza son limitadas. Así nos aseguramos de tenerte todo listo cuando llegues.",
-            "heading": "Cómo reservar mesa o grupo"
+            "text": "Reservar es muy fácil: cuéntanos cuántos sois, la fecha y qué tipo de celebración tienes en mente, y preparamos una propuesta a tu medida. Puedes hacerlo a través de nuestro sistema de reserva de mesa o escribiéndonos por WhatsApp. Para eventos privados y menús personalizados, te recomendamos avisar con antelación para reservar el espacio.",
+            "heading": "Cómo reservar para un grupo o evento"
+          },
+          {
+            "text": "Detrás del proyecto está Danny Barrios, apasionado por la cocina, junto a un equipo comprometido con la calidad y la atención al cliente. Nos diferencia una cocina casera que cambia constantemente, con menús del día creativos y platos elaborados al momento, y una programación habitual de conciertos y eventos en directo. Lo dicen nuestros clientes: \"La comida exquisita y el trato del personal es espectacular. Volveremos\", \"Anggie es la mejor camarera de Valdemorillo, muy simpática y atenta\". Cientos de personas nos visitan cada mes y contamos con una excelente valoración en Google.",
+            "heading": "Por qué elegir Las Chimeneas"
           }
         ],
         "faq": [
           {
-            "a": "Tenemos directo todos los sábados y en el vermut de los domingos. La programación concreta de cada semana la confirmamos por WhatsApp o en nuestras redes.",
-            "q": "¿Cuándo hay música en vivo en Bar Las Chimeneas?"
+            "a": "Solemos organizar conciertos, música en directo o eventos gastronómicos cada 15 días aproximadamente; según el mes, al menos una vez al mes. Pregúntanos por el próximo evento para no perdértelo.",
+            "q": "¿Cada cuánto hay música en vivo o eventos?"
           },
           {
-            "a": "Sí. Escríbenos por WhatsApp o reserva a través de la web indicando el número de personas y la fecha. Para grupos y eventos conviene avisar con antelación porque las plazas en terraza son limitadas.",
-            "q": "¿Se puede reservar para un grupo o una celebración?"
+            "a": "Sí. Ponemos nuestras instalaciones a tu disposición para cumpleaños, reuniones familiares, comidas de empresa y todo tipo de celebraciones, con menús personalizados diseñados para cada evento.",
+            "q": "¿Puedo celebrar un cumpleaños o una comida de empresa?"
           },
           {
-            "a": "Estamos en Valdemorillo (Madrid), en el corazón de la Casa de la Cultura. Es un punto de encuentro fácil de localizar en el pueblo.",
-            "q": "¿Dónde estáis?"
+            "a": "Nos encanta el ambiente de un buen partido. Escríbenos para confirmar qué retransmisiones tenemos previstas el día que quieras venir con tu grupo.",
+            "q": "¿Ponéis el fútbol?"
+          },
+          {
+            "a": "Cuéntanos fecha, número de personas y tipo de celebración a través de la reserva de mesa o por WhatsApp, y te preparamos una propuesta personalizada. Recomendamos reservar con antelación.",
+            "q": "¿Cómo reservo para un grupo o evento privado?"
           }
         ],
-        "jsonld": "{\"@context\":\"https://schema.org\",\"@type\":\"BarOrPub\",\"name\":\"Bar Las Chimeneas\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Valdemorillo\",\"addressRegion\":\"Madrid\",\"addressCountry\":\"ES\"},\"servesCuisine\":\"Tapas madrileñas\",\"amenityFeature\":[{\"@type\":\"LocationFeatureSpecification\",\"name\":\"Música en vivo\",\"value\":true},{\"@type\":\"LocationFeatureSpecification\",\"name\":\"Terraza\",\"value\":true}]}",
+        "jsonld": "{\"@context\":\"https://schema.org\",\"@type\":\"BarOrPub\",\"name\":\"Bar Las Chimeneas\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Valdemorillo\",\"addressRegion\":\"Madrid\",\"addressCountry\":\"ES\"},\"servesCuisine\":\"Española, cocina casera\",\"description\":\"Bar con terraza en Valdemorillo con conciertos y música en vivo, eventos gastronómicos y celebraciones privadas.\",\"event\":{\"@type\":\"Event\",\"name\":\"Música en vivo en Bar Las Chimeneas\",\"eventSchedule\":{\"@type\":\"Schedule\",\"repeatFrequency\":\"P15D\"},\"location\":{\"@type\":\"Place\",\"name\":\"Bar Las Chimeneas\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Valdemorillo\",\"addressRegion\":\"Madrid\",\"addressCountry\":\"ES\"}}}}",
         "gaps": [
-          "Agenda real de eventos: artistas, fechas y horarios concretos de la música en vivo para poder publicar programación actualizada.",
-          "Retransmisiones deportivas: confirmar si se ponen partidos de fútbol u otros deportes, en qué pantallas y si se reserva mesa para grandes encuentros.",
-          "Eventos privados: condiciones, aforo máximo de terraza/local y opciones de menú o precio para celebraciones.",
-          "Datos de contacto exactos: dirección postal completa, teléfono y número de WhatsApp para incluirlos visibles y en el JSON-LD (refuerza la confianza según E-E-A-T).",
-          "Quién actualizará la agenda y con qué frecuencia, para mantener el contenido fresco y dar razón para volver."
+          "No hay calendario concreto de conciertos con fechas, artistas o estilo musical: aportarlo permitiría publicar una agenda real y actualizada (clave para la intención de fidelización).",
+          "No está confirmado si se retransmiten partidos de fútbol ni qué competiciones/pantallas hay: dato solicitado en 'debe_responder' que ahora se redacta de forma condicional.",
+          "Falta la dirección postal exacta y el teléfono/WhatsApp concreto para reservas: necesarios para la confianza (E-E-A-T) y el JSON-LD.",
+          "No se aportan precios ni horquilla de menús para eventos privados; se redacta sin cifras para no inventar.",
+          "No hay fotos propias de conciertos/eventos ni número exacto de reseñas/valoración de Google (se cita 4.8 del material web actual pero conviene verificar y actualizar)."
         ]
       },
       "client_facts": {
-        "tipo_eventos": "Conciertos en directo, música en vivo y eventos gastronómicos.",
+        "tipo_eventos": "Conciertos en directo, música en vivo y eventos gastronómicos. Los eventos suelen organizarse una vez cada 15 días. ",
         "eventos_privados": "Sí. Ponemos nuestras instalaciones a disposición de nuestros clientes para celebrar cumpleaños, reuniones familiares, comidas de empresa y todo tipo de celebraciones. Diseñamos menús personalizados para que cada evento sea una experiencia especial.",
-        "agenda_actualizable": "El propietario, semanalmente."
+        "agenda_actualizable": "El propietario, cada 15 días. A veces, dependiendo del mes, es un evento al mes."
       }
     },
     {
@@ -153,56 +161,61 @@
       "exists_already": false,
       "priority": 3,
       "copy": {
-        "meta_title": "Contacto Bar Las Chimeneas Valdemorillo | Reserva",
-        "meta_description": "¿Quieres venir al Bar Las Chimeneas en Valdemorillo? Aquí tienes dirección, teléfono, cómo llegar y cómo reservar mesa. Terraza, raciones caseras y música en vivo.",
-        "h1": "Contacto y reservas — Bar Las Chimeneas Valdemorillo",
+        "meta_title": "Contacto Bar Las Chimeneas Valdemorillo | Reserva y Ubicación",
+        "meta_description": "¿Buscas contacto con Bar Las Chimeneas en Valdemorillo? Teléfono, WhatsApp, dirección en la Casa de la Cultura y cómo reservar mesa. Te esperamos.",
+        "h1": "Contacto y reservas · Bar Las Chimeneas, Valdemorillo",
         "sections": [
           {
-            "text": "Estamos en el corazón de Valdemorillo, en la Calle Real 15, 28210 Valdemorillo (Madrid). Si quieres reservar mesa, preguntar por la terraza o consultar el próximo concierto, lo más rápido es llamarnos o escribirnos por WhatsApp al 918 99 88 77. Te contestamos una persona de verdad: aquí te conocemos por tu nombre.",
-            "heading": "Dónde estamos y cómo contactar"
+            "text": "Bar Las Chimeneas te espera en la Casa de la Cultura de Valdemorillo, un espacio acogedor donde disfrutar de cocina casera, un menú del día que cambia cada jornada y buena música en vivo. Si quieres reservar mesa, resolver una duda o simplemente venir a conocernos, aquí tienes toda la información para localizarnos fácilmente. Nos gusta el trato cercano: aquí te atendemos por tu nombre.",
+            "heading": "Estamos en el corazón de Valdemorillo"
           },
           {
-            "text": "Reservar es sencillo. Llámanos o mándanos un WhatsApp al 918 99 88 77 indicándonos el día, la hora y cuántos vais a ser. Si os apetece la terraza, avísanos al reservar: las plazas al aire libre son limitadas, sobre todo los sábados con música en vivo y los domingos de vermut. Te confirmamos la mesa en el momento.",
+            "text": "Dirección: Calle La Paz 51, Casa de la Cultura, Valdemorillo (Madrid).\n\nTeléfono y WhatsApp: 639 984 727.\n\nPuedes llamarnos o escribirnos por WhatsApp para reservar mesa, consultar el menú del día o preguntarnos por los próximos conciertos y eventos. Respondemos con mucho gusto.",
+            "heading": "Dirección y teléfono"
+          },
+          {
+            "text": "Reservar es muy sencillo: llámanos o mándanos un WhatsApp al 639 984 727 indicándonos el día, la hora y el número de personas. Si vienes en fin de semana o quieres sitio en la terraza, te recomendamos reservar con antelación, ya que las plazas son limitadas y los sábados y domingos de vermut solemos tener música en vivo y mucho ambiente.",
             "heading": "Cómo reservar mesa"
           },
           {
-            "text": "El Bar Las Chimeneas está en Calle Real 15, en pleno centro de Valdemorillo, muy cerca de la Casa de la Cultura. Es una zona fácil de encontrar a pie desde el núcleo del pueblo. [Información sobre aparcamiento y acceso en transporte — pendiente de confirmar por el cliente.]",
-            "heading": "Cómo llegar"
+            "text": "Nos encontrarás dentro de la Casa de la Cultura de Valdemorillo, un punto muy conocido y de fácil acceso en el municipio. Cerca del establecimiento dispones de aparcamiento público, así que llegar en coche y encontrar sitio no será un problema. Si vienes desde fuera, la Casa de la Cultura es una referencia fácil de localizar en el centro de la localidad.",
+            "heading": "Cómo llegar y aparcamiento"
           },
           {
-            "text": "Nuestro horario habitual es de 08:00 a 23:00. La música en vivo suena todos los sábados, y los domingos celebramos el vermut dominical, dos de los momentos con más ambiente de la semana. [Confirmar días de cierre semanal y posibles cambios de horario en festivos con el cliente.]",
-            "heading": "Horario y días de apertura"
+            "text": "Abrimos cada día para desayunos, comidas, tapeo y cócteles por la tarde-noche. Como orientación, el horario habitual arranca por la mañana y se extiende hasta bien entrada la noche, con música en vivo los sábados y los domingos de vermut. Antes de venir, te recomendamos confirmar el horario del día llamándonos o consultando nuestra ficha de Google.",
+            "heading": "Horario de apertura"
           },
           {
-            "text": "Desde 2018 somos punto de encuentro en Valdemorillo: raciones caseras pensadas para compartir, cócteles artesanales, una bodega seleccionada y la terraza con vistas a la sierra. Si buscas algo más que una consumición, este es tu sitio. Escríbenos y reserva tu mesa.",
-            "heading": "Un plan que merece la visita"
+            "text": "Estamos en Instagram y en Google Business, donde publicamos el menú del día, los próximos conciertos y los platos que preparamos al momento. Es la mejor forma de estar al tanto de todo lo que pasa en Las Chimeneas y de ver por qué somos uno de los sitios favoritos de Valdemorillo para comer, compartir y disfrutar.",
+            "heading": "Síguenos y conócenos mejor"
           }
         ],
         "faq": [
           {
-            "a": "Puedes llamarnos o escribirnos por WhatsApp al 918 99 88 77. Es la vía más rápida para reservar o resolver cualquier duda.",
-            "q": "¿Cuál es el teléfono del Bar Las Chimeneas en Valdemorillo?"
+            "a": "Estamos en Calle La Paz 51, dentro de la Casa de la Cultura de Valdemorillo (Madrid), un punto céntrico y muy conocido del municipio.",
+            "q": "¿Cuál es la dirección de Bar Las Chimeneas en Valdemorillo?"
           },
           {
-            "a": "En Calle Real 15, 28210 Valdemorillo (Madrid), en pleno centro del pueblo y cerca de la Casa de la Cultura.",
-            "q": "¿Dónde está exactamente el bar?"
+            "a": "Puedes llamarnos o escribirnos por WhatsApp al 639 984 727. Te atenderemos para reservar mesa o resolver cualquier duda.",
+            "q": "¿Cuál es el teléfono para reservar?"
           },
           {
-            "a": "Llamándonos o enviándonos un WhatsApp al 918 99 88 77 con el día, la hora y el número de personas. Si quieres terraza, indícalo al reservar porque las plazas son limitadas.",
-            "q": "¿Cómo reservo mesa?"
+            "a": "Sí. Muy cerca del establecimiento hay aparcamiento público y el acceso es sencillo, tanto si vienes en coche como andando desde el centro.",
+            "q": "¿Hay aparcamiento cerca?"
           },
           {
-            "a": "Abrimos de 08:00 a 23:00. Los sábados hay música en vivo y los domingos, vermut dominical.",
-            "q": "¿Qué horario tenéis?"
+            "a": "Llámanos o mándanos un WhatsApp al 639 984 727 indicando día, hora y número de personas. En terraza las plazas son limitadas, así que mejor reservar con antelación, sobre todo los fines de semana.",
+            "q": "¿Cómo reservo mesa en la terraza?"
           }
         ],
-        "jsonld": "{\"@context\":\"https://schema.org\",\"@type\":\"BarOrPub\",\"name\":\"Bar Las Chimeneas\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"Calle Real 15\",\"postalCode\":\"28210\",\"addressLocality\":\"Valdemorillo\",\"addressRegion\":\"Madrid\",\"addressCountry\":\"ES\"},\"telephone\":\"+34918998877\",\"openingHours\":\"Mo-Su 08:00-23:00\",\"servesCuisine\":\"Tapas madrileñas\",\"foundingDate\":\"2018\"}",
+        "jsonld": "{\"@context\":\"https://schema.org\",\"@type\":\"BarOrPub\",\"name\":\"Bar Las Chimeneas\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"Calle La Paz 51, Casa de la Cultura\",\"addressLocality\":\"Valdemorillo\",\"addressRegion\":\"Madrid\",\"addressCountry\":\"ES\"},\"telephone\":\"+34639984727\",\"servesCuisine\":\"Española, cocina casera\",\"url\":\"\"}",
         "gaps": [
-          "Aparcamiento y acceso: falta confirmar si hay parking cercano, zona azul o cómo se llega en transporte público (dato pedido en 'parking_acceso').",
-          "Redes sociales y ficha de Google: falta URL de Instagram/Facebook y enlace a la ficha de Google Maps para reforzar confianza y facilitar cómo llegar.",
-          "Horario detallado: confirmar si hay día de cierre semanal y horarios especiales en festivos.",
-          "Coordenadas/mapa: para añadir mapa embebido y geo-coordenadas al JSON-LD conviene confirmar la ubicación exacta (el material menciona la Casa de la Cultura y los datos indican Calle Real 15).",
-          "Enlace o sistema de reserva online: si existe formulario o herramienta de reservas, añadirlo junto al teléfono/WhatsApp."
+          "Horario de apertura exacto por días (la web actual solo muestra 'hoy 08:00–23:00'); necesario para dar información fiable al cliente.",
+          "Código postal de Valdemorillo para completar la dirección postal en el JSON-LD.",
+          "URLs concretas del perfil de Instagram y de la ficha de Google Business para enlazarlos.",
+          "Confirmar si se puede reservar solo por teléfono/WhatsApp o también por otro canal (email, formulario, redes).",
+          "Email de contacto del establecimiento, si existe.",
+          "Coordenadas o enlace a Google Maps para incrustar el mapa de 'cómo llegar'."
         ]
       },
       "client_facts": {
@@ -231,67 +244,66 @@
       "exists_already": false,
       "priority": 2,
       "copy": {
-        "meta_title": "Carta y menú del día en Valdemorillo | Bar Las Chimeneas",
-        "meta_description": "Descubre la carta de Bar Las Chimeneas en Valdemorillo: raciones caseras, tapas y platos para compartir. Consulta si hay menú del día y opciones para todos.",
-        "h1": "Carta y menú del día en Valdemorillo",
+        "meta_title": "Menú del día en Valdemorillo | Bar Las Chimeneas",
+        "meta_description": "Descubre el menú del día en Valdemorillo del Bar Las Chimeneas: cocina casera que cambia cada día por 13,90 €, raciones para compartir, opciones veganas y para llevar.",
+        "h1": "Nuestra carta y el menú del día en Valdemorillo",
         "sections": [
           {
-            "text": "En Bar Las Chimeneas, en el corazón de la Casa de la Cultura de Valdemorillo, cocinamos raciones caseras que combinan la tradición de las tapas madrileñas con toques creativos. Cada plato está pensado para compartir en mesa, ya sea en el interior o en nuestra terraza con vistas a la sierra. Aquí tienes la carta para decidir con tranquilidad qué te apetece antes de venir.",
-            "heading": "Nuestra cocina, pensada para compartir"
+            "text": "En Bar Las Chimeneas creemos que comer bien no debería ser aburrido. Por eso elaboramos un menú del día en Valdemorillo diferente cada jornada, con recetas caseras y un toque creativo que preparamos al momento. Detrás de los fogones está Danny Barrios y un equipo que cocina con la misma ilusión con la que abrió sus puertas este proyecto en el corazón de la Casa de la Cultura: buen producto, trato cercano y ganas de que salgas contento. Como dicen nuestros clientes: «Dani cocina de lujo, cada día un menú diferente que sorprende».",
+            "heading": "Cocina casera que cambia cada día"
           },
           {
-            "text": "El menú del día es la forma más cómoda de comer bien sin complicarte: un primero, un segundo y postre o bebida a un precio cerrado. [Pendiente de confirmar por el negocio: si ofrecéis menú del día, qué platos incluye, el precio y los días/horas en que está disponible.] En cuanto tengamos estos datos, aquí verás cada opción del día para que sepas exactamente qué vas a comer y cuánto cuesta.",
-            "heading": "Menú del día en Valdemorillo"
+            "text": "Nuestro menú del día cuesta 13,90 € e incluye primer plato, segundo plato, bebida y postre. Lo elaboramos a diario con recetas distintas, así que siempre encontrarás algo nuevo que probar. Es la opción favorita de vecinos, trabajadores y familias de Valdemorillo que buscan comer casero, variado y a un precio justo, sin renunciar a la calidad.",
+            "heading": "Menú del día: qué incluye y cuánto cuesta"
           },
           {
-            "text": "Nuestra propuesta gira en torno a las raciones caseras y las tapas para compartir, con producto cuidado y platos pensados para acompañar una caña, un vermut de domingo o un cóctel artesanal. [Pendiente: lista de raciones y tapas con sus precios reales.] Cuando nos paséis la carta actual, incluiremos aquí cada plato con su precio para que puedas elegir sin sorpresas.",
-            "heading": "Raciones y tapas para picar"
+            "text": "Además del menú del día, en nuestra carta encontrarás raciones caseras y tapas pensadas para compartir, que unen la tradición madrileña con toques creativos. Es el plan perfecto para venir con amigos, en pareja o en grupo y picar de todo mientras disfrutáis del ambiente. Consúltanos la carta del día y los precios directamente en el bar o por teléfono; nuestra propuesta cambia según el mercado y la temporada. [Detalle de platos y precios de la carta — pendiente de aportar por el cliente]",
+            "heading": "Carta, raciones y tapas para compartir"
           },
           {
-            "text": "Queremos que cualquiera encuentre su plato. [Pendiente de confirmar: si contáis con opciones vegetarianas, platos sin gluten o menú infantil, y qué platos concretos.] Si tienes alguna alergia o intolerancia, avísanos al reservar o al llegar y te indicamos qué opciones podemos prepararte.",
-            "heading": "Opciones para todos: vegetariano, sin gluten y niños"
+            "text": "Sabemos que cada comensal es diferente. Por eso ofrecemos opciones vegetarianas y adaptamos algunos platos según las necesidades de cada cliente. Si tienes alguna intolerancia, alergia o preferencia concreta, coméntanoslo al llegar o al reservar y buscaremos la mejor solución para ti. [Confirmar opciones sin gluten y menú infantil — pendiente de aportar por el cliente]",
+            "heading": "Opciones vegetarianas y adaptadas"
           },
           {
-            "text": "Si prefieres disfrutar de nuestras raciones en casa, [pendiente de confirmar: si ofrecemos comida para llevar o a domicilio y cómo hacer el pedido]. En cuanto lo confirmemos, aquí te explicamos cómo encargar tus platos favoritos para llevar.",
-            "heading": "Para llevar"
+            "text": "¿No puedes quedarte? No hay problema. Ofrecemos comida para llevar, así que puedes disfrutar de nuestra cocina casera en casa o en el trabajo. Pásate por el bar o llámanos para encargar tu pedido.",
+            "heading": "También para llevar"
           },
           {
-            "text": "La terraza suele tener plazas limitadas, sobre todo los sábados con música en vivo y los domingos de vermut. Reserva mesa por WhatsApp o desde la web para asegurarte tu sitio. Horario de hoy: 08:00 – 23:00.",
-            "heading": "Reserva tu mesa"
+            "text": "En Las Chimeneas cuidamos cada detalle para que tu visita sea una experiencia, no solo una comida. Terraza con vistas a la sierra, música en vivo los fines de semana, vermut dominical y una atención personalizada donde te conocemos por tu nombre. Ven a comprobar por qué tantos vecinos de Valdemorillo nos han convertido en su sitio de siempre.",
+            "heading": "Mucho más que comer bien"
           }
         ],
         "faq": [
           {
-            "a": "Estamos actualizando esta información. [Pendiente de confirmar por el negocio si se ofrece menú del día, su precio y qué incluye.] Puedes preguntarnos directamente por WhatsApp mientras tanto.",
-            "q": "¿Tenéis menú del día en Valdemorillo?"
+            "a": "El menú del día cuesta 13,90 € e incluye primer plato, segundo plato, bebida y postre. Lo elaboramos cada día con recetas diferentes.",
+            "q": "¿Cuánto cuesta el menú del día?"
           },
           {
-            "a": "Sí, nuestra intención es mostrar aquí la carta completa con precios. Estamos ultimando la lista de raciones y tapas para que puedas elegir con toda la información.",
-            "q": "¿Puedo ver la carta con precios antes de ir?"
+            "a": "Sí. Disponemos de opciones vegetarianas y adaptamos algunos platos según las necesidades de cada cliente. Avísanos de cualquier alergia o preferencia y buscaremos la mejor solución.",
+            "q": "¿Hay opciones vegetarianas o adaptadas?"
           },
           {
-            "a": "Consúltanos al reservar o al llegar. [Pendiente de confirmar las opciones vegetarianas, sin gluten e infantiles disponibles.] Si nos avisas de tu intolerancia, buscamos la mejor alternativa para ti.",
-            "q": "¿Hay opciones vegetarianas o sin gluten?"
-          },
-          {
-            "a": "Estamos confirmando esta opción. Contáctanos por WhatsApp para saber si tu ración favorita se puede pedir para llevar.",
+            "a": "Sí, ofrecemos comida para llevar. Puedes acercarte al bar o llamarnos para hacer tu pedido.",
             "q": "¿Se puede pedir comida para llevar?"
+          },
+          {
+            "a": "Como nuestra propuesta cambia según la temporada y el producto, te recomendamos consultar la carta del día directamente en el bar o llamándonos por teléfono.",
+            "q": "¿Dónde puedo ver los platos y precios de la carta?"
           }
         ],
-        "jsonld": "{\"@context\":\"https://schema.org\",\"@type\":\"BarOrPub\",\"name\":\"Bar Las Chimeneas\",\"description\":\"Bar con terraza en Valdemorillo con raciones caseras, tapas para compartir, música en vivo y cócteles artesanales.\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Valdemorillo\",\"addressRegion\":\"Madrid\",\"addressCountry\":\"ES\"},\"servesCuisine\":\"Española, tapas madrileñas\",\"hasMenu\":\"https://barlaschimeneas.netlify.app/carta\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.8\"}}",
+        "jsonld": "{\"@context\":\"https://schema.org\",\"@type\":\"Restaurant\",\"name\":\"Bar Las Chimeneas\",\"servesCuisine\":\"Cocina casera, tapas y raciones\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Valdemorillo\",\"addressRegion\":\"Madrid\",\"addressCountry\":\"ES\"},\"hasMenu\":{\"@type\":\"Menu\",\"name\":\"Menú del día\",\"description\":\"Menú del día elaborado a diario: primer plato, segundo plato, bebida y postre.\",\"offers\":{\"@type\":\"Offer\",\"price\":\"13.90\",\"priceCurrency\":\"EUR\"}},\"acceptsReservations\":true}",
         "gaps": [
-          "Falta la carta actual con platos y precios reales para poder mostrarla completa.",
-          "Falta confirmar si existe menú del día: precio, qué incluye y días/horas disponibles.",
-          "Falta saber si hay opciones vegetarianas, sin gluten e infantiles, y qué platos concretos.",
-          "Falta confirmar si se ofrece comida para llevar o a domicilio y cómo se pide.",
-          "Falta la dirección postal completa y el teléfono para reforzar la confianza (E-E-A-T) y completar el JSON-LD.",
-          "El número de reseñas que respalda el 4.8 de Google no se ha aportado; conviene indicarlo para el aggregateRating.",
-          "No se ha confirmado el número de años en activo (la web indica 'Desde 2018', pero el contador muestra '0+ Años')."
+          "Dirección postal exacta, teléfono y email del bar para completar el JSON-LD y reforzar la confianza (E-E-A-T).",
+          "El cliente prefiere no publicar precios de la carta: la página gana mucho si al menos se listan los platos/raciones destacados (aunque sea sin precio).",
+          "Confirmar si hay opciones sin gluten y menú/platos infantiles (se pregunta en 'debe_responder' pero no consta en los datos).",
+          "Días y horario del menú del día (¿solo entre semana? ¿fines de semana?).",
+          "Ejemplos reales de platos del menú del día o de raciones para dar prueba de experiencia (E-E-A-T)."
         ]
       },
       "client_facts": {
         "menu_dia": "13,90 €, incluye primer plato, segundo plato, bebida y postre.",
         "para_llevar": "Sí, ofrecemos comida para llevar.",
+        "carta_actual": "No queremos poner precios de la carta en la página.",
         "opciones_dieteticas": "Disponemos de opciones vegetarianas y adaptamos algunos platos según las necesidades del cliente."
       }
     },
@@ -313,72 +325,306 @@
       "exists_already": true,
       "priority": 1,
       "copy": {
-        "meta_title": "Bar en Valdemorillo | Bar Las Chimeneas",
-        "meta_description": "Bar Las Chimeneas, tu bar en Valdemorillo: raciones caseras, cócteles artesanales, música en vivo y la terraza con vistas a la sierra. Reserva mesa hoy.",
-        "h1": "Bar Las Chimeneas: tu bar en Valdemorillo con terraza y música en vivo",
+        "meta_title": "Bar en Valdemorillo | Las Chimeneas · Cocina y Terraza",
+        "meta_description": "Bar en Valdemorillo con menú del día casero, tapas de autor, terraza y música en vivo. Ambiente familiar en la Casa de Cultura. ¡Reserva tu mesa en Las Chimeneas!",
+        "h1": "Bar Las Chimeneas: cocina casera, terraza y música en el corazón de Valdemorillo",
         "sections": [
           {
-            "text": "Si buscas un bar en Valdemorillo para tapear, tomar un vermut o quedar con los tuyos, Bar Las Chimeneas es un punto de encuentro en el corazón del pueblo. Estamos ubicados en la Casa de la Cultura de Valdemorillo (Madrid) y abrimos desde 2018 con una idea sencilla: raciones caseras, buen ambiente y un trato cercano en el que te conocemos por tu nombre. Aquí no vienes solo a consumir; vienes a pasar un buen rato.",
-            "heading": "El bar de Valdemorillo donde el tiempo se detiene"
+            "text": "Bar Las Chimeneas es mucho más que un sitio donde tomar algo: es un lugar acogedor en pleno corazón de Valdemorillo, dentro de la Casa de Cultura, donde vienes a comer bien y te quedas por el ambiente. Desde 2025, Danny Barrios ha cogido las riendas del local y ha cambiado por completo el concepto, apostando por una cocina casera con un toque creativo elaborada al momento con ingredientes de calidad. En solo un año, ese trabajo ha convertido a Las Chimeneas en uno de los bares de referencia del pueblo. Si buscas un bar en Valdemorillo con trato cercano y comida que sorprende, aquí te sentirás como en casa.",
+            "heading": "Un bar en Valdemorillo pensado para que te quedes"
           },
           {
-            "text": "Nuestra propuesta combina la tradición de las tapas madrileñas con toques creativos pensados para compartir. En la carta encontrarás raciones caseras, entrantes para picar en mesa y una barra con cócteles artesanales y una bodega seleccionada. Tanto si te apetece un aperitivo rápido como una comida sin prisas con amigos o familia, hay opciones para cada momento del día. [Platos y tapas estrella — pendiente de confirmar con el cliente].",
-            "heading": "Qué ofrecemos: raciones, tapas, cócteles y bodega"
+            "text": "Nuestra seña de identidad es el menú del día, elaborado cada jornada con recetas diferentes salidas de la creatividad de nuestro chef: comida de calidad con un toque premium, porque todos merecen comer al mejor nivel. Y si prefieres picar y compartir, nuestras tapas y raciones caseras son famosas en el municipio: croquetas caseras, secreto ibérico, solomillo con romesco de avellanas, hamburguesas gourmet y postres caseros que no querrás dejar en el plato. Todo acompañado de una buena bebida, con opciones para el aperitivo, la comida o el momento de después.",
+            "heading": "Qué encontrarás: menú del día, tapas y platos para compartir"
           },
           {
-            "text": "Uno de nuestros sellos es la terraza exterior con vistas a la sierra, una de las más especiales del municipio. Los sábados y los domingos de vermut tenemos música en vivo, así que es un plan perfecto para grupos, parejas y familias que buscan algo más que una simple consumición. El ambiente es relajado y cercano: un sitio donde apetece quedarse.",
-            "heading": "Terraza, música en vivo y ambiente"
+            "text": "Las Chimeneas es un local acogedor con terraza y un ambiente familiar, ideal para venir con la familia, en pareja o con un grupo de amigos. Aquí caben los vecinos que buscan su menú del día, los que quieren tomar unas tapas tranquilos y los que se acercan a disfrutar de nuestros conciertos y eventos en directo, parte habitual de nuestra programación. Cuidamos cada detalle del servicio para que cada visita sea una experiencia completa, no solo una comida.",
+            "heading": "Ambiente familiar, terraza y eventos en directo"
           },
           {
-            "text": "Llevamos desde 2018 siendo un punto de reunión en Valdemorillo, con una valoración de 4,8 en Google que refleja el trato personalizado que nos define. Terraza con vistas, música en directo los fines de semana, cócteles artesanales y raciones caseras: la combinación que hace que muchos vecinos nos consideren su bar de referencia. Aquí prima la cercanía y el ambiente auténtico.",
-            "heading": "Por qué elegir Bar Las Chimeneas frente a otros bares del pueblo"
+            "text": "Lo que nos diferencia es una cocina casera que cambia constantemente, con menús del día creativos y platos elaborados al momento. Organizamos música y eventos en directo, cuidamos el trato —aquí te atienden con nombre y sonrisa— y buscamos que salgas con ganas de volver. No es casualidad que nuestros clientes lo cuenten así: “Dani cocina de lujo, cada día un menú diferente que sorprende. Todo buenísimo y el servicio excelente.” “La comida exquisita y el trato del personal es espectacular. Volveremos.” Detrás está Danny Barrios y un equipo comprometido con la calidad y la atención al cliente.",
+            "heading": "Por qué elegir Las Chimeneas frente a otros bares del pueblo"
           },
           {
-            "text": "Nos encuentras en la Casa de la Cultura de Valdemorillo (Madrid). Las plazas en terraza son limitadas, así que si vienes en grupo o en fin de semana te recomendamos reservar mesa por WhatsApp con antelación. [Dirección exacta, teléfono y horario completo de cada día — pendiente de confirmar con el cliente].",
-            "heading": "Dónde estamos y cómo reservar"
+            "text": "Nos encontrarás en la Casa de Cultura de Valdemorillo (Madrid). Nuestro horario es de lunes a viernes de 9:00 a 23:00, sábados de 13:00 a 17:00 y de 19:00 a 23:00, y domingo cerrado. Para asegurarte mesa, especialmente en terraza y los días de menú o evento, te recomendamos reservar con antelación. Escríbenos o llámanos y te confirmamos tu sitio.",
+            "heading": "Horario, ubicación y cómo reservar"
           }
         ],
         "faq": [
           {
-            "a": "Estamos en la Casa de la Cultura de Valdemorillo (Madrid). Puedes escribirnos por WhatsApp para indicarte cómo llegar y reservar mesa. [Dirección exacta pendiente de confirmar].",
+            "a": "Estamos en la Casa de Cultura de Valdemorillo (Madrid), un espacio céntrico y de fácil acceso. Contamos con terraza y un ambiente familiar y acogedor.",
             "q": "¿Dónde está Bar Las Chimeneas en Valdemorillo?"
           },
           {
-            "a": "Sí. Contamos con una terraza exterior con vistas a la sierra, una de las más especiales del pueblo. En fines de semana las plazas son limitadas, por lo que conviene reservar.",
-            "q": "¿Tenéis terraza?"
+            "a": "Abrimos de lunes a viernes de 9:00 a 23:00 y los sábados de 13:00 a 17:00 y de 19:00 a 23:00. Los domingos permanecemos cerrados.",
+            "q": "¿Qué horario tiene el bar?"
           },
           {
-            "a": "Sí, ofrecemos música en directo los sábados y los domingos de vermut. Es uno de nuestros planes más populares.",
-            "q": "¿Hay música en vivo?"
+            "a": "Sí. El menú del día es nuestra especialidad y se elabora cada día con recetas diferentes, cocina casera con un toque premium preparada al momento por nuestro chef.",
+            "q": "¿Ofrecen menú del día?"
           },
           {
-            "a": "Raciones caseras y tapas madrileñas con toques creativos, pensadas para compartir, además de cócteles artesanales y una bodega seleccionada. [Carta y especialidades concretas pendientes de confirmar].",
-            "q": "¿Qué tipo de comida servís?"
+            "a": "Sí, recomendamos reservar, sobre todo para la terraza y los días con menú o evento en directo. Contáctanos para confirmar tu mesa.",
+            "q": "¿Se puede reservar mesa?"
           },
           {
-            "a": "Puedes reservar mesa fácilmente por WhatsApp. Te recomendamos hacerlo con antelación si vienes en grupo o en fin de semana, ya que la terraza tiene plazas limitadas.",
-            "q": "¿Cómo reservo mesa?"
+            "a": "Totalmente. Es un local familiar y acogedor, ideal para familias, parejas, trabajadores y grupos de amigos que buscan buena comida, buen ambiente y una excelente relación calidad-precio.",
+            "q": "¿Es un sitio para ir en familia o en grupo?"
           }
         ],
-        "jsonld": "{\"@context\":\"https://schema.org\",\"@type\":\"BarOrPub\",\"name\":\"Bar Las Chimeneas\",\"description\":\"Bar en Valdemorillo con terraza, raciones caseras, cócteles artesanales y música en vivo los fines de semana.\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Valdemorillo\",\"addressRegion\":\"Madrid\",\"addressCountry\":\"ES\"},\"servesCuisine\":\"Tapas y raciones madrileñas\",\"foundingDate\":\"2018\"}",
+        "jsonld": "{\"@context\":\"https://schema.org\",\"@type\":\"Restaurant\",\"name\":\"Bar Las Chimeneas\",\"description\":\"Bar en Valdemorillo con menú del día casero, tapas de autor, terraza y música en vivo. Ambiente familiar en la Casa de Cultura.\",\"servesCuisine\":\"Cocina casera española, tapas\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"Casa de Cultura de Valdemorillo\",\"addressLocality\":\"Valdemorillo\",\"addressRegion\":\"Madrid\",\"addressCountry\":\"ES\"},\"openingHoursSpecification\":[{\"@type\":\"OpeningHoursSpecification\",\"dayOfWeek\":[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\"],\"opens\":\"09:00\",\"closes\":\"23:00\"},{\"@type\":\"OpeningHoursSpecification\",\"dayOfWeek\":\"Saturday\",\"opens\":\"13:00\",\"closes\":\"17:00\"},{\"@type\":\"OpeningHoursSpecification\",\"dayOfWeek\":\"Saturday\",\"opens\":\"19:00\",\"closes\":\"23:00\"}]}",
         "gaps": [
-          "Dirección postal exacta y teléfono visible del bar (imprescindible para la confianza/E-E-A-T y para el JSON-LD).",
-          "Horario completo de cada día de la semana (solo aparece 'horario hoy 08:00–23:00').",
-          "Especialidades reales: platos y tapas estrella para destacarlos en la carta.",
-          "Detalles del local: aforo, si hay chimenea, zona interior, si es apto para familias/niños.",
-          "Fotos propias del local, la terraza, los platos y la música en vivo (clave para transmitir experiencia real).",
-          "Enlace o número de WhatsApp/teléfono de reservas para hacer clic directo.",
-          "Testimonios reales de clientes con nombre para reforzar prueba social (más allá del 4,8 de Google).",
-          "Número de reseñas que respaldan el 4,8 en Google, para dar contexto verificable."
+          "Falta la dirección postal exacta y el código postal dentro de la Casa de Cultura (calle y número) para el JSON-LD y la sección de ubicación.",
+          "Falta teléfono y/o número de WhatsApp de reservas y enlace del sistema de reserva online.",
+          "No se aporta el precio del menú del día ni rango de precios (priceRange), dato clave para la decisión de compra.",
+          "No hay email ni razón social/NIF para completar contacto y futuras páginas legales.",
+          "Conviene confirmar el número real de reseñas y la valoración en Google (el material web menciona 4.8, pero no está verificado en datos_cliente) antes de mostrarlo como cifra.",
+          "Falta detalle de la programación de eventos/conciertos (días, tipo de música) para reforzar la experiencia.",
+          "Recomendable enlazar/crear páginas propias de Carta, Eventos y Galería (fotos reales disponibles) para que cada intención tenga su página.",
+          "Confirmar si hay opciones vegetarianas, para celíacos o menú infantil, dudas habituales de familias."
         ]
       },
       "client_facts": {
+        "horario": "Lunes a viernes de 9:00 a 23:00  y sabados de 13:00 - 17:00 y 19:00 - 23:00. Dominngo cierra.",
         "ambiente_local": "Local acogedor situado en la Casa de Cultura de Valdemorillo, con terraza y un ambiente familiar, ideal para disfrutar de una buena comida o de nuestros eventos.",
-        "especialidades": "Croquetas caseras, secreto ibérico, solomillo con Romesco de Avellanas, hamburguesas gourmet, y postres caseros.",
+        "especialidades": "El bar es especialmente reconocido por el Menú del día que ofrece, donde podrás probar las ingeniosas elaboraciones de nuestro chef, comida de calidad con un toque premium, porque todos merecen comer al mejor nivel. También es famoso por sus tapas, algunas de las más reconocidas son: Croquetas caseras, secreto ibérico, solomillo con Romesco de Avellanas, hamburguesas gourmet, y postres caseros.",
+        "anios_experiencia": "El bar está abierto desde 2018, sin embargo, Danny, el nuevo dueño es quién lo ha cogido desde 2025. Esta vez, ha apostado por cambiar por completo el concepto, y ha creado un sitio que en solo un año ya es reconocido como de los mejores bares de Valdemorillo.",
         "fotos_disponibles": "Sí. Disponemos de fotografías del local, la terraza, los platos y los eventos."
+      }
+    },
+    {
+      "path": "/privacidad",
+      "title": "Política de Privacidad",
+      "intent": "Legal obligatoria (RGPD): informar del tratamiento de datos personales.",
+      "primary_keyword": "política de privacidad",
+      "secondary_keywords": [],
+      "must_answer": [
+        "¿Quién es el responsable?",
+        "¿Qué datos se recogen y para qué?",
+        "¿Cuáles son tus derechos?"
+      ],
+      "exists_already": false,
+      "priority": 1,
+      "copy": {
+        "meta_title": "Política de Privacidad | Bar Las Chimeneas Valdemorillo",
+        "meta_description": "Consulta la política de privacidad del Bar Las Chimeneas en Valdemorillo: quién trata tus datos, con qué finalidad y cómo ejercer tus derechos según el RGPD.",
+        "h1": "Política de Privacidad",
+        "sections": [
+          {
+            "text": "El responsable del tratamiento de los datos personales que puedas facilitar a través de esta web o de nuestros canales de contacto es:\n\n- Titular: Emperatriz Parucha Camacho\n- NIF: 14049542S\n- Domicilio: Calle Balconcillos 8, 28210 Valdemorillo (Madrid)\n- Correo electrónico de contacto: emperatriz.parucha@Gmail.com\n\nEsta política explica de forma transparente cómo tratamos tus datos cuando visitas nuestra web, reservas mesa o te pones en contacto con nosotros.",
+            "heading": "Responsable del tratamiento"
+          },
+          {
+            "text": "Tratamos únicamente los datos que tú nos facilitas voluntariamente y los que se generan de forma automática al navegar por la web.\n\n- Datos de reserva o contacto: nombre, teléfono, correo electrónico y cualquier información que incluyas en tu mensaje. Finalidad: gestionar tu reserva de mesa, atender tus consultas y responderte.\n- Datos de navegación: información técnica y de uso recogida mediante herramientas de análisis (utilizamos Google Analytics y Google Search Console). Finalidad: entender cómo se usa la web y mejorar nuestros contenidos y servicios.\n\nNo utilizamos tus datos para finalidades distintas de las aquí indicadas sin informarte previamente.",
+            "heading": "Qué datos recogemos y con qué finalidad"
+          },
+          {
+            "text": "Tratamos tus datos amparándonos en las siguientes bases legales previstas en el RGPD:\n\n- Tu consentimiento, que otorgas al enviarnos una reserva, un mensaje o al aceptar las cookies analíticas.\n- La ejecución de la relación con el cliente cuando solicitas una reserva o un servicio.\n- Nuestro interés legítimo en analizar el uso de la web para mejorarla.\n\nPuedes retirar tu consentimiento en cualquier momento sin que ello afecte a la licitud del tratamiento previo.",
+            "heading": "Base jurídica del tratamiento"
+          },
+          {
+            "text": "Conservamos tus datos durante el tiempo estrictamente necesario para la finalidad para la que se recogieron y, posteriormente, durante los plazos legalmente exigibles. Cuando ya no sean necesarios, se eliminan de forma segura. [Plazo concreto de conservación — pendiente de definir por el cliente].",
+            "heading": "Conservación de los datos"
+          },
+          {
+            "text": "Tus datos no se ceden a terceros salvo obligación legal. Al utilizar herramientas de Google (Google Analytics y Google Search Console), determinada información de navegación puede ser tratada por Google LLC, que puede implicar transferencias internacionales de datos amparadas en las garantías previstas por dicho proveedor. Puedes consultar la política de privacidad de Google para más detalle.",
+            "heading": "Destinatarios y transferencias"
+          },
+          {
+            "text": "Como titular de los datos, la normativa de protección de datos (RGPD y LOPDGDD) te reconoce los siguientes derechos:\n\n- Acceso: saber qué datos tuyos tratamos.\n- Rectificación: corregir datos inexactos o incompletos.\n- Supresión: solicitar que eliminemos tus datos.\n- Oposición: oponerte a determinados tratamientos.\n- Limitación: pedir que restrinjamos el tratamiento.\n- Portabilidad: recibir tus datos en un formato estructurado.\n\nPara ejercer cualquiera de estos derechos, escríbenos a emperatriz.parucha@Gmail.com indicando tu solicitud. Si consideras que no hemos atendido correctamente tu petición, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es).",
+            "heading": "Tus derechos"
+          },
+          {
+            "text": "Aplicamos medidas técnicas y organizativas razonables para proteger tus datos personales frente a accesos no autorizados, pérdida o uso indebido. Tratamos tu información con la misma cercanía y cuidado con el que atendemos a cada cliente que entra por nuestra puerta.",
+            "heading": "Seguridad de tus datos"
+          },
+          {
+            "text": "Documento orientativo — debe revisarlo un asesor legal antes de publicar.",
+            "heading": "Nota legal"
+          }
+        ],
+        "faq": [
+          {
+            "a": "El responsable es Emperatriz Parucha Camacho (NIF 14049542S), con domicilio en Calle Balconcillos 8, 28210 Valdemorillo (Madrid). Puedes contactar en emperatriz.parucha@Gmail.com.",
+            "q": "¿Quién es el responsable de mis datos en Bar Las Chimeneas?"
+          },
+          {
+            "a": "Recogemos el nombre, teléfono, correo electrónico y la información que incluyas en tu solicitud, con el único fin de gestionar tu reserva y atenderte correctamente.",
+            "q": "¿Qué datos recogéis cuando reservo mesa?"
+          },
+          {
+            "a": "Puedes solicitar el acceso, rectificación, supresión, oposición, limitación o portabilidad de tus datos escribiendo a emperatriz.parucha@Gmail.com. También puedes reclamar ante la Agencia Española de Protección de Datos.",
+            "q": "¿Cómo puedo ejercer mis derechos de protección de datos?"
+          }
+        ],
+        "jsonld": "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Política de Privacidad\",\"description\":\"Política de privacidad del Bar Las Chimeneas en Valdemorillo conforme al RGPD.\",\"publisher\":{\"@type\":\"Restaurant\",\"name\":\"Bar Las Chimeneas\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"Calle Balconcillos 8\",\"postalCode\":\"28210\",\"addressLocality\":\"Valdemorillo\",\"addressRegion\":\"Madrid\",\"addressCountry\":\"ES\"},\"email\":\"emperatriz.parucha@Gmail.com\"}}",
+        "gaps": [
+          "No se indica el plazo concreto de conservación de los datos (reservas, consultas, datos analíticos): el cliente debe definirlo.",
+          "No se aporta teléfono de contacto para incluirlo como canal para ejercer derechos.",
+          "No consta si existe un encargado del tratamiento adicional (por ejemplo, plataforma de reservas, hosting, gestoría) que trate datos por cuenta del negocio.",
+          "No se especifica si se usa el correo para envío de comunicaciones comerciales o newsletter, lo que requeriría base jurídica y cláusula específica.",
+          "Conviene confirmar la razón social/forma jurídica exacta (autónoma persona física) para el apartado de identificación del responsable.",
+          "El documento debe ser revisado por un asesor legal antes de su publicación."
+        ]
+      },
+      "client_facts": {
+        "nif": "14049542S",
+        "email_legal": "emperatriz.parucha@Gmail.com",
+        "razon_social": "Emperatriz Parucha Camacho",
+        "usa_analytics": "Sí, usamos Google Analytics y Google search control",
+        "domicilio_fiscal": "Calle Balconcillos 8 Valdemorillo, 28210"
+      }
+    },
+    {
+      "path": "/cookies",
+      "title": "Política de Cookies",
+      "intent": "Legal obligatoria (LSSI): qué cookies usa la web y cómo gestionarlas. Va unida al banner de consentimiento.",
+      "primary_keyword": "política de cookies",
+      "secondary_keywords": [],
+      "must_answer": [
+        "¿Qué cookies usa la web?",
+        "¿Cómo aceptarlas o rechazarlas?"
+      ],
+      "exists_already": false,
+      "priority": 1,
+      "copy": {
+        "meta_title": "Política de Cookies | Bar Las Chimeneas Valdemorillo",
+        "meta_description": "Consulta la política de cookies de Bar Las Chimeneas (Valdemorillo): qué cookies usamos, para qué sirven y cómo aceptarlas, rechazarlas o configurarlas.",
+        "h1": "Política de Cookies",
+        "sections": [
+          {
+            "text": "Las cookies son pequeños archivos de texto que un sitio web instala en tu dispositivo (ordenador, móvil o tablet) cuando lo visitas. Sirven para recordar información sobre tu navegación, hacer que la web funcione correctamente y ayudarnos a entender cómo se utiliza para mejorarla. Esta página te explica qué cookies utiliza la web de Bar Las Chimeneas y cómo puedes gestionarlas en cualquier momento.",
+            "heading": "¿Qué son las cookies?"
+          },
+          {
+            "text": "El responsable del tratamiento de los datos obtenidos a través de las cookies es Emperatriz Parucha Camacho (NIF 14049542S), con domicilio en Calle Balconcillos 8, 28210 Valdemorillo (Madrid). Para cualquier consulta relacionada con esta política puedes escribir a emperatriz.parucha@Gmail.com.",
+            "heading": "¿Quién es el responsable?"
+          },
+          {
+            "text": "En nuestra web utilizamos dos tipos de cookies: 1) Cookies técnicas o necesarias, imprescindibles para que la página funcione correctamente y para recordar tus preferencias de consentimiento; estas no requieren tu autorización. 2) Cookies de análisis o medición de terceros: usamos Google Analytics y Google Search Console para conocer de forma estadística cómo interactúan los visitantes con la web (páginas más vistas, tiempo de navegación, dispositivos empleados). Esta información nos ayuda a mejorar nuestros contenidos y servicios. Estas cookies analíticas solo se activan si das tu consentimiento. [Tabla detallada de cookies con nombre, proveedor, finalidad y caducidad — pendiente de completar con los datos técnicos exactos.]",
+            "heading": "¿Qué cookies usa esta web?"
+          },
+          {
+            "text": "La primera vez que visitas la web aparece un banner de consentimiento donde puedes: aceptar todas las cookies, rechazarlas (manteniendo solo las técnicas necesarias) o configurar cuáles permites. Puedes cambiar tu decisión cuando quieras volviendo a abrir el panel de configuración de cookies del sitio. Además, puedes gestionar o eliminar las cookies desde la configuración de tu navegador: en Google Chrome, Mozilla Firefox, Microsoft Edge y Safari encontrarás en sus ajustes de privacidad la opción de bloquear o borrar cookies. Ten en cuenta que, si desactivas las cookies técnicas, algunas funciones de la web podrían no funcionar correctamente.",
+            "heading": "¿Cómo aceptar, rechazar o configurar las cookies?"
+          },
+          {
+            "text": "Google Analytics y Google Search Console son servicios prestados por Google. La información que generan estas cookies sobre tu uso de la web puede ser tratada por Google conforme a sus propias políticas de privacidad. Te recomendamos revisar la política de privacidad de Google para conocer con detalle cómo tratan estos datos y las opciones que ofrecen para inhabilitar su seguimiento.",
+            "heading": "Cookies de terceros: Google"
+          },
+          {
+            "text": "Podemos actualizar esta política de cookies para adaptarla a cambios legales, técnicos o en los servicios que utilizamos. Te recomendamos revisarla periódicamente para estar informado sobre cómo usamos las cookies.",
+            "heading": "Actualizaciones de esta política"
+          },
+          {
+            "text": "Documento orientativo — debe revisarlo un asesor legal antes de publicar.",
+            "heading": "Nota importante"
+          }
+        ],
+        "faq": [
+          {
+            "a": "Sí. Puedes rechazar las cookies de análisis y seguir navegando con normalidad, ya que solo se mantendrán activas las cookies técnicas necesarias para que la web funcione.",
+            "q": "¿Puedo navegar por la web sin aceptar las cookies?"
+          },
+          {
+            "a": "Puedes modificar tu consentimiento en cualquier momento reabriendo el panel de configuración de cookies del sitio o borrando las cookies desde los ajustes de privacidad de tu navegador.",
+            "q": "¿Cómo cambio mi decisión sobre las cookies?"
+          }
+        ],
+        "jsonld": "{\"@context\":\"https://schema.org\",\"@type\":\"BarOrPub\",\"name\":\"Bar Las Chimeneas\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"Calle Balconcillos 8\",\"postalCode\":\"28210\",\"addressLocality\":\"Valdemorillo\",\"addressRegion\":\"Madrid\",\"addressCountry\":\"ES\"},\"email\":\"emperatriz.parucha@Gmail.com\"}",
+        "gaps": [
+          "Falta la tabla técnica detallada de cookies (nombre exacto de cada cookie, proveedor, finalidad concreta y plazo de caducidad), especialmente las de Google Analytics/Search Console.",
+          "No se indica si la web usa otras cookies (redes sociales, mapas embebidos, botón de WhatsApp, sistema de reservas) que también deberían declararse.",
+          "Conviene enlazar la Política de Privacidad y el Aviso Legal desde esta página para coherencia legal.",
+          "Falta confirmar el nombre comercial y datos de contacto telefónico visibles para reforzar la confianza (E-E-A-T)."
+        ]
+      },
+      "client_facts": {
+        "nif": "14049542S",
+        "email_legal": "emperatriz.parucha@Gmail.com",
+        "razon_social": "Emperatriz Parucha Camacho",
+        "usa_analytics": "Si, google Annalytics y google search control",
+        "domicilio_fiscal": "Calle Balconcillos 8 Valdemorillo, 28210"
+      }
+    },
+    {
+      "path": "/aviso-legal",
+      "title": "Aviso Legal",
+      "intent": "Legal obligatoria (LSSI): datos identificativos del titular de la web.",
+      "primary_keyword": "aviso legal",
+      "secondary_keywords": [],
+      "must_answer": [
+        "¿Quién es el titular de la web?",
+        "¿Datos de contacto?"
+      ],
+      "exists_already": false,
+      "priority": 1,
+      "copy": {
+        "meta_title": "Aviso Legal | Bar Las Chimeneas Valdemorillo",
+        "meta_description": "Aviso legal de Bar Las Chimeneas en Valdemorillo: datos identificativos del titular de la web y contacto conforme a la normativa LSSI-CE vigente.",
+        "h1": "Aviso Legal",
+        "sections": [
+          {
+            "text": "En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se facilitan a continuación los datos identificativos del titular de este sitio web:\n\n- Titular: Emperatriz Parucha Camacho\n- NIF: 14049542S\n- Domicilio: Calle Balconcillos 8, 28210 Valdemorillo (Madrid)\n- Correo electrónico de contacto: emperatriz.parucha@gmail.com\n- Nombre comercial: Bar Las Chimeneas",
+            "heading": "Titular de la web"
+          },
+          {
+            "text": "El presente aviso legal regula el uso del sitio web de Bar Las Chimeneas, establecimiento de hostelería situado en Valdemorillo (Madrid). El acceso y la navegación por este sitio implican la aceptación de las condiciones recogidas en este aviso legal. Recomendamos leerlo detenidamente.",
+            "heading": "Objeto"
+          },
+          {
+            "text": "El usuario se compromete a hacer un uso adecuado de los contenidos y servicios que se ofrecen a través de este sitio web y a no emplearlos para incurrir en actividades ilícitas o contrarias a la buena fe y al ordenamiento jurídico. El titular no se hace responsable del mal uso que se realice de los contenidos de la web, siendo responsabilidad exclusiva de la persona que accede a ellos o los utiliza.",
+            "heading": "Condiciones de uso"
+          },
+          {
+            "text": "Los contenidos de este sitio web (textos, imágenes, logotipos, diseño y demás elementos) son titularidad del responsable de la web o cuenta con la autorización correspondiente para su uso, y están protegidos por la normativa de propiedad intelectual e industrial. Queda prohibida su reproducción, distribución o comunicación pública total o parcial sin autorización expresa.",
+            "heading": "Propiedad intelectual e industrial"
+          },
+          {
+            "text": "El titular no garantiza la disponibilidad continuada del sitio web ni se responsabiliza de los posibles daños derivados de interrupciones o fallos técnicos. En caso de que el sitio contenga enlaces a páginas de terceros, el titular no asume responsabilidad alguna sobre el contenido de dichos sitios externos.",
+            "heading": "Responsabilidad y enlaces"
+          },
+          {
+            "text": "Este sitio web utiliza herramientas de análisis de tráfico, en concreto Google Analytics y Google Search Console, que recogen información sobre la navegación de los usuarios con fines estadísticos y de mejora del servicio. Puedes consultar el detalle del tratamiento de datos y la gestión de cookies en nuestra Política de Privacidad y Política de Cookies.",
+            "heading": "Analítica web"
+          },
+          {
+            "text": "El presente aviso legal se rige por la legislación española. Para la resolución de cualquier controversia derivada del acceso o uso de este sitio web, las partes se someten a los juzgados y tribunales que correspondan conforme a la normativa vigente.\n\nDocumento orientativo — debe revisarlo un asesor legal antes de publicar.",
+            "heading": "Legislación aplicable"
+          }
+        ],
+        "faq": [
+          {
+            "a": "El titular es Emperatriz Parucha Camacho, con NIF 14049542S y domicilio en Calle Balconcillos 8, 28210 Valdemorillo (Madrid), responsable del sitio web del Bar Las Chimeneas.",
+            "q": "¿Quién es el titular de esta web?"
+          },
+          {
+            "a": "Puedes escribir al correo electrónico emperatriz.parucha@gmail.com o acudir al establecimiento en Calle Balconcillos 8, Valdemorillo.",
+            "q": "¿Cómo puedo contactar con el responsable de la web?"
+          }
+        ],
+        "jsonld": "{\"@context\":\"https://schema.org\",\"@type\":\"BarOrPub\",\"name\":\"Bar Las Chimeneas\",\"legalName\":\"Emperatriz Parucha Camacho\",\"taxID\":\"14049542S\",\"email\":\"emperatriz.parucha@gmail.com\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"Calle Balconcillos 8\",\"addressLocality\":\"Valdemorillo\",\"postalCode\":\"28210\",\"addressRegion\":\"Madrid\",\"addressCountry\":\"ES\"}}",
+        "gaps": [
+          "No se aporta teléfono de contacto del establecimiento (recomendable en el aviso legal para reforzar la transparencia y la confianza).",
+          "No se indica si existe un número de registro mercantil o de actividad económica (epígrafe IAE) que pudiera ser aplicable.",
+          "Falta confirmar el nombre del dominio web exacto para incluirlo en el aviso legal.",
+          "No se especifica el proveedor de hosting/alojamiento, dato recomendable en un aviso legal completo.",
+          "Conviene enlazar de forma efectiva la Política de Privacidad y la Política de Cookies desde este documento."
+        ]
+      },
+      "client_facts": {
+        "nif": "14049542S",
+        "email_legal": "emperatriz.parucha@Gmail.com",
+        "razon_social": "Emperatriz Parucha Camacho",
+        "usa_analytics": "Sí, google Analytics y Google search console",
+        "domicilio_fiscal": "Calle Balconcillos 8 Valdemorillo, 28210"
       }
     }
   ],
+  "analytics": {
+    "ga4_measurement_id": "G-1R1H5F8B6X",
+    "gsc_verification": null
+  },
   "design_brief": {
     "tone": "Cercano, pero premieum",
     "notes": "Las fotos que he subido para galería son para usar o bien algunas e la home si hacen falta o en la sección de carta, son algunos de nuestros platos.",
@@ -550,8 +796,8 @@
   },
   "build_instructions": "Clona el repo, revisa /kit-de-obra, y ejecuta Claude Code con el pack de agentes declarado en cenit.build.json. Construye cada página del array `pages` respetando `tech` y `performance_targets`. No inventes datos del negocio: usa `copy` y `client_facts`; lo listado en `copy.gaps` queda pendiente de que el cliente lo aporte.",
   "_readiness": {
-    "pages_total": 4,
-    "pages_with_copy": 4,
+    "pages_total": 7,
+    "pages_with_copy": 7,
     "has_design_brief": true,
     "ready_to_hand_off": true
   }
