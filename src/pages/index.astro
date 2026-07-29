@@ -6,6 +6,7 @@ import { site, telLink, waLink, link } from '../data/site';
 
 import hero from '../assets/local-interior.jpg';
 import musica from '../assets/musica-directo.jpg';
+import postre from '../assets/ambiente-terraza.jpg';
 import croquetas from '../assets/croquetas.png';
 import huevosRotos from '../assets/huevos-rotos.png';
 import raboDeToro from '../assets/rabo-de-toro.jpg';
@@ -76,9 +77,21 @@ const proofs = [
   path="/"
   schema={[faqSchema]}
 >
-  <!-- HERO -->
+  <!-- HERO: foto a media pantalla con fundido hacia la pizarra -->
   <section class="hero">
-    <div class="container hero__grid">
+    <div class="hero__media">
+      <Image
+        src={hero}
+        alt="Interior del Bar Las Chimeneas: barra de ladrillo y ambiente familiar en Valdemorillo."
+        width={1100}
+        height={1000}
+        loading="eager"
+        fetchpriority="high"
+        format="webp" densities={[1, 2]}
+        quality={82}
+      />
+    </div>
+    <div class="container hero__inner">
       <div class="hero__copy">
         <span class="hand hero__hand">aquí te sentirás como en casa</span>
         <span class="eyebrow">Bar · Menú del día · Música en vivo</span>
@@ -93,89 +106,94 @@ const proofs = [
           <a class="btn" href={waLink}>Reservar por WhatsApp</a>
           <a class="btn btn--ghost" href={link('/carta')}>Ver el menú del día</a>
         </div>
+        <ul class="trust">
+          <li><strong>4,8 ★</strong> Google · {site.reviews} reseñas</li>
+          <li>Menú del día 13,90 €</li>
+          <li>Ambiente familiar y terraza</li>
+          <li>Eventos en directo</li>
+        </ul>
       </div>
-
-      <div class="hero__media" data-reveal>
-        <div class="frame hero__frame">
-          <Image
-            src={hero}
-            alt="Interior del Bar Las Chimeneas: barra de ladrillo y ambiente familiar en Valdemorillo."
-            width={720}
-            height={480}
-            loading="eager"
-            fetchpriority="high"
-            format="webp" densities={[1, 2]}
-            quality={82}
-          />
-        </div>
-        <span class="hero__ember" aria-hidden="true"></span>
-      </div>
-    </div>
-
-    <div class="container">
-      <ul class="trust">
-        <li><strong>4,8 ★</strong> Google · {site.reviews} reseñas</li>
-        <li>Menú del día 13,90 €</li>
-        <li>Ambiente familiar y terraza</li>
-        <li>Eventos en directo</li>
-      </ul>
     </div>
   </section>
 
   <!-- INTRO: Danny 2025 -->
   <section class="section">
-    <div class="container two" >
-      <div data-reveal>
+    <div class="container intro">
+      <div class="intro__copy" data-reveal>
         <span class="eyebrow">Desde 2025, nuevo concepto</span>
         <h2 class="h-xl">Un bar en Valdemorillo pensado para que te quedes</h2>
+        <div class="prose">
+          <p>
+            Bar Las Chimeneas es mucho más que un sitio donde tomar algo: es un lugar acogedor en
+            pleno corazón de Valdemorillo, dentro de la Casa de Cultura, donde vienes a comer bien y
+            te quedas por el ambiente. Desde 2025, <strong>Danny Barrios</strong> ha cogido las
+            riendas del local y ha cambiado por completo el concepto, apostando por una cocina casera
+            con un toque creativo elaborada al momento con ingredientes de calidad. En solo un año,
+            ese trabajo ha convertido a Las Chimeneas en uno de los bares de referencia del pueblo.
+          </p>
+        </div>
       </div>
-      <div class="prose" data-reveal style="--reveal-delay:80ms">
-        <p>
-          Bar Las Chimeneas es mucho más que un sitio donde tomar algo: es un lugar acogedor en pleno
-          corazón de Valdemorillo, dentro de la Casa de Cultura, donde vienes a comer bien y te quedas
-          por el ambiente. Desde 2025, Danny Barrios ha cogido las riendas del local y ha cambiado por
-          completo el concepto, apostando por una cocina casera con un toque creativo elaborada al
-          momento con ingredientes de calidad. En solo un año, ese trabajo ha convertido a Las
-          Chimeneas en uno de los bares de referencia del pueblo.
-        </p>
+      <div class="intro__fig" data-reveal style="--reveal-delay:80ms">
+        <div class="frame">
+          <Image
+            src={postre}
+            alt="Postre casero de fresas con nata de Bar Las Chimeneas."
+            width={620}
+            height={640}
+            format="webp" densities={[1, 2]}
+            quality={82}
+            loading="lazy"
+          />
+        </div>
+        <span class="stamp intro__stamp">¡bienvenido!</span>
       </div>
     </div>
   </section>
 
-  <!-- MENÚ DEL DÍA (protagonista) + CARRUSEL DE TAPAS REALES -->
-  <section class="section paper">
-    <div class="container">
-      <div class="menudia" data-reveal>
-        <aside class="pizarra" aria-label="Menú del día">
-          <span class="pizarra__hand">nuestra seña de identidad</span>
-          <h2 class="pizarra__title">Menú del día</h2>
-          <p class="pizarra__price">13,90 €</p>
-          <ul class="pizarra__list">
-            <li>Primer plato</li>
-            <li>Segundo plato</li>
-            <li>Bebida</li>
-            <li>Postre</li>
-          </ul>
-          <p class="pizarra__foot">Recetas diferentes cada jornada, elaboradas al momento.</p>
-        </aside>
-        <div class="menudia__copy">
-          <span class="eyebrow">La mesa</span>
-          <h2 class="h-lg">Menú del día, tapas y platos para compartir</h2>
-          <div class="prose">
-            <p>
-              Nuestra seña de identidad es el menú del día, elaborado cada jornada con recetas
-              diferentes salidas de la creatividad de nuestro chef: comida de calidad con un toque
-              premium, porque todos merecen comer al mejor nivel. Y si prefieres picar y compartir,
-              nuestras tapas y raciones caseras son famosas en el municipio: croquetas caseras,
-              secreto ibérico, solomillo con romesco de avellanas, hamburguesas gourmet y postres
-              caseros que no querrás dejar en el plato.
-            </p>
-          </div>
-          <a class="link-gold" href={link('/carta')}>Ver la carta y el menú del día →</a>
+  <!-- MENÚ DEL DÍA (protagonista) — banda premium con foto de fondo -->
+  <section class="menudia-band">
+    <div class="band-bg" aria-hidden="true">
+      <Image src={raboDeToro} alt="" width={1600} height={1000} format="webp" quality={70} loading="lazy" />
+    </div>
+    <div class="container menudia" data-reveal>
+      <aside class="pizarra" aria-label="Menú del día">
+        <span class="pizarra__hand">nuestra seña de identidad</span>
+        <h2 class="pizarra__title">Menú del día</h2>
+        <p class="pizarra__price">13,90 €</p>
+        <ul class="pizarra__list">
+          <li>Primer plato</li>
+          <li>Segundo plato</li>
+          <li>Bebida</li>
+          <li>Postre</li>
+        </ul>
+        <p class="pizarra__foot">Recetas diferentes cada jornada, elaboradas al momento.</p>
+      </aside>
+      <div class="menudia__copy">
+        <span class="eyebrow">La mesa</span>
+        <h2 class="h-lg">Menú del día, tapas y platos para compartir</h2>
+        <div class="prose">
+          <p>
+            Nuestra seña de identidad es el <strong>menú del día</strong>, elaborado cada jornada con
+            recetas diferentes salidas de la creatividad de nuestro chef: comida de calidad con un
+            toque premium, <strong>porque todos merecen comer al mejor nivel</strong>. Y si prefieres
+            picar y compartir, nuestras tapas y raciones caseras son famosas en el municipio:
+            croquetas caseras, secreto ibérico, solomillo con romesco de avellanas, hamburguesas
+            gourmet y postres caseros que no querrás dejar en el plato.
+          </p>
         </div>
+        <a class="link-gold" href={link('/carta')}>Ver la carta y el menú del día →</a>
       </div>
     </div>
+  </section>
 
+  <!-- CARRUSEL DE TAPAS REALES -->
+  <section class="section carousel-sec">
+    <div class="container">
+      <div class="carousel-sec__head" data-reveal>
+        <span class="eyebrow">De nuestra cocina</span>
+        <h2 class="h-lg">Algunas de nuestras tapas y platos</h2>
+      </div>
+    </div>
     <div class="carousel" role="region" aria-label="Algunas de nuestras tapas y platos">
       <ul class="carousel__track">
         {
@@ -192,35 +210,23 @@ const proofs = [
     </div>
   </section>
 
-  <!-- TERRAZA / MÚSICA -->
-  <section class="section">
-    <div class="container split">
-      <div class="frame split__media" data-reveal>
-        <Image
-          src={musica}
-          alt="Música en vivo en el Bar Las Chimeneas, con la terraza como escenario."
-          width={620}
-          height={620}
-          format="webp" densities={[1, 2]}
-          quality={82}
-          loading="lazy"
-        />
-        <span class="frame__cap">en directo, cada quincena</span>
-      </div>
-      <div class="split__copy" data-reveal style="--reveal-delay:80ms">
-        <span class="eyebrow">Terraza · familia · directo</span>
-        <h2 class="h-lg">Ambiente familiar, terraza y eventos en directo</h2>
-        <div class="prose">
-          <p>
-            Las Chimeneas es un local acogedor con terraza y un ambiente familiar, ideal para venir
-            con la familia, en pareja o con un grupo de amigos. Aquí caben los vecinos que buscan su
-            menú del día, los que quieren tomar unas tapas tranquilos y los que se acercan a
-            disfrutar de nuestros conciertos y eventos en directo, parte habitual de nuestra
-            programación. Cuidamos cada detalle del servicio para que cada visita sea una experiencia
-            completa, no solo una comida.
-          </p>
-        </div>
-        <a class="link-gold" href={link('/eventos-musica-en-vivo')}>Ver la agenda de eventos →</a>
+  <!-- TERRAZA / EVENTOS: banda a sangre con capa vermut -->
+  <section class="eventos-band">
+    <div class="band-bg" aria-hidden="true">
+      <Image src={musica} alt="" width={1900} height={900} format="webp" quality={72} loading="lazy" />
+    </div>
+    <div class="container eventos-band__inner" data-reveal>
+      <span class="hand eventos-band__hand">los findes, en directo</span>
+      <h2 class="eventos-band__title">Ambiente familiar, terraza <span class="accent">y eventos en directo</span></h2>
+      <p class="eventos-band__text">
+        Las Chimeneas es un local acogedor con terraza y un ambiente familiar, ideal para venir con la
+        familia, en pareja o con un grupo de amigos. Aquí caben los vecinos que buscan su menú del día,
+        los que quieren unas tapas tranquilos y los que se acercan a nuestros conciertos y eventos en
+        directo, parte habitual de nuestra programación.
+      </p>
+      <div class="btn-row eventos-band__cta">
+        <a class="btn" href={waLink}>Reservar mesa para el finde</a>
+        <a class="btn btn--ghost" href={link('/eventos-musica-en-vivo')}>Ver la agenda</a>
       </div>
     </div>
   </section>
@@ -302,16 +308,38 @@ const proofs = [
 </Base>
 
 <style>
-  /* HERO */
+  /* HERO — foto a media pantalla con fundido hacia la pizarra */
   .hero {
     position: relative;
-    padding-block: clamp(var(--sp-7), 7vw, var(--sp-9)) var(--sp-7);
+    overflow: hidden;
+    isolation: isolate;
   }
-  .hero__grid {
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: clamp(var(--sp-6), 5vw, var(--sp-8));
+  .hero__media {
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: 52%;
+    z-index: -1;
+  }
+  .hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* Fundido: el borde izquierdo de la foto se mezcla con el fondo pizarra */
+  .hero__media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--ink) 2%, rgba(32, 36, 26, 0.55) 22%, transparent 55%);
+  }
+  .hero__inner {
+    display: flex;
     align-items: center;
+    min-height: min(86vh, 760px);
+    padding-block: clamp(var(--sp-7), 6vw, var(--sp-9));
+  }
+  .hero__copy {
+    max-width: 34rem;
   }
   .hero__hand {
     display: block;
@@ -322,94 +350,145 @@ const proofs = [
   }
   .hero__title {
     margin-block: var(--sp-3) var(--sp-5);
-    max-width: 16ch;
+    max-width: 18ch;
   }
-  /* CTA del hero: los dos botones, juntos y en una fila */
-  .hero__cta {
-    flex-wrap: nowrap;
-  }
-  @media (max-width: 480px) {
-    .hero__cta {
-      flex-wrap: wrap;
-    }
-    .hero__cta .btn {
-      flex: 1 1 auto;
-    }
-  }
-  .hero__media {
-    position: relative;
-  }
-  .hero__frame {
-    aspect-ratio: 3 / 2;
-    transform: rotate(0.6deg);
-  }
-  .hero__frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .hero__ember {
-    position: absolute;
-    inset: -18% -12% auto auto;
-    width: 55%;
-    aspect-ratio: 1;
-    background: radial-gradient(circle, rgba(217, 107, 63, 0.35), transparent 65%);
-    filter: blur(24px);
-    z-index: -1;
-    animation: ember 7s ease-in-out infinite alternate;
-  }
-  @keyframes ember {
-    from { transform: translate3d(0, 0, 0) scale(1); opacity: 0.75; }
-    to { transform: translate3d(-8px, 10px, 0) scale(1.08); opacity: 1; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .hero__ember { animation: none; }
-    .hero__frame { transform: none; }
-  }
+  .hero__cta { flex-wrap: wrap; }
 
   .trust {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--sp-3) var(--sp-6);
+    gap: var(--sp-3) var(--sp-5);
     align-items: center;
     list-style: none;
     padding: var(--sp-5) 0 0;
     margin-top: var(--sp-6);
-    border-top: 1px solid var(--line);
+    border-top: 1px dashed var(--line-strong);
     color: var(--cream-dim);
     font-size: var(--step--1);
     letter-spacing: 0.02em;
   }
-  .trust li {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--sp-2);
-  }
-  .trust li + li::before {
-    content: '·';
-    color: var(--gold);
-    margin-right: var(--sp-4);
-  }
-  .trust strong {
-    color: var(--gold-bright);
-    font-family: var(--font-display);
-    font-size: 1.05rem;
+  .trust li { display: inline-flex; align-items: center; gap: var(--sp-2); }
+  .trust li + li::before { content: '·'; color: var(--amber); margin-right: var(--sp-3); }
+  .trust strong { color: var(--amber-bright); font-family: var(--font-display); font-size: 1.15rem; }
+
+  @media (max-width: 860px) {
+    /* Móvil: foto primero (arriba), luego el copy — como pediste */
+    .hero { display: flex; flex-direction: column; }
+    .hero__media {
+      position: relative;
+      width: 100%;
+      height: 42vh;
+      inset: auto;
+      z-index: 0;
+      order: -1;
+    }
+    .hero__media::after {
+      background: linear-gradient(0deg, var(--ink) 2%, transparent 60%);
+    }
+    .hero__inner { min-height: 0; padding-top: var(--sp-6); }
   }
 
-  /* Bloques de dos columnas */
-  .two {
+  /* INTRO: texto izquierda + foto (postre) derecha con sello */
+  .intro {
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: clamp(var(--sp-5), 4vw, var(--sp-8));
-    align-items: start;
+    grid-template-columns: 1.02fr 0.98fr;
+    gap: clamp(var(--sp-6), 5vw, var(--sp-8));
+    align-items: center;
   }
-  .two--head {
-    align-items: end;
-    margin-bottom: var(--sp-6);
+  .intro__copy h2 { margin: var(--sp-3) 0 var(--sp-4); }
+  .intro__fig { position: relative; }
+  .intro__fig .frame { aspect-ratio: 4 / 5; }
+  .intro__fig .frame img { width: 100%; height: 100%; object-fit: cover; }
+  .intro__stamp {
+    position: absolute;
+    top: var(--sp-4);
+    right: calc(-1 * var(--sp-3));
+    font-size: 1.9rem;
+    z-index: 4;
+    box-shadow: var(--shadow-soft);
   }
-  .two h2 {
-    margin-top: var(--sp-3);
+  @media (max-width: 780px) {
+    .intro { grid-template-columns: 1fr; }
+    .intro__fig .frame { aspect-ratio: 4 / 3; }
   }
+
+  /* Capa de fondo compartida para bandas a sangre */
+  .band-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+  }
+  .band-bg img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* Banda del MENÚ DEL DÍA — foto de fondo + capa cálida oscura */
+  .menudia-band {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    padding-block: clamp(var(--sp-8), 8vw, var(--sp-10));
+    color: var(--cream);
+  }
+  .menudia-band .band-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(20, 24, 16, 0.86), rgba(20, 24, 16, 0.92)),
+      radial-gradient(120% 100% at 15% 0%, rgba(176, 74, 47, 0.42), transparent 60%);
+  }
+  .menudia {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: clamp(var(--sp-6), 5vw, var(--sp-8));
+    align-items: center;
+  }
+  .menudia__copy h2 { margin: var(--sp-3) 0 var(--sp-4); }
+  .menudia__copy .prose { color: var(--cream-dim); }
+  .menudia__copy .prose strong { color: var(--amber-bright); font-weight: 600; }
+  .menudia__copy .link-gold { display: inline-block; margin-top: var(--sp-5); }
+  @media (max-width: 780px) {
+    .menudia { grid-template-columns: 1fr; }
+    .menudia .pizarra { margin-inline: auto; }
+  }
+
+  /* Banda de TERRAZA / EVENTOS — foto a sangre + capa vermut */
+  .eventos-band {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    padding-block: clamp(var(--sp-9), 11vw, var(--sp-10));
+    text-align: center;
+  }
+  .eventos-band .band-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(28, 12, 8, 0.62), rgba(28, 12, 8, 0.72)),
+      radial-gradient(120% 120% at 50% 40%, rgba(176, 74, 47, 0.5), rgba(20, 24, 16, 0.55) 75%);
+  }
+  .eventos-band__inner { max-width: 760px; margin-inline: auto; }
+  .eventos-band__hand { font-size: clamp(1.7rem, 3.4vw, 2.5rem); color: var(--amber-bright); }
+  .eventos-band__title {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    font-size: var(--step-3);
+    line-height: 0.96;
+    letter-spacing: 0.02em;
+    color: #fff;
+    margin: var(--sp-2) 0 var(--sp-4);
+  }
+  .eventos-band__title .accent { color: var(--amber); }
+  .eventos-band__text { color: #f4e6de; max-width: 56ch; margin: 0 auto var(--sp-6); }
+  .eventos-band__cta { justify-content: center; }
+  .eventos-band__cta .btn--ghost { color: #fff; border-color: rgba(255, 255, 255, 0.5); }
+  .eventos-band__cta .btn--ghost:hover { border-color: var(--amber-bright); color: var(--amber-bright); background: rgba(255,255,255,0.08); }
+
+  /* Sección del carrusel de tapas */
+  .carousel-sec { padding-bottom: clamp(var(--sp-7), 6vw, var(--sp-8)); }
+  .carousel-sec__head { margin-bottom: var(--sp-5); }
+  .carousel-sec__head h2 { margin-top: var(--sp-2); }
 
   .split {
     display: grid;
@@ -426,29 +505,6 @@ const proofs = [
   .split__copy .link-gold {
     display: inline-block;
     margin-top: var(--sp-5);
-  }
-
-  /* Menú del día (pizarra + copy) */
-  .menudia {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: clamp(var(--sp-6), 5vw, var(--sp-8));
-    align-items: center;
-  }
-  .menudia__copy h2 {
-    margin: var(--sp-3) 0 var(--sp-4);
-  }
-  .menudia__copy .link-gold {
-    display: inline-block;
-    margin-top: var(--sp-5);
-  }
-  @media (max-width: 780px) {
-    .menudia {
-      grid-template-columns: 1fr;
-    }
-    .menudia .pizarra {
-      margin-inline: auto;
-    }
   }
 
   /* Reseñas reales */
