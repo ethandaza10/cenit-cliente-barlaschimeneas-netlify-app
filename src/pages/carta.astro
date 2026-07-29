@@ -89,10 +89,13 @@ const menuSchema = {
     </div>
   </section>
 
-  <!-- Menú del día -->
-  <section class="section paper">
-    <div class="container split">
-      <aside class="pizarra" data-reveal aria-label="Menú del día">
+  <!-- Menú del día — banda premium con foto de fondo + capa vermut -->
+  <section class="menu-band">
+    <div class="band-bg" aria-hidden="true">
+      <Image src={raboDeToro} alt="" width={1600} height={1000} format="webp" quality={70} loading="lazy" />
+    </div>
+    <div class="container split" data-reveal>
+      <aside class="pizarra" aria-label="Menú del día">
         <span class="pizarra__hand">el de cada día</span>
         <h2 class="pizarra__title">Menú del día</h2>
         <p class="pizarra__price">13,90 €</p>
@@ -104,15 +107,15 @@ const menuSchema = {
         </ul>
         <p class="pizarra__foot">Comer bien sin complicarte, en el corazón de Valdemorillo.</p>
       </aside>
-      <div class="split__copy" data-reveal style="--reveal-delay:80ms">
+      <div class="split__copy menu-band__copy" style="--reveal-delay:80ms">
         <span class="eyebrow">Cada día</span>
         <h2 class="h-lg">Menú del día en Valdemorillo</h2>
         <div class="prose">
           <p>
-            El menú del día es la forma más cómoda de comer bien sin complicarte: primer plato,
-            segundo plato, bebida y postre por <strong>13,90&nbsp;€</strong>. Los platos concretos
-            van cambiando cada día, así que lo mejor es preguntarnos por WhatsApp o al llegar qué
-            hay hoy.
+            El <strong>menú del día</strong> es la forma más cómoda de comer bien sin complicarte:
+            primer plato, segundo plato, bebida y postre por <strong>13,90&nbsp;€</strong>. Los
+            platos concretos <strong>cambian cada día</strong>, así que lo mejor es preguntarnos por
+            WhatsApp o al llegar qué hay hoy.
           </p>
         </div>
         <p class="pending">
@@ -225,6 +228,32 @@ const menuSchema = {
     margin: var(--sp-3) 0 var(--sp-4);
   }
   /* estilos de .pizarra* en global.css (se comparten con la home) */
+
+  /* Banda del menú del día — foto de fondo + capa cálida oscura (como en la home) */
+  .menu-band {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    padding-block: clamp(var(--sp-8), 8vw, var(--sp-10));
+    color: var(--cream);
+  }
+  .band-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+  }
+  .band-bg img { width: 100%; height: 100%; object-fit: cover; }
+  .menu-band .band-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(20, 24, 16, 0.86), rgba(20, 24, 16, 0.92)),
+      radial-gradient(120% 100% at 85% 0%, rgba(176, 74, 47, 0.42), transparent 60%);
+  }
+  .menu-band__copy .prose { color: var(--cream-dim); }
+  .menu-band__copy .prose strong { color: var(--amber-bright); font-weight: 600; }
 
   .two {
     display: grid;

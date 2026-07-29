@@ -338,8 +338,14 @@ p { text-wrap: pretty; }
   border-bottom: 2px dotted var(--line-strong);
   display: grid;
   gap: var(--sp-2);
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
+}
+/* Ítems del menú escritos "a tiza" (manuscrito) */
+.pizarra__list li {
+  font-family: var(--font-hand);
+  font-weight: 600;
+  font-size: 1.75rem;
+  line-height: 1.15;
+  color: var(--cream);
 }
 .pizarra__foot {
   margin-top: var(--sp-4);
