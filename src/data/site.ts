@@ -44,7 +44,7 @@ export const site = {
     'https://maps.google.com/?cid=5165903861513153668',
   mapsEmbed:
     'https://maps.google.com/maps?q=Bar%20Las%20Chimeneas%20Valdemorillo%20Casa%20de%20la%20Cultura&z=16&output=embed',
-  domain: 'https://www.barlaschimeneas.com',
+  domain: 'https://barlaschimeneas.com',
 } as const;
 
 export const nav = [

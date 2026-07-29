@@ -11,7 +11,7 @@ const IS_PAGES = process.env.GITHUB_PAGES === 'true';
 // DOMINIO FINAL del cliente (kit: client.site_url). De aquí salen el canonical
 // autorreferente y el sitemap.xml, EXACTAMENTE este dominio (no el de pruebas),
 // para que Google indexe la web real y no la de preview.
-const SITE = 'https://www.barlaschimeneas.com';
+const SITE = 'https://barlaschimeneas.com';
 
 export default defineConfig({
   site: SITE,
