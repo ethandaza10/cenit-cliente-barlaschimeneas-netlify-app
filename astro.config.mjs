@@ -8,15 +8,15 @@ const REPO = 'cenit-cliente-barlaschimeneas-netlify-app';
 // El workflow de GitHub Pages define GITHUB_PAGES=true.
 const IS_PAGES = process.env.GITHUB_PAGES === 'true';
 
-// URL del sitio para canonical, sitemap y JSON-LD.
-// - GitHub Pages → https://ethandaza10.github.io (subruta /REPO/).
-// - Netlify → la URL real del deploy (env `URL`).
-// - Fuera de eso → dominio del cliente como referencia local.
-const SITE = process.env.URL
-  || (IS_PAGES ? 'https://ethandaza10.github.io' : 'https://barlaschimeneas.netlify.app');
+// DOMINIO FINAL del cliente (kit: client.site_url). De aquí salen el canonical
+// autorreferente y el sitemap.xml, EXACTAMENTE este dominio (no el de pruebas),
+// para que Google indexe la web real y no la de preview.
+const SITE = 'https://www.barlaschimeneas.com';
 
 export default defineConfig({
   site: SITE,
+  // La subruta /REPO/ solo aplica a la preview de GitHub Pages; en el dominio
+  // real (Netlify/producción) la base es "/". Los enlaces internos son relativos.
   base: IS_PAGES ? `/${REPO}` : undefined,
   integrations: [sitemap()],
   compressHTML: true,

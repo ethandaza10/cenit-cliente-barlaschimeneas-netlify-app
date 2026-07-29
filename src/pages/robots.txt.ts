@@ -6,7 +6,7 @@ import type { APIRoute } from 'astro';
 //   para no competir en Google con la web viva del cliente.
 export const GET: APIRoute = ({ site }) => {
   const indexable = process.env.SITE_INDEXABLE === 'true';
-  const base = site ?? new URL('https://barlaschimeneas.netlify.app');
+  const base = site ?? new URL('https://www.barlaschimeneas.com');
 
   const body = indexable
     ? `User-agent: *\nAllow: /\n\nSitemap: ${new URL('sitemap-index.xml', base).href}\n`
