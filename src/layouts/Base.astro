@@ -15,9 +15,11 @@ interface Props {
   path?: string;
   /** Nodos JSON-LD adicionales (FAQPage, Menu, etc.). */
   schema?: Record<string, unknown>[];
+  /** true → esta página NO se indexa (legales, gracias…). No aparece en Google ni en el sitemap. */
+  noindex?: boolean;
 }
 
-const { title, description, path, schema = [] } = Astro.props;
+const { title, description, path, schema = [], noindex = false } = Astro.props;
 
 const canonicalPath = path ?? Astro.url.pathname;
 // Origen del sitio realmente desplegado (Astro.site), con fallback.
@@ -30,7 +32,8 @@ const businessUrl = new URL(link('/'), siteBase).href;
 // (pages.dev, workers.dev, netlify, localhost) para no competir con la web viva. SITE_INDEXABLE=true fuerza.
 const isPreviewHost = /(netlify\.app|pages\.dev|workers\.dev|localhost|127\.0\.0\.1)/i.test(Astro.site?.host || '');
 const indexable = process.env.SITE_INDEXABLE === 'true' || !isPreviewHost;
-const robotsContent = indexable ? 'index, follow' : 'noindex, nofollow';
+// noindex por página (legales, etc.) manda: se rastrea pero no se indexa. Si no, según el host.
+const robotsContent = noindex ? 'noindex, follow' : (indexable ? 'index, follow' : 'noindex, nofollow');
 
 // Nodo LocalBusiness común a todas las páginas (datos verificados).
 const business = {

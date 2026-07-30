@@ -18,7 +18,8 @@ export default defineConfig({
   // La subruta /REPO/ solo aplica a la preview de GitHub Pages; en el dominio
   // real (Netlify/producción) la base es "/". Los enlaces internos son relativos.
   base: IS_PAGES ? `/${REPO}` : undefined,
-  integrations: [sitemap()],
+  // El sitemap solo debe listar páginas indexables → fuera las legales (van en noindex).
+  integrations: [sitemap({ filter: (page) => !/\/(privacidad|cookies|aviso-legal)\/?$/.test(page) })],
   compressHTML: true,
   build: {
     inlineStylesheets: 'auto',
