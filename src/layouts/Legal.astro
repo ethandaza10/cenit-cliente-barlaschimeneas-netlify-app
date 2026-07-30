@@ -1,10 +1,10 @@
 ---
 import Base from './Base.astro';
 import { link } from '../data/site';
-interface Props { title: string; description: string; path: string; h1: string; }
-const { title, description, path, h1 } = Astro.props;
+interface Props { title: string; description: string; path: string; h1: string; noindex?: boolean; }
+const { title, description, path, h1, noindex = false } = Astro.props;
 ---
-<Base title={title} description={description} path={path}>
+<Base title={title} description={description} path={path} noindex={noindex}>
   <article class="legal">
     <div class="container legal__wrap">
       <header class="legal__head">
