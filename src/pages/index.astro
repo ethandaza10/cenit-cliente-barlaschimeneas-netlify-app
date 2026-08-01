@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Faq from '../components/Faq.astro';
 import { site, telLink, waLink, link } from '../data/site';
@@ -13,6 +13,17 @@ import raboDeToro from '../assets/rabo-de-toro.jpg';
 import tortilla from '../assets/tortilla.png';
 import hamburguesa from '../assets/hamburguesa.png';
 import tarta from '../assets/tarta-queso.jpg';
+
+// Imagen LCP (hero): se genera aquí para poder PRECARGARLA en el <head> (mejora el LCP).
+const HERO_SIZES = '(max-width: 860px) 100vw, 52vw';
+const HERO_WIDTHS = [560, 860, 1100, 1600, 2000];
+const heroLcp = await getImage({
+  src: hero,
+  widths: HERO_WIDTHS,
+  sizes: HERO_SIZES,
+  format: 'webp',
+  quality: 82,
+});
 
 // SOLO fotos reales del cliente (mapa en /assets/manifest.json). No se inventa ninguna.
 const carousel = [
@@ -77,17 +88,28 @@ const proofs = [
   path="/"
   schema={[faqSchema]}
 >
+  <!-- Precarga de la imagen LCP (hero) para bajar el LCP -->
+  <link
+    slot="head"
+    rel="preload"
+    as="image"
+    href={heroLcp.src}
+    imagesrcset={heroLcp.srcSet.attribute}
+    imagesizes={HERO_SIZES}
+    fetchpriority="high"
+  />
+
   <!-- HERO: foto a media pantalla con fundido hacia la pizarra -->
   <section class="hero">
     <div class="hero__media">
       <Image
         src={hero}
         alt="Interior del Bar Las Chimeneas: barra de ladrillo y ambiente familiar en Valdemorillo."
-        width={1100}
-        height={1000}
+        widths={HERO_WIDTHS}
+        sizes={HERO_SIZES}
         loading="eager"
         fetchpriority="high"
-        format="webp" densities={[1, 2]}
+        format="webp"
         quality={82}
       />
     </div>
@@ -152,8 +174,8 @@ const proofs = [
 
   <!-- MENÚ DEL DÍA (protagonista) — banda premium con foto de fondo -->
   <section class="menudia-band">
-    <div class="band-bg" aria-hidden="true">
-      <Image src={raboDeToro} alt="" width={1600} height={1000} format="webp" quality={70} loading="lazy" />
+    <div class="band-bg">
+      <Image src={raboDeToro} alt="Plato del menú del día de Bar Las Chimeneas en Valdemorillo" width={1600} height={1000} format="webp" quality={70} loading="lazy" />
     </div>
     <div class="container menudia" data-reveal>
       <aside class="pizarra" aria-label="Menú del día">
@@ -212,8 +234,8 @@ const proofs = [
 
   <!-- TERRAZA / EVENTOS: banda a sangre con capa vermut -->
   <section class="eventos-band">
-    <div class="band-bg" aria-hidden="true">
-      <Image src={musica} alt="" width={1900} height={900} format="webp" quality={72} loading="lazy" />
+    <div class="band-bg">
+      <Image src={musica} alt="Terraza del Bar Las Chimeneas en Valdemorillo durante un concierto en vivo" width={1900} height={900} format="webp" quality={72} loading="lazy" />
     </div>
     <div class="container eventos-band__inner" data-reveal>
       <span class="hand eventos-band__hand">los findes, en directo</span>

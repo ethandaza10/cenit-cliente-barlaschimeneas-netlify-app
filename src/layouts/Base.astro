@@ -89,6 +89,9 @@ const jsonLd = [business, ...schema];
 
     <link rel="sitemap" href={link('/sitemap-index.xml')} />
 
+    <!-- Preload de la imagen LCP y otros extras de <head> por página -->
+    <slot name="head" />
+
     {
       jsonLd.map((node) => (
         <script type="application/ld+json" set:html={JSON.stringify(node)} />
