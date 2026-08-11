@@ -23,6 +23,10 @@ const gallery = [
 
 const faq = [
   {
+    q: '¿Dónde comer en Valdemorillo?',
+    a: 'En pleno centro de Valdemorillo, dentro de la Casa de la Cultura, Bar Las Chimeneas es un bar y restaurante de cocina casera donde comer cada día: menú del día por 13,90 €, raciones y tapas para compartir y terraza. Reserva por WhatsApp y ven a comer con nosotros.',
+  },
+  {
     q: '¿Tenéis menú del día en Valdemorillo?',
     a: 'Sí. Nuestro menú del día cuesta 13,90 € e incluye primer plato, segundo plato, bebida y postre. Los platos concretos van cambiando cada día; consúltanos por WhatsApp o al llegar qué hay hoy.',
   },
@@ -70,8 +74,8 @@ const menuSchema = {
 ---
 
 <Base
-  title="Carta y menú del día en Valdemorillo | Bar Las Chimeneas"
-  description="Descubre la carta de Bar Las Chimeneas en Valdemorillo: raciones caseras, tapas y platos para compartir. Consulta si hay menú del día y opciones para todos."
+  title="Carta y menú del día | Restaurante Bar Las Chimeneas en Valdemorillo"
+  description="Carta del Bar Las Chimeneas, restaurante para comer en Valdemorillo: menú del día, raciones caseras, tapas y platos para compartir. Consulta el menú del día y opciones para todos."
   path="/carta"
   schema={[menuSchema, faqSchema]}
 >
@@ -109,7 +113,7 @@ const menuSchema = {
       </aside>
       <div class="split__copy menu-band__copy" style="--reveal-delay:80ms">
         <span class="eyebrow">Cada día</span>
-        <h2 class="h-lg">Menú del día en Valdemorillo</h2>
+        <h2 class="h-lg">Menú del día para comer en Valdemorillo</h2>
         <div class="prose">
           <p>
             El <strong>menú del día</strong> es la forma más cómoda de comer bien sin complicarte:
@@ -120,6 +124,23 @@ const menuSchema = {
         </div>
         <p class="pending">
           ¿Quieres saber el menú de hoy? Escríbenos por WhatsApp y te contamos los platos del día.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Restaurante / comer en Valdemorillo (intención de búsqueda) -->
+  <section class="section section--tight">
+    <div class="container intent" data-reveal>
+      <span class="eyebrow">Comer en Valdemorillo</span>
+      <h2 class="h-xl">Un restaurante para comer bien en Valdemorillo</h2>
+      <div class="prose">
+        <p>
+          Si buscas <strong>dónde comer en Valdemorillo</strong>, Bar Las Chimeneas es tu
+          restaurante de cocina casera en el corazón del pueblo, dentro de la Casa de la Cultura.
+          Aquí puedes <strong>comer en Valdemorillo</strong> cada día con nuestro menú del día,
+          picar unas tapas o reunir a la familia y los amigos en la terraza. Un bar y restaurante
+          pensado para comer sin prisas, con producto cuidado y un trato cercano.
         </p>
       </div>
     </div>
@@ -254,6 +275,13 @@ const menuSchema = {
   }
   .menu-band__copy .prose { color: var(--cream-dim); }
   .menu-band__copy .prose strong { color: var(--amber-bright); font-weight: 600; }
+
+  .intent {
+    max-width: 64ch;
+  }
+  .intent h2 {
+    margin: var(--sp-3) 0 var(--sp-4);
+  }
 
   .two {
     display: grid;
